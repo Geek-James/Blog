@@ -8,12 +8,7 @@
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
 ## ES6 知识总结 思维导图
-![loading.png](http://upload-images.jianshu.io/upload_images/1503319-c696a9cd1495d68f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
-
-作者：Fsn_soul
-链接：https://www.jianshu.com/p/5c1805c6f0ff
-来源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+![loading.png](https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png/w/200)
 
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
