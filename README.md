@@ -6,18 +6,18 @@
 ## 个人专栏
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
-## JavaScript 深入系列目录
- 1.[JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
+## JavaScript 彻底搞懂系列目录
+ 1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
  
- 2.[彻底理解JS中的this 指向问题](https://github.com/zc639143029/Blog/issues/2)
+ 2.[彻底搞懂-JS中的this 指向问题](https://github.com/zc639143029/Blog/issues/2)
  
- 3.[join()和split()方法的区别](https://github.com/zc639143029/Blog/issues/3)
+ 3.[彻底搞懂-join()和split()方法的区别](https://github.com/zc639143029/Blog/issues/3)
  
- 4.[深入搞懂构造函数和原型对象](https://github.com/zc639143029/Blog/issues/4)
+ 4.[彻底搞懂-构造函数和原型对象](https://github.com/zc639143029/Blog/issues/4)
  
- 5.[call apply band 小结](https://github.com/zc639143029/Blog/issues/5)
+ 5.[彻底搞懂-call apply band 小结](https://github.com/zc639143029/Blog/issues/5)
  
- 6.[彻底搞懂instance和typeOf](https://github.com/zc639143029/Blog/issues/6)
+ 6.[彻底搞懂-instance和typeOf](https://github.com/zc639143029/Blog/issues/6)
  
  
 ## JavaScript Dom操作系列目录
