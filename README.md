@@ -8,7 +8,7 @@
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
 ## ES6 知识总结 思维导图
-![ES6 知识总结](https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png =200x300)
+![ES6 知识总结](https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png)
 
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
