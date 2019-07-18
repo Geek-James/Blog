@@ -1,6 +1,7 @@
 # 个人笔记分享
 记录个人成长🔥分享学习笔记😊<br>
-主要分享JavaScript、JavaScript Dom操作、ES6、javaScript设计模式、数据结构与算法、分享内容会附加优质的学习博客以供大家参考学习。
+主要分享JavaScript、JavaScript Dom操作、ES6、javaScript设计模式、数据结构与算法、分享内容会附加优质的学习博客以供大家参考学习。<br>
+如果我的个人笔记对你有帮助,记得右上角点小星星⭐️
 
 # 个人专栏
 [CSDN博客](https://blog.csdn.net/zc639143029)
