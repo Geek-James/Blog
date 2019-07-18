@@ -23,7 +23,9 @@
  
  
 ## JavaScript Dom操作系列目录
- 1.[JavaScript常用的Dom操作](https://github.com/zc639143029/Blog/issues/9)<br>
+ 1.[JavaScript常用的Dom操作](https://github.com/zc639143029/Blog/issues/9)
+ 
+ 2.[JS事件响应处理操作](https://github.com/zc639143029/Blog/issues/12)
  
 ## 算法及数据结构系列目录
  1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
