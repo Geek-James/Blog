@@ -27,6 +27,15 @@
  
  2.[JS事件响应处理操作](https://github.com/zc639143029/Blog/issues/12)
  
+## ES6 系列
+1.[ES6详解-迭代器for of](https://github.com/zc639143029/Blog/issues/13)
+
+2.[ES6详解-Map Set Symbol ](https://github.com/zc639143029/Blog/issues/14)
+
+3.[ES6详解-Proxy](https://github.com/zc639143029/Blog/issues/15)
+
+4.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
+
 ## 算法及数据结构系列目录
  1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
  
