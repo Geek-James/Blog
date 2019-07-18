@@ -7,6 +7,11 @@
 ## 个人专栏
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
+## ES6 知识总结 思维导图
+![知识总结 思维导图](https://github.com/zc639143029/Blog/blob/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png =200x300)
+
+[CSDN博客](https://blog.csdn.net/zc639143029)
+
 ## JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
  
