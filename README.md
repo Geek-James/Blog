@@ -5,18 +5,18 @@
 # 个人专栏
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
-# JavaScript 深入系列目录 😊
- 1.[JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
- 2.[彻底理解JS中的this 指向问题](https://github.com/zc639143029/Blog/issues/2)
- 3.[join()和split()方法的区别](https://github.com/zc639143029/Blog/issues/3)
- 4.[深入搞懂构造函数和原型对象](https://github.com/zc639143029/Blog/issues/4)
- 5.[call apply band 小结](https://github.com/zc639143029/Blog/issues/5)
- 6.[彻底搞懂instance和typeOf](https://github.com/zc639143029/Blog/issues/6)
+# JavaScript 深入系列目录
+ 1.[JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)<br>
+ 2.[彻底理解JS中的this 指向问题](https://github.com/zc639143029/Blog/issues/2)<br>
+ 3.[join()和split()方法的区别](https://github.com/zc639143029/Blog/issues/3)<br>
+ 4.[深入搞懂构造函数和原型对象](https://github.com/zc639143029/Blog/issues/4)<br>
+ 5.[call apply band 小结](https://github.com/zc639143029/Blog/issues/5)<br>
+ 6.[彻底搞懂instance和typeOf](https://github.com/zc639143029/Blog/issues/6)<br>
  
-#  JavaScript Dom操作系列目录 😊
- 1.[JavaScript常用的Dom操作](https://github.com/zc639143029/Blog/issues/9)
+#  JavaScript Dom操作系列目录
+ 1.[JavaScript常用的Dom操作](https://github.com/zc639143029/Blog/issues/9)<br>
  
-# 算法及数据结构系列目录 😊
- 1.[递归](https://github.com/zc639143029/Blog/issues/10)
+# 算法及数据结构系列目录
+ 1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
  
  
