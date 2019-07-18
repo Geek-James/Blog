@@ -1,6 +1,6 @@
 # 全栈前端笔记分享
 记录个人成长🔥分享学习笔记😊<br>
-主要分享JavaScript、JavaScript Dom操作、ES6、javaScript设计模式、数据结构与算法、Vue、Node.js等等,分享内容会附加优质的学习博客连接以供全面参考学习。<br>
+主要分享JavaScript彻底搞懂系列、JavaScript Dom操作、ES6详解系列、javaScript设计模式系列、数据结构与算法系列、Vue、Node.js等等,分享内容会附加优质的学习博客连接以供全面参考学习。<br>
 如果我的笔记对你有帮助,点个小星星鼓励下⭐️
 
 ## 个人专栏
