@@ -19,7 +19,7 @@
  
  6.[彻底搞懂-instance和typeOf](https://github.com/zc639143029/Blog/issues/6)
  
- 7[7.彻底搞懂-JavaScript 闭包](https://github.com/zc639143029/Blog/issues/11)
+ 7.[彻底搞懂-JavaScript 闭包](https://github.com/zc639143029/Blog/issues/11)
  
  
 ## JavaScript Dom操作系列目录
