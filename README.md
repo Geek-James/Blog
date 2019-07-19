@@ -1,11 +1,15 @@
 # 全栈前端笔记分享
 记录个人成长🔥分享学习笔记😊<br>
-主要分享JavaScript彻底搞懂系列、JavaScript Dom操作、ES6详解系列、javaScript设计模式系列、数据结构与算法系列、Vue、Node.js等等,分享内容会附加优质的学习博客连接以供全面参考学习。<br>
+主要分享jQuery源码剖析系列、JavaScript彻底搞懂系列、JavaScript Dom操作、ES6详解系列、javaScript设计模式系列、数据结构与算法系列、Vue、Node.js等等,分享内容会附加优质的学习博客连接以供全面参考学习。<br>
 如果喜欢或者有所启发，欢迎 ⭐️star，对作者也是一种鼓励。
 
 
 ## 个人专栏
 [CSDN博客](https://blog.csdn.net/zc639143029)
+[掘金](https://juejin.im/user/5c4ebc72e51d4511dc7306ce/posts)
+
+## JQuery 源码剖析系列
+1.[核心功能函数](https://github.com/zc639143029/Blog/issues/18)
 
 ## JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
