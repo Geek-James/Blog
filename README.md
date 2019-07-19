@@ -9,29 +9,40 @@
 
 ## JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
- 
+
  2.[彻底搞懂-JS中的this 指向问题](https://github.com/zc639143029/Blog/issues/2)
- 
+
  3.[彻底搞懂-join()和split()方法的区别](https://github.com/zc639143029/Blog/issues/3)
- 
+
  4.[彻底搞懂-构造函数和原型对象](https://github.com/zc639143029/Blog/issues/4)
- 
+
  5.[彻底搞懂-call apply band 小结](https://github.com/zc639143029/Blog/issues/5)
- 
+
  6.[彻底搞懂-instance和typeOf](https://github.com/zc639143029/Blog/issues/6)
- 
+
  7.[彻底搞懂-JavaScript 闭包](https://github.com/zc639143029/Blog/issues/11)
- 
- 
+
+
 ## JavaScript Dom操作系列目录
  1.[JavaScript常用的Dom操作](https://github.com/zc639143029/Blog/issues/9)
- 
+
  2.[JS事件响应处理操作](https://github.com/zc639143029/Blog/issues/12)
- 
+
  ## ES6 知识总结 思维导图
  [⭐️点我下载](https://github.com/zc639143029/Blog/blob/master/XMind/ES6%E6%80%BB%E7%BB%931-9.xmind)
 
-![ES6 知识总结](https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png)
+<div> <img src="https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png" style="width:260px;float:left;margin-right:120px;height:150px""/>
+<a href="https://github.com/zc639143029/Blog/blob/master/XMind/ES6%E6%80%BB%E7%BB%931-9.xmind"><img src="https://raw.githubusercontent.com/Geek-James/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%2011-20.png" style="width:260px;height:150px"/></div>
+
+
+
+
+
+
+
+
+
+
 ## ES6 系列
 1.[ES6详解-迭代器for of](https://github.com/zc639143029/Blog/issues/13)
 
@@ -44,7 +55,9 @@
 5.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
 
 
+
+
 ## 算法及数据结构系列目录
  1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
- 
+
  
