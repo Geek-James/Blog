@@ -29,7 +29,7 @@
  2.[JS事件响应处理操作](https://github.com/zc639143029/Blog/issues/12)
 
  ## ES6 知识总结 思维导图
- [⭐️点我下载](https://github.com/zc639143029/Blog/blob/master/XMind/ES6%E6%80%BB%E7%BB%931-9.xmind)
+ [⭐️点我下载](https://github.com/Geek-James/Blog/tree/master/XMind)
 
 <img width="150" height="90" float="left" src="https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png">
 <img width="150" height="90" float="left" src="https://raw.githubusercontent.com/Geek-James/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%2011-20.png">
