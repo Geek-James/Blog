@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery源码解析 选择器</title>
+    <!-- <script src="./js/jquery-3.4.1.js"></script> -->
+</head>
+<body>
+    <div id="box"></div>
+    <script src="./js/my-jQuery-1.0.1.js"></script>
+    <script>
+        // 创建DOM
+        // 传入字符串
+        console.log($("a"));    //创建DOM节点包装成jQuery对象
+        // 传入HTML
+        console.log($("<div>"));  // //创建DOM节点包装成jQuery对象
+        // 传入对象
+        console.log($(document));
+        // 传入选择器
+        console.log($('.box'));
+        // 传入对象
+        console.log($(this));   // 把传入的对象包装成jQuery对象 
+                
+        $(function(){
+            console.log(11111);  //这个是在页面加载完成后加载执行的,等效于在DOM文档加载完成后执行了$(document).read()方法        
+})
+        // console.log(data.charAt(0));
+        // console.log(data.charAt(data.length-1));
+        // console.log(data.length);
+            
+        // var data = "<a>";
+        // var rejectExp = /^<(\w+)\s*\/?>(?:<\/\1|)$/;
+        // var parse = rejectExp.exec(data);
+        // console.log(parse);
+        // 查询DOM
+        // console.log($("#box"));
+        // 对象
+        // console.log($(document));
+        
+    </script>
+    
+    
+</body>
+</html>
