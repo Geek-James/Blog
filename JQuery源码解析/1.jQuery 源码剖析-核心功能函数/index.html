@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery源码解析 核心功能函数</title>
+    <!-- 引入自己仿写的my-jQuery文件 -->
+    <script src="./js/my-jQuery-1.0.0.js"></script>
+    <!-- 官方jQuery文件 -->
+    <!-- <script src="./js/jquery-3.4.1.js"></script> -->
+</head>
+<body>
+    <script>
+        // console.log($()); 
+        // 任意对象扩展
+        var a = {name:"james",list:{age:"26"}};
+        var b = {list:{sex:"男"}}; 
+        var c = $.extend(true,{},a,b); 
+        // {{name:"james",list:{sex:"男"}}}
+        console.log(c);
+        // // 本身扩展
+        // $.extend({
+        //     work:function(){
+        //     }
+        // });
+
+        // // 实例对象扩展
+        // $.fn.extend({
+        //     sex:"男"
+        // });
+        // $().sex;  // 男
+    </script>
+</body>
+</html>
