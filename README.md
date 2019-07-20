@@ -12,6 +12,8 @@
 ## JQuery 源码剖析系列
 1.[核心功能函数](https://github.com/zc639143029/Blog/issues/18)
 
+2.[选择器](https://github.com/zc639143029/Blog/issues/19)
+
 ## JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
 
