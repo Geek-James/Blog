@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery 源码剖析 callbacks 原理</title>
+    <!-- 官方 jQuery 文件 -->
+    <script src="./js/jquery-3.4.1.js"></script>
+    <!-- 自己的my-jQuery文件 -->
+    <!-- <script src="./js/my-jQuery 1.0.2.js'"></script> -->
+</head>
+<body>
+    <button value="点我呀" id="btn">Button点击事件</button>
+    <script>
+        var cb = $.Callbacks();
+        cb.add(function(){
+            console.log("add one");
+            
+        });
+        cb.add(function(){
+            console.log("add two");
+        })
+        cb.add(function(){
+            console.log("add three");
+            
+        })
+        cb.fire();
+        cb.fire();
+        // once关键字
+        var cbOne = $.Callbacks('once');
+        cbOne.add(function(){
+            console.log("this is cbOne1 - ");
+        });
+        cbOne.add(function(){
+            console.log("this is a cbOne2");
+        });
+        // 只执行一次下面fire()不执行
+        cbOne.fire();// this is cbOne1 - this is a cbOne2
+        cbOne.fire();
+
+        // unique 关键字
+        var cbUnique = $.Callbacks('unique');
+        function demo(){
+            console.log("this is a cbUnique - ");
+        }
+        function demo2() {
+            console.log("this is a cbUnique2");
+            
+        }
+        cbUnique.add(demo,demo,demo2);
+        // demo只输出一次
+        cbUnique.fire(); // this is a cbUnique - this is a cbUnique2
+        
+        // stopOnFalse 关键字
+        // 不加关键字的情况
+        var cbDemo = $.Callbacks();
+        cbDemo.add(function(){
+            console.log("this is cbDemo 1 - ");
+            return false;
+            
+        },function(){
+            console.log("this is cbDemo 2");
+        })
+        cbDemo.fire();  // this is cbDemo 1 - this is cbDemo 2
+        
+        // 加关键字的情况
+        var cbStopOnFalse = $.Callbacks('stopOnFalse');
+        cbStopOnFalse.add(function(){
+            console.log("this is a cbStopOnFalse 1 - ");
+            return false;
+        },function(){
+            console.log("this is a cbStopOnFalse 2");
+        });
+        cbStopOnFalse.fire(); // this is a cbStopOnFalse 1 -
+    // 参数 memory
+    // 不加参数的情况
+    var cbNoMemory = $.Callbacks();
+    cbNoMemory.add(function(){
+        console.log("this is a cbNoMemory 1");
+    });
+    cbNoMemory.fire(); // this is a cbNoMemory 1
+    cbNoMemory.add(function (){
+        console.log("this is a cbNoMemory 2");
+    });
+    
+    // 添加参数的情况
+    var cbMemory = $.Callbacks('memory');
+    cbMemory.add(function(){
+        console.log("this is a cbMemory 1 - ");
+    });
+    cbMemory.fire(); // this is a cbMemory 1 - this is a cbMemory 2
+    cbMemory.add(function(){
+        console.log("this is a cbMemory 2");
+    })
+
+    // 一对多事件模型
+    function one(){
+        console.log("one");
+        
+    };
+    function two(){
+        console.log("two");
+        
+    };
+    function three(){
+        console.log("three");
+        
+    };
+    function four(){
+        console.log("four");
+        
+    };
+    var clickCallBack = [one,two,three,four];
+    $("#btn").click(function(){
+       var _this = this;
+       clickCallBack.forEach(function(fn){
+           fn.call(_this);
+           
+       })
+    });
+
+    
+</script>
+    
+</body>
+</html>

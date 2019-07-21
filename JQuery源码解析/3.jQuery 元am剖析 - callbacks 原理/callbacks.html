@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Callbacks 原理解析 仿写Callbacks</title>
+</head>
+<body>
+    <!-- 只包含callbacks 文件 -->
+    <!-- <script src="./js/my-jQuery 1.0.2.js"></script> -->
+    <!-- 集合进前两节的框架 -->
+    <script src="./js/my-jQuery-1.0.3.js"></script>
+
+<script>
+    // var cb = _.callbacks();
+    // var demo = function(){
+    //     console.log("demo");
+    // };
+    // cb.add(demo,demo);
+    // cb.fire();
+
+    var cb =$.Callbacks("unique");
+    
+    
+    var demo = function (){
+        console.log("demo");
+    }
+    cb.add(demo,demo,demo);
+    cb.fire();
+
+
+
+//    var cb = _.callbacks("stopOnfalse");
+   
+//    cb.add(function(){
+//        console.log(1);
+//        return false;
+//    })
+
+//    cb.add(function(){
+//        console.log(3);
+       
+//    })
+    
+//    cb.fire();
+//    cb.add(function(){
+//        console.log(2);
+//    });
+
+</script>
+    
+</body>
+</html>
