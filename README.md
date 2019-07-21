@@ -14,6 +14,8 @@
 
 2.[选择器](https://github.com/zc639143029/Blog/issues/19)
 
+3.[Callbacks原理分析及实现](https://github.com/zc639143029/Blog/issues/20)
+
 ## JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
 
