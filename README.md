@@ -4,19 +4,19 @@
 如果喜欢或者有所启发，欢迎 ⭐️star，对作者也是一种鼓励。
 
 
-## 个人专栏
+## | 个人专栏
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
 [掘金](https://juejin.im/user/5c4ebc72e51d4511dc7306ce/posts)
 
-## JQuery 源码剖析系列
+## | JQuery 源码剖析系列
 1.[核心功能函数](https://github.com/zc639143029/Blog/issues/18)
 
 2.[选择器](https://github.com/zc639143029/Blog/issues/19)
 
 3.[Callbacks原理分析及实现](https://github.com/zc639143029/Blog/issues/20)
 
-## JavaScript 彻底搞懂系列目录
+## | JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
 
  2.[彻底搞懂-JS中的this 指向问题](https://github.com/zc639143029/Blog/issues/2)
@@ -32,19 +32,19 @@
  7.[彻底搞懂-JavaScript 闭包](https://github.com/zc639143029/Blog/issues/11)
 
 
-## JavaScript Dom操作系列目录
+## | JavaScript Dom操作系列目录
  1.[JavaScript常用的Dom操作](https://github.com/zc639143029/Blog/issues/9)
 
  2.[JS事件响应处理操作](https://github.com/zc639143029/Blog/issues/12)
 
- ## ES6 知识总结 思维导图
+ ## | ES6 知识总结 思维导图
  [⭐️点我下载](https://github.com/Geek-James/Blog/tree/master/XMind)
 
 <img width="150" height="90" float="left" src="https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png">
 <img width="150" height="90" float="left" src="https://raw.githubusercontent.com/Geek-James/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%2011-20.png">
 
 
-## ES6 系列
+## | ES6 系列
 1.[ES6详解-迭代器for of](https://github.com/zc639143029/Blog/issues/13)
 
 2.[ES6详解-Map Set Symbol ](https://github.com/zc639143029/Blog/issues/14)
@@ -58,7 +58,7 @@
 
 
 
-## 算法及数据结构系列目录
+## | 算法及数据结构系列目录
  1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
 
  
