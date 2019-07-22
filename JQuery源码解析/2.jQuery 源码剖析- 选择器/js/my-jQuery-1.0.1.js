@@ -2,7 +2,7 @@
  * @Description: JQuery 源码剖析  选择器 部分
  * @Author: James
  * @Date: 2019-07-20 09:32:42
- * @LastEditTime: 2019-07-20 16:33:56
+ * @LastEditTime: 2019-07-22 09:23:38
  * @LastEditors: Please set LastEditors
  */
 // 闭包 立即执行函数
@@ -82,6 +82,7 @@
                 jQuery.readylist.push(fn);
             }
         }
+        
     }
     
     jQuery.extend = jQuery.fn.extend = function () {

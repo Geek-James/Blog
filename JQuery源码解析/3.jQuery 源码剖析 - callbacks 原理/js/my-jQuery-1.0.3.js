@@ -3,7 +3,7 @@
  * @Author: James
  * @Descript 仿写jQuery源码
  * @Date: 2019-07-20 09:32:42
- * @LastEditTime: 2019-07-21 20:33:27
+ * @LastEditTime: 2019-07-22 15:14:11
  * @LastEditors: Please set LastEditors
  */
 // 闭包 立即执行函数
@@ -11,7 +11,7 @@
 
     var textExp = /^\s*(<[w\W]+>)[^>]*$/;
     var rejectExp = /^<(\w+)\s*\/?>(?:<\/\1|)$/;
-    var version = "1.0.1";
+    var version = "1.0.3";
     
     var jQuery = function(selector,context) {
         // jQuery对象实际上只是init构造函数
