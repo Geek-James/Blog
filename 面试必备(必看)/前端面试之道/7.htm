@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5be04a8e6fb9a04a072fd2cd -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="google-site-verification" content="cCHsgG9ktuCTgWgYfqCJql8AeR4gAne4DTZqztPoirE">
+    <meta name="apple-itunes-app" content="app-id=987739104">
+    <meta name="baidu-site-verification" content="qiK2a1kcFc">
+    <meta name="360-site-verification" content="4c3c7d57d59f0e1a308462fbc7fd7e51">
+    <meta name="sogou_site_verification" content="c49WUDZczQ">
+    <style>body {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    a, button, input {
+        margin: 1rem 1.5rem;
+    }
+
+    img {
+        width: 0;
+        height: 0;
+    }
+
+    #juejin {
+        overflow-x: hidden;
+    }</style>
+    <title data-vue-meta="true">前端面试之道 - yck - 掘金小册</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://b-gold-cdn.xitu.io/favicons/v2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-16x16.png">
+    <link rel="manifest" href="https://b-gold-cdn.xitu.io/favicons/v2/manifest.json">
+    <link rel="mask-icon" href="https://b-gold-cdn.xitu.io/favicons/v2/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon.ico">
+    <meta name="msapplication-config" content="https://b-gold-cdn.xitu.io/favicons/v2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" title="掘金" href="https://b-gold-cdn.xitu.io/conf/search.xml"
+          type="application/opensearchdescription+xml">
+    <link rel="stylesheet" href="./7-Event Loop_files/ionicons.min.css">
+    <link rel="stylesheet" href="./7-Event Loop_files/iconfont.css">
+    <link href="./7-Event Loop_files/0.20e96f0e16539d696fbd.css" rel="stylesheet">
+    <script src="tools.js"></script>
+    <script async="" src="./7-Event Loop_files/hm.js.下载"></script>
+    <script async="" src="./7-Event Loop_files/analytics.js.下载"></script>
+    <script type="text/javascript" async="" src="./7-Event Loop_files/vds.js.下载"></script>
+    <script charset="utf-8" src="./7-Event Loop_files/13.46a6fc9d409a46c2798c.js.下载"></script>
+    <meta data-vmid="keywords" name="keywords"
+          content="掘金,稀土,Vue.js,微信小程序,Kotlin,RxJava,React Native,Wireshark,敏捷开发,Bootstrap,OKHttp,正则表达式,WebGL,Webpack,Docker,MVVM"
+          data-vue-meta="true">
+    <meta data-vmid="description" name="description"
+          content="掘金是一个帮助开发者成长的社区，是给开发者用的 Hacker News，给设计师用的 Designer News，和给产品经理用的 Medium。掘金的技术文章由稀土上聚集的技术大牛和极客共同编辑为你筛选出最优质的干货，其中包括：Android、iOS、前端、后端等方面的内容。用户每天都可以在这里找到技术世界的头条内容。与此同时，掘金内还有沸点、掘金翻译计划、线下活动、专栏文章等内容。即使你是 GitHub、StackOverflow、开源中国的用户，我们相信你也可以在这里有所收获。"
+          data-vue-meta="true">
+</head>
+<body>
+<div id="juejin" data-v-514f306c="">
+    <div class="global-component-box" data-v-514f306c=""><!---->
+        <div data-v-71cabb60="" data-v-514f306c="" class="alert-list alert-list"></div><!----><!----><!---->
+        <div class="emoji-barrage" data-v-e5f49d52="" data-v-514f306c=""><!----></div>
+        <div class="book-new-user-award-popup" style="display:none;" data-v-71b0e7b2="" data-v-514f306c="">
+            <div class="content-box" style="display:;" data-v-71b0e7b2="">
+                <div class="close ion-close-round" data-v-71b0e7b2=""></div>
+                <div class="header" data-v-71b0e7b2="">
+                    <div class="icon" data-v-71b0e7b2=""><img src="./7-Event Loop_files/icon.a87e5ae.svg"
+                                                              data-v-71b0e7b2=""></div>
+                    <div class="txt" data-v-71b0e7b2="">新人专享好礼</div>
+                </div>
+                <div class="desc" data-v-71b0e7b2="">凡未购买过小册的用户，均可领取三张 5 折新人专享券，购买小册时自动使用专享券，最高可节省 45 元。</div>
+                <div class="tickets" data-v-71b0e7b2="">
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="remark" data-v-71b0e7b2="">注：专享券的使用期限在领券的七天内。</div>
+                <div class="submit-btn" data-v-71b0e7b2="">一键领取</div>
+            </div>
+            <div class="model success" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取成功</div>
+                <div class="content-text" data-v-71b0e7b2="">购买小册时自动使用专享券</div>
+                <div class="btn-success-footer" data-v-71b0e7b2="">
+                    <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+                    <div class="btn-ok btn-link" data-v-71b0e7b2="">前往小册首页</div>
+                </div>
+            </div>
+            <div class="model fail" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取失败</div>
+                <div class="content-text" data-v-71b0e7b2="">本活动仅适用于小册新用户</div>
+                <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+            </div>
+        </div><!----></div><!---->
+    <div data-v-097468bb="" data-v-514f306c="" class="book-read-view">
+        <section data-v-097468bb="" class="book-section">
+            <div data-v-097468bb="" class="book-summary">
+                <div data-v-097468bb="" class="book-summary-masker"></div>
+                <div data-v-097468bb="" class="book-summary-inner">
+                    <div data-v-097468bb="" class="book-summary__header"><a data-v-097468bb=""
+                                                                            href="https://juejin.im/books" target=""
+                                                                            rel="" class="logo"><img data-v-097468bb=""
+                                                                                                     src="./7-Event Loop_files/logo.a7995ad.svg"></a>
+                        <div data-v-097468bb="" class="label">小册</div><!----></div><!---->
+                    <div data-v-d0eb2184="" data-v-097468bb="" class="book-directory book-directory bought"><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">1</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">小册食用指南</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">2</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（一）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">3</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（二）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">4</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">ES6 知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">5</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 异步编程及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">6</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">手写 Promise</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section route-active section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">7</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Event Loop</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">8</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 进阶知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">9</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 思考题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">10</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">DevTools Tips</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">11</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器基础知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">12</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器缓存机制</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">13</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器渲染原理</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">14</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">安全防范知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">15</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">从 V8 中看 JS 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">16</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">性能优化琐碎事</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">17</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Webpack 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">18</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">实现小型打包工具</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">19</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 和 Vue 两大框架之间的相爱相杀</div><!----><!----></div>
+                        <!----></a><a data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">20</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">21</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">22</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">23</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">24</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">监控</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">25</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">UDP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">26</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">TCP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">27</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP 及 TLS</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">28</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP/2 及 HTTP/3</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">29</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">输入 URL 到页面渲染的整个流程</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">30</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">设计模式</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">31</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常见数据结构</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">32</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常考算法题解析</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">33</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">CSS 常考面试题资料</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">34</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">如何写好一封简历</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">35</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">面试常用技巧</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">36</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">前方的路，让我们结伴同行</div><!----><!----></div><!----></a>
+                    </div>
+                    <div data-v-097468bb="" class="book-summary__footer">
+                        <div data-v-097468bb="" class="qr-icon"><img data-v-097468bb=""
+                                                                     src="./7-Event Loop_files/qr-icon.881015a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="qr-tips"><span data-v-097468bb="" class="ion-close"></span>
+                            <div data-v-097468bb="" class="title"><span data-v-097468bb="">关注公众号</span><span
+                                    data-v-097468bb="">领取优惠码</span></div>
+                            <div data-v-097468bb="" class="qr-img"><img data-v-097468bb=""
+                                                                        src="./7-Event Loop_files/wx-qr.13d8b4d.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-097468bb="" class="book-content">
+                <div data-v-097468bb="" class="book-content-inner">
+                    <div data-v-097468bb="" class="book-content__header visible">
+                        <div data-v-097468bb="" class="switch"><img data-v-097468bb=""
+                                                                    src="./7-Event Loop_files/icon.3e69d5a.svg"></div>
+                        <div data-v-097468bb="" class="menu"><img data-v-097468bb=""
+                                                                  src="./7-Event Loop_files/menu.74b9add.svg"></div>
+                        <div data-v-097468bb="" class="title"><a data-v-097468bb=""
+                                                                 href="https://juejin.im/book/5bdc715fe51d454e755f75ef"
+                                                                 target="" rel="">前端面试之道</a></div>
+                        <div data-v-629272fe="" data-v-097468bb="" class="user-auth user-auth">
+                            <div data-v-629272fe="" class="nav-item menu">
+                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-629272fe=""
+                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                     class="lazy avatar avatar loaded"
+                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                <div data-v-629272fe="" class="nav-menu user-dropdown-list" style="display: none;">
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-write"></i><span
+                                                data-v-629272fe="">写文章</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-draft"></i><span
+                                                data-v-629272fe="">草稿</span></a></li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a"><i
+                                                data-v-629272fe="" class="fengwei fw-person"></i><span
+                                                data-v-629272fe="">我的主页</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/likes"><i
+                                                data-v-629272fe="" class="fengwei fw-like"></i><span data-v-629272fe="">我喜欢的</span></a>
+                                        </li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/collections"><i
+                                                data-v-629272fe="" class="fengwei fw-collection"></i><span
+                                                data-v-629272fe="">我的收藏集</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/books?type=bought"><i
+                                                data-v-629272fe="" class="fengwei fw-bought"></i><span
+                                                data-v-629272fe="">已购</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/subscribe"><i
+                                                data-v-629272fe="" class="fengwei fw-tag"></i><span data-v-629272fe="">标签管理</span></a>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/settings"><i
+                                                data-v-629272fe="" class="fengwei fw-setting"></i><span
+                                                data-v-629272fe="">设置</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item more"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-info"></i><span data-v-629272fe="">关于</span><i
+                                                data-v-629272fe="" class="ion-chevron-right more-icon"></i></a>
+                                            <div data-v-629272fe="" class="nav-menu more-dropdown-list">
+                                                <ul data-v-629272fe="" class="nav-menu-item-group">
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/app"
+                                                                                                    target="_blank">下载应用</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/about"
+                                                                                                    target="_blank">关于</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://xitu.io/jobs"
+                                                                                                    target="_blank">加入我们</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://github.com/xitu/gold-miner"
+                                                                                                    rel="nofollow noopener noreferrer"
+                                                                                                    target="_blank">翻译计划</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://bd.juejin.im/?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                                                                    target="_blank">合作伙伴</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-logout"></i><span
+                                                data-v-629272fe="">登出</span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!----></div><!----></div>
+                    <div data-v-097468bb="" class="book-body transition--next">
+                        <div data-v-5602b343="" data-v-097468bb="" class="section-view book-section-content">
+                            <div data-v-05bbf43a="" data-v-5602b343="" class="section-content">
+                                <div data-v-05bbf43a="" class="section-page book-section-view">
+                                    <div data-v-05bbf43a="" class="entry-content article-content"><h1 class="heading"
+                                                                                                      data-id="heading-0">
+                                        Event Loop</h1>
+                                        <p>在前两章节中我们了解了 JS 异步相关的知识。在实践的过程中，你是否遇到过以下场景，为什么 <code>setTimeout</code> 会比
+                                            <code>Promise</code> 后执行，明明代码写在 <code>Promise</code> 之前。这其实涉及到了 Event Loop
+                                            相关的知识，这一章节我们会来详细地了解 Event Loop 相关知识，知道 JS 异步运行代码的原理，并且这一章节也是面试常考知识点。</p>
+                                        <h2 class="heading" data-id="heading-1">进程与线程</h2>
+                                        <blockquote class="warning"><p>涉及面试题：进程与线程区别？JS 单线程带来的好处？
+                                        </p></blockquote>
+                                        <p>相信大家经常会听到 JS 是<strong>单线程</strong>执行的，但是你是否疑惑过什么是线程？</p>
+                                        <p>讲到线程，那么肯定也得说一下进程。本质上来说，两个名词都是 CPU <strong>工作时间片</strong>的一个描述。</p>
+                                        <p>进程描述了 CPU 在<strong>运行指令及加载和保存上下文所需的时间</strong>，放在应用上来说就代表了一个程序。线程是进程中的更小单位，描述了执行一段指令所需的时间。
+                                        </p>
+                                        <p>把这些概念拿到浏览器中来说，当你打开一个 Tab 页时，其实就是创建了一个进程，一个进程中可以有多个线程，比如渲染线程、JS 引擎线程、HTTP
+                                            请求线程等等。当你发起一个请求时，其实就是创建了一个线程，当请求结束后，该线程可能就会被销毁。</p>
+                                        <p>上文说到了 JS 引擎线程和渲染线程，大家应该都知道，在 JS 运行的时候可能会阻止 UI 渲染，这说明了两个线程是<strong>互斥</strong>的。这其中的原因是因为
+                                            JS 可以修改 DOM，如果在 JS 执行的时候 UI 线程还在工作，就可能导致不能安全的渲染 UI。这其实也是一个单线程的好处，得益于 JS
+                                            是单线程运行的，可以达到节省内存，节约上下文切换时间，没有锁的问题的好处。当然前面两点在服务端中更容易体现，对于锁的问题，形象的来说就是当我读取一个数字
+                                            15 的时候，同时有两个操作对数字进行了加减，这时候结果就出现了错误。解决这个问题也不难，只需要在读取的时候加锁，直到读取完毕之前都不能进行写入操作。
+                                        </p>
+                                        <h2 class="heading" data-id="heading-2">执行栈</h2>
+                                        <blockquote class="warning"><p>涉及面试题：什么是执行栈？
+                                        </p></blockquote>
+                                        <p>可以把执行栈认为是一个存储函数调用的<strong>栈结构</strong>，遵循先进后出的原则。</p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/11/13/1670d2d20ead32ec?imageslim"
+                                                     data-width="1211" data-height="623"
+                                                     src="./7-Event Loop_files/1670d2d20ead32ec">
+                                            <figcaption>执行栈可视化</figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <p>当开始执行 JS 代码时，首先会执行一个 <code>main</code>
+                                            函数，然后执行我们的代码。根据先进后出的原则，后执行的函数会先弹出栈，在图中我们也可以发现，<code>foo</code>
+                                            函数后执行，当执行完毕后就从栈中弹出了。</p>
+                                        <p>平时在开发中，大家也可以在报错中找到执行栈的痕迹</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span
+                                                class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span
+                                                    class="hljs-string">'error'</span>)
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span
+        class="hljs-params"></span>) </span>{
+  foo()
+}
+bar()
+</code></pre>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/11/13/1670c0e21540090c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="614" data-height="121"
+                                                     src="./7-Event Loop_files/1670c0e21540090c">
+                                            <figcaption>函数执行顺序</figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <p>大家可以在上图清晰的看到报错在 <code>foo</code> 函数，<code>foo</code> 函数又是在 <code>bar</code>
+                                            函数中调用的。</p>
+                                        <p>当我们使用递归的时候，因为栈可存放的函数是有<strong>限制</strong>的，一旦存放了过多的函数且没有得到释放的话，就会出现爆栈的问题</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span
+                                                class="hljs-params"></span>) </span>{
+  bar()
+}
+bar()
+</code></pre>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/11/13/1670c128acce975f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="511" data-height="158"
+                                                     src="./7-Event Loop_files/1670c128acce975f">
+                                            <figcaption>爆栈</figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <h2 class="heading" data-id="heading-3">浏览器中的 Event Loop</h2>
+                                        <blockquote class="warning"><p>涉及面试题：异步代码执行顺序？解释一下什么是 Event Loop ？
+                                        </p></blockquote>
+                                        <p>上一小节我们讲到了什么是执行栈，大家也知道了当我们执行 JS
+                                            代码的时候其实就是往执行栈中放入函数，那么遇到异步代码的时候该怎么办？其实当遇到异步的代码时，会被<strong>挂起</strong>并在需要执行的时候加入到
+                                            Task（有多种 Task） 队列中。一旦执行栈为空，Event Loop 就会从 Task 队列中拿出需要执行的代码并放入执行栈中执行，所以本质上来说
+                                            JS 中的异步还是同步行为。</p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/11/23/16740fa4cd9c6937?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="1280" data-height="515"
+                                                     src="./7-Event Loop_files/16740fa4cd9c6937">
+                                            <figcaption>事件循环</figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <p>不同的任务源会被分配到不同的 Task 队列中，任务源可以分为 <strong>微任务</strong>（microtask） 和
+                                            <strong>宏任务</strong>（macrotask）。在 ES6 规范中，microtask 称为 <code>jobs</code>，macrotask
+                                            称为 <code>task</code>。下面来看以下代码的执行顺序：</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-built_in">console</span>.log(<span
+                                                class="hljs-string">'script start'</span>)
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                                                    class="hljs-title">async1</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">await</span> async2()
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'async1 end'</span>)
+}
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                                                    class="hljs-title">async2</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'async2 end'</span>)
+}
+async1()
+
+setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setTimeout'</span>)
+}, <span class="hljs-number">0</span>)
+
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span
+                                                    class="hljs-params">resolve</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Promise'</span>)
+  resolve()
+})
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'promise1'</span>)
+  })
+  .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'promise2'</span>)
+  })
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'script end'</span>)
+<span class="hljs-comment">// script start =&gt; async2 end =&gt; Promise =&gt; script end =&gt; promise1 =&gt; promise2 =&gt; async1 end =&gt; setTimeout</span>
+</code></pre>
+                                        <blockquote class="warning"><p>注意：新的浏览器中不是如上打印的，因为 await 变快了，具体内容可以往下看
+                                        </p></blockquote>
+                                        <p>首先先来解释下上述代码的 <code>async</code> 和 <code>await</code> 的执行顺序。当我们调用
+                                            <code>async1</code> 函数时，会马上输出 <code>async2 end</code>，并且函数返回一个
+                                            <code>Promise</code>，接下来在遇到 <code>await</code>的时候会就让出线程开始执行
+                                            <code>async1</code> 外的代码，所以我们完全可以把 <code>await</code>
+                                            看成是<strong>让出线程</strong>的标志。</p>
+                                        <p>然后当同步代码全部执行完毕以后，就会去执行所有的异步代码，那么又会回到 <code>await</code> 的位置执行返回的
+                                            <code>Promise</code> 的 <code>resolve</code> 函数，这又会把 <code>resolve</code>
+                                            丢到微任务队列中，接下来去执行 <code>then</code> 中的回调，当两个 <code>then</code>
+                                            中的回调全部执行完毕以后，又会回到 <code>await</code> 的位置处理返回值，这时候你可以看成是 <code>Promise.resolve(返回值).then()</code>，然后
+                                            <code>await</code> 后的代码全部被包裹进了 <code>then</code> 的回调中，所以 <code>console.log('async1
+                                                end')</code> 会优先执行于 <code>setTimeout</code>。</p>
+                                        <p>如果你觉得上面这段解释还是有点绕，那么我把 <code>async</code> 的这两个函数改造成你一定能理解的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">new</span> <span
+                                                class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span
+                                                class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'async2 end'</span>)
+  <span class="hljs-comment">// Promise.resolve() 将代码插入微任务队列尾部</span>
+  <span class="hljs-comment">// resolve 再次插入微任务队列尾部</span>
+  resolve(<span class="hljs-built_in">Promise</span>.resolve())
+}).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'async1 end'</span>)
+})
+</code></pre>
+                                        <p>也就是说，如果 <code>await</code> 后面跟着 <code>Promise</code> 的话，<code>async1
+                                            end</code> 需要等待三个 tick 才能执行到。那么其实这个性能相对来说还是略慢的，所以 V8 团队借鉴了 Node 8 中的一个
+                                            Bug，在引擎底层将三次 tick 减少到了二次 tick。但是这种做法其实是违法了规范的，当然规范也是可以更改的，这是 V8 团队的一个 <a
+                                                    target="_blank"
+                                                    href="https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Ftc39%2Fecma262%2Fpull%2F1250"
+                                                    rel="nofollow noopener noreferrer">PR</a>，目前已被同意这种做法。</p>
+                                        <p>所以 Event Loop 执行顺序如下所示：</p>
+                                        <ul>
+                                            <li>首先执行同步代码，这属于宏任务</li>
+                                            <li>当执行完所有同步代码后，执行栈为空，查询是否有异步代码需要执行</li>
+                                            <li>执行所有微任务</li>
+                                            <li>当执行完所有微任务后，如有必要会渲染页面</li>
+                                            <li>然后开始下一轮 Event Loop，执行宏任务中的异步代码，也就是 <code>setTimeout</code> 中的回调函数</li>
+                                        </ul>
+                                        <p>所以以上代码虽然 <code>setTimeout</code> 写在 <code>Promise</code> 之前，但是因为 <code>Promise</code>
+                                            属于微任务而 <code>setTimeout</code> 属于宏任务，所以会有以上的打印。</p>
+                                        <p>微任务包括 <code>process.nextTick</code> ，<code>promise</code> ，<code>MutationObserver</code>。
+                                        </p>
+                                        <p>宏任务包括 <code>script</code> ， <code>setTimeout</code> ，<code>setInterval</code>
+                                            ，<code>setImmediate</code> ，<code>I/O</code> ，<code>UI rendering</code>。</p>
+                                        <p>这里很多人会有个误区，认为微任务快于宏任务，其实是错误的。因为宏任务中包括了 <code>script</code> ，浏览器会<strong>先执行一个宏任务</strong>，接下来有异步代码的话才会先执行微任务。
+                                        </p>
+                                        <h2 class="heading" data-id="heading-4">Node 中的 Event Loop</h2>
+                                        <blockquote class="warning"><p>涉及面试题：Node 中的 Event Loop
+                                            和浏览器中的有什么区别？process.nexttick 执行顺序？
+                                        </p></blockquote>
+                                        <p>Node 中的 Event Loop 和浏览器中的是完全不相同的东西。</p>
+                                        <p>Node 的 Event Loop 分为 6 个阶段，它们会按照<strong>顺序</strong>反复运行。每当进入某一个阶段的时候，都会从对应的回调队列中取出函数去执行。当队列为空或者执行的回调函数数量到达系统设定的阈值，就会进入下一阶段。
+                                        </p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/11/13/1670c3fe3f9a5e2b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="745" data-height="442"
+                                                     src="./7-Event Loop_files/1670c3fe3f9a5e2b">
+                                            <figcaption></figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <h3 class="heading" data-id="heading-5">timer</h3>
+                                        <p>timers 阶段会执行 <code>setTimeout</code> 和 <code>setInterval</code> 回调，并且是由 poll
+                                            阶段控制的。</p>
+                                        <p>同样，在 Node 中定时器指定的时间也不是准确时间，只能是<strong>尽快</strong>执行。</p>
+                                        <h3 class="heading" data-id="heading-6">I/O</h3>
+                                        <p>I/O 阶段会处理一些上一轮循环中的<strong>少数未执行</strong>的 I/O 回调</p>
+                                        <h3 class="heading" data-id="heading-7">idle, prepare</h3>
+                                        <p>idle, prepare 阶段内部实现，这里就忽略不讲了。</p>
+                                        <h3 class="heading" data-id="heading-8">poll</h3>
+                                        <p>poll 是一个至关重要的阶段，这一阶段中，系统会做两件事情</p>
+                                        <ol>
+                                            <li>回到 timer 阶段执行回调</li>
+                                            <li>执行 I/O 回调</li>
+                                        </ol>
+                                        <p>并且在进入该阶段时如果没有设定了 timer 的话，会发生以下两件事情</p>
+                                        <ul>
+                                            <li>如果 poll 队列不为空，会遍历回调队列并同步执行，直到队列为空或者达到系统限制</li>
+                                            <li>如果 poll 队列为空时，会有两件事发生
+                                                <ul>
+                                                    <li>如果有 <code>setImmediate</code> 回调需要执行，poll 阶段会停止并且进入到 check
+                                                        阶段执行回调
+                                                    </li>
+                                                    <li>如果没有 <code>setImmediate</code>
+                                                        回调需要执行，会等待回调被加入到队列中并立即执行回调，这里同样会有个超时时间设置防止一直等待下去
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <p>当然设定了 timer 的话且 poll 队列为空，则会判断是否有 timer 超时，如果有的话会回到 timer 阶段执行回调。</p>
+                                        <h3 class="heading" data-id="heading-9">check</h3>
+                                        <p>check 阶段执行 <code>setImmediate</code></p>
+                                        <h3 class="heading" data-id="heading-10">close callbacks</h3>
+                                        <p>close callbacks 阶段执行 close 事件</p>
+                                        <p>在以上的内容中，我们了解了 Node 中的 Event Loop 的执行顺序，接下来我们将会通过代码的方式来深入理解这块内容。</p>
+                                        <p>首先在有些情况下，定时器的执行顺序其实是<strong>随机</strong>的</p>
+                                        <pre><code class="hljs js" lang="js">setTimeout(<span
+                                                class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setTimeout'</span>)
+}, <span class="hljs-number">0</span>)
+setImmediate(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'setImmediate'</span>)
+})
+</code></pre>
+                                        <p>对于以上代码来说，<code>setTimeout</code> 可能执行在前，也可能执行在后</p>
+                                        <ul>
+                                            <li>首先 <code>setTimeout(fn, 0) === setTimeout(fn, 1)</code>，这是由源码决定的</li>
+                                            <li>进入事件循环也是需要成本的，如果在准备时候花费了大于 1ms 的时间，那么在 timer 阶段就会直接执行
+                                                <code>setTimeout</code> 回调
+                                            </li>
+                                            <li>那么如果准备时间花费小于 1ms，那么就是 <code>setImmediate</code> 回调先执行了</li>
+                                        </ul>
+                                        <p>当然在某些情况下，他们的执行顺序一定是固定的，比如以下代码：</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">const</span> fs = <span
+                                                class="hljs-built_in">require</span>(<span
+                                                class="hljs-string">'fs'</span>)
+
+fs.readFile(__filename, () =&gt; {
+    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'timeout'</span>);
+    }, <span class="hljs-number">0</span>)
+    setImmediate(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'immediate'</span>)
+    })
+})
+</code></pre>
+                                        <p>在上述代码中，<code>setImmediate</code> 永远<strong>先执行</strong>。因为两个代码写在 IO 回调中，IO
+                                            回调是在 poll 阶段执行，当回调执行完毕后队列为空，发现存在 <code>setImmediate</code> 回调，所以就直接跳转到 check
+                                            阶段去执行回调了。</p>
+                                        <p>上面介绍的都是 macrotask 的执行情况，对于 microtask 来说，它会在以上每个阶段完成前<strong>清空</strong>
+                                            microtask 队列，下图中的 Tick 就代表了 microtask</p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/11/14/16710fb80dd42d27?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="644" data-height="1227"
+                                                     src="./7-Event Loop_files/16710fb80dd42d27">
+                                            <figcaption></figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <pre><code class="hljs js" lang="js">setTimeout(<span
+                                                class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'timer21'</span>)
+}, <span class="hljs-number">0</span>)
+
+<span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params"></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'promise1'</span>)
+})
+</code></pre>
+                                        <p>对于以上代码来说，其实和浏览器中的输出是一样的，microtask 永远执行在 macrotask 前面。</p>
+                                        <p>最后我们来讲讲 Node 中的 <code>process.nextTick</code>，这个函数其实是独立于 Event Loop
+                                            之外的，它有一个自己的队列，当每个阶段完成后，如果存在 nextTick 队列，就会<strong>清空队列中的所有回调函数</strong>，并且优先于其他
+                                            microtask 执行。</p>
+                                        <pre><code class="hljs js" lang="js">setTimeout(<span
+                                                class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'timer1'</span>)
+
+ <span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params"></span>) </span>{
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'promise1'</span>)
+ })
+}, <span class="hljs-number">0</span>)
+
+process.nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'nextTick'</span>)
+ process.nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'nextTick'</span>)
+   process.nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'nextTick'</span>)
+     process.nextTick(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'nextTick'</span>)
+     })
+   })
+ })
+})
+</code></pre>
+                                        <p>对于以上代码，大家可以发现无论如何，永远都是先把 nextTick 全部打印出来。</p>
+                                        <h2 class="heading" data-id="heading-11">小结</h2>
+                                        <p>这一章节我们学习了 JS 实现异步的原理，并且了解了在浏览器和 Node 中 Event Loop 其实是不相同的。Event Loop
+                                            这个知识点对于我们理解 JS 是如何执行的至关重要，同时也是常考题。如果大家对于这个章节的内容存在疑问，欢迎在评论区与我互动。</p>
+                                    </div>
+                                    <section data-v-05bbf43a="" class="book-comments">
+                                        <div data-v-05bbf43a="" class="box-title">留言</div>
+                                        <div data-v-05bbf43a="" class="comment-box">
+                                            <div data-v-81313b1e="" data-v-05bbf43a="" class="comment-form comment-form"
+                                                 id="comment">
+                                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-81313b1e=""
+                                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                                     class="lazy avatar avatar loaded"
+                                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                                <textarea data-v-81313b1e="" placeholder="评论将在后台进行审核，审核通过后对所有人可见"
+                                                          class="content-input"
+                                                          style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea>
+                                                <div data-v-81313b1e="" class="action-box" style="display: none;">
+                                                    <div data-v-680eb36d="" data-v-81313b1e=""
+                                                         class="image-uploader image-uploader" style="display: none;">
+                                                        <input data-v-680eb36d="" type="file" class="input">
+                                                        <button data-v-680eb36d="" class="upload-btn"><i
+                                                                data-v-680eb36d="" class="icon ion-image"></i><span
+                                                                data-v-680eb36d="">上传图片</span></button>
+                                                    </div>
+                                                    <div data-v-81313b1e="" class="submit-box"><span data-v-81313b1e=""
+                                                                                                     class="submit-text">Ctrl or ⌘ + Enter</span>
+                                                        <button data-v-81313b1e="" class="submit-btn">评论</button>
+                                                    </div>
+                                                </div><!----></div>
+                                        </div>
+                                        <ul data-v-32e5a55b="" data-v-05bbf43a="" st:block="commentList"
+                                            class="comment-list comment-list"><!----></ul>
+                                    </section>
+                                </div>
+                            </div><!----><!----></div>
+                    </div>
+                    <div data-v-a9263a68="" data-v-097468bb="" class="book-handle book-direction">
+                        <div data-v-a9263a68="" class="step-btn step-btn--prev"><img data-v-a9263a68=""
+                                                                                     src="./7-Event Loop_files/prev.87ad47e.svg">
+                        </div>
+                        <div data-v-a9263a68="" class="step-btn step-btn--next"><img data-v-a9263a68=""
+                                                                                     src="./7-Event Loop_files/next.54d8a35.svg">
+                        </div><!----><!----></div><!----></div>
+            </div>
+        </section><!----><!----><!---->
+        <div data-v-1b0b9cb8="" data-v-097468bb="" class="image-viewer-box"><!----></div>
+    </div><!----></div>
+
+
+<script type="text/javascript" src="./7-Event Loop_files/runtime.5902a8b1cc2b7567f479.js.下载"></script>
+<script type="text/javascript" src="./7-Event Loop_files/0.e205fcdd4d4b6767f462.js.下载"></script>
+<script type="text/javascript" src="./7-Event Loop_files/1.cbb1f8f5dcdee0086c6a.js.下载"></script>
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5bdc74186fb9a049ab0d0b6b -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="google-site-verification" content="cCHsgG9ktuCTgWgYfqCJql8AeR4gAne4DTZqztPoirE">
+    <meta name="apple-itunes-app" content="app-id=987739104">
+    <meta name="baidu-site-verification" content="qiK2a1kcFc">
+    <meta name="360-site-verification" content="4c3c7d57d59f0e1a308462fbc7fd7e51">
+    <meta name="sogou_site_verification" content="c49WUDZczQ">
+    <style>body {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    a, button, input {
+        margin: 1rem 1.5rem;
+    }
+
+    img {
+        width: 0;
+        height: 0;
+    }
+
+    #juejin {
+        overflow-x: hidden;
+    }</style>
+    <title data-vue-meta="true">前端面试之道 - yck - 掘金小册</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://b-gold-cdn.xitu.io/favicons/v2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-16x16.png">
+    <link rel="manifest" href="https://b-gold-cdn.xitu.io/favicons/v2/manifest.json">
+    <link rel="mask-icon" href="https://b-gold-cdn.xitu.io/favicons/v2/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon.ico">
+    <meta name="msapplication-config" content="https://b-gold-cdn.xitu.io/favicons/v2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" title="掘金" href="https://b-gold-cdn.xitu.io/conf/search.xml"
+          type="application/opensearchdescription+xml">
+    <link rel="stylesheet" href="./30-设计模式_files/ionicons.min.css">
+    <link rel="stylesheet" href="./30-设计模式_files/iconfont.css">
+    <link href="./30-设计模式_files/0.20e96f0e16539d696fbd.css" rel="stylesheet">
+    <script src="tools.js"></script>
+    <script async="" src="./30-设计模式_files/hm.js.下载"></script>
+    <script async="" src="./30-设计模式_files/analytics.js.下载"></script>
+    <script type="text/javascript" async="" src="./30-设计模式_files/vds.js.下载"></script>
+    <script charset="utf-8" src="./30-设计模式_files/13.46a6fc9d409a46c2798c.js.下载"></script>
+    <meta data-vmid="keywords" name="keywords"
+          content="掘金,稀土,Vue.js,微信小程序,Kotlin,RxJava,React Native,Wireshark,敏捷开发,Bootstrap,OKHttp,正则表达式,WebGL,Webpack,Docker,MVVM"
+          data-vue-meta="true">
+    <meta data-vmid="description" name="description"
+          content="掘金是一个帮助开发者成长的社区，是给开发者用的 Hacker News，给设计师用的 Designer News，和给产品经理用的 Medium。掘金的技术文章由稀土上聚集的技术大牛和极客共同编辑为你筛选出最优质的干货，其中包括：Android、iOS、前端、后端等方面的内容。用户每天都可以在这里找到技术世界的头条内容。与此同时，掘金内还有沸点、掘金翻译计划、线下活动、专栏文章等内容。即使你是 GitHub、StackOverflow、开源中国的用户，我们相信你也可以在这里有所收获。"
+          data-vue-meta="true">
+</head>
+<body>
+<div id="juejin" data-v-514f306c="">
+    <div class="global-component-box" data-v-514f306c=""><!---->
+        <div data-v-71cabb60="" data-v-514f306c="" class="alert-list alert-list"></div><!----><!----><!---->
+        <div class="emoji-barrage" data-v-e5f49d52="" data-v-514f306c=""><!----></div>
+        <div class="book-new-user-award-popup" style="display:none;" data-v-71b0e7b2="" data-v-514f306c="">
+            <div class="content-box" style="display:;" data-v-71b0e7b2="">
+                <div class="close ion-close-round" data-v-71b0e7b2=""></div>
+                <div class="header" data-v-71b0e7b2="">
+                    <div class="icon" data-v-71b0e7b2=""><img src="./30-设计模式_files/icon.a87e5ae.svg" data-v-71b0e7b2="">
+                    </div>
+                    <div class="txt" data-v-71b0e7b2="">新人专享好礼</div>
+                </div>
+                <div class="desc" data-v-71b0e7b2="">凡未购买过小册的用户，均可领取三张 5 折新人专享券，购买小册时自动使用专享券，最高可节省 45 元。</div>
+                <div class="tickets" data-v-71b0e7b2="">
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="remark" data-v-71b0e7b2="">注：专享券的使用期限在领券的七天内。</div>
+                <div class="submit-btn" data-v-71b0e7b2="">一键领取</div>
+            </div>
+            <div class="model success" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取成功</div>
+                <div class="content-text" data-v-71b0e7b2="">购买小册时自动使用专享券</div>
+                <div class="btn-success-footer" data-v-71b0e7b2="">
+                    <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+                    <div class="btn-ok btn-link" data-v-71b0e7b2="">前往小册首页</div>
+                </div>
+            </div>
+            <div class="model fail" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取失败</div>
+                <div class="content-text" data-v-71b0e7b2="">本活动仅适用于小册新用户</div>
+                <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+            </div>
+        </div><!----></div><!---->
+    <div data-v-097468bb="" data-v-514f306c="" class="book-read-view">
+        <section data-v-097468bb="" class="book-section">
+            <div data-v-097468bb="" class="book-summary">
+                <div data-v-097468bb="" class="book-summary-masker"></div>
+                <div data-v-097468bb="" class="book-summary-inner">
+                    <div data-v-097468bb="" class="book-summary__header"><a data-v-097468bb=""
+                                                                            href="https://juejin.im/books" target=""
+                                                                            rel="" class="logo"><img data-v-097468bb=""
+                                                                                                     src="./30-设计模式_files/logo.a7995ad.svg"></a>
+                        <div data-v-097468bb="" class="label">小册</div><!----></div><!---->
+                    <div data-v-d0eb2184="" data-v-097468bb="" class="book-directory book-directory bought"><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">1</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">小册食用指南</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">2</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（一）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">3</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（二）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">4</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">ES6 知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">5</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 异步编程及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">6</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">手写 Promise</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">7</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Event Loop</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">8</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 进阶知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">9</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 思考题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">10</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">DevTools Tips</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">11</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器基础知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">12</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器缓存机制</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">13</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器渲染原理</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">14</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">安全防范知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">15</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">从 V8 中看 JS 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">16</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">性能优化琐碎事</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">17</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Webpack 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">18</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">实现小型打包工具</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">19</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 和 Vue 两大框架之间的相爱相杀</div><!----><!----></div>
+                        <!----></a><a data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">20</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">21</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">22</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">23</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">24</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">监控</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">25</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">UDP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">26</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">TCP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">27</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP 及 TLS</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">28</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP/2 及 HTTP/3</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">29</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">输入 URL 到页面渲染的整个流程</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section route-active section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">30</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">设计模式</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">31</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常见数据结构</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">32</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常考算法题解析</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">33</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">CSS 常考面试题资料</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">34</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">如何写好一封简历</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">35</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">面试常用技巧</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">36</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">前方的路，让我们结伴同行</div><!----><!----></div><!----></a>
+                    </div>
+                    <div data-v-097468bb="" class="book-summary__footer">
+                        <div data-v-097468bb="" class="qr-icon"><img data-v-097468bb=""
+                                                                     src="./30-设计模式_files/qr-icon.881015a.svg"></div>
+                        <div data-v-097468bb="" class="qr-tips"><span data-v-097468bb="" class="ion-close"></span>
+                            <div data-v-097468bb="" class="title"><span data-v-097468bb="">关注公众号</span><span
+                                    data-v-097468bb="">领取优惠码</span></div>
+                            <div data-v-097468bb="" class="qr-img"><img data-v-097468bb=""
+                                                                        src="./30-设计模式_files/wx-qr.13d8b4d.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-097468bb="" class="book-content">
+                <div data-v-097468bb="" class="book-content-inner">
+                    <div data-v-097468bb="" class="book-content__header">
+                        <div data-v-097468bb="" class="switch"><img data-v-097468bb=""
+                                                                    src="./30-设计模式_files/icon.3e69d5a.svg"></div>
+                        <div data-v-097468bb="" class="menu"><img data-v-097468bb=""
+                                                                  src="./30-设计模式_files/menu.74b9add.svg"></div>
+                        <div data-v-097468bb="" class="title"><a data-v-097468bb=""
+                                                                 href="https://juejin.im/book/5bdc715fe51d454e755f75ef"
+                                                                 target="" rel="">前端面试之道</a></div>
+                        <div data-v-629272fe="" data-v-097468bb="" class="user-auth user-auth">
+                            <div data-v-629272fe="" class="nav-item menu">
+                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-629272fe=""
+                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                     class="lazy avatar avatar loaded"
+                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                <div data-v-629272fe="" class="nav-menu user-dropdown-list" style="display: none;">
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-write"></i><span
+                                                data-v-629272fe="">写文章</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-draft"></i><span
+                                                data-v-629272fe="">草稿</span></a></li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a"><i
+                                                data-v-629272fe="" class="fengwei fw-person"></i><span
+                                                data-v-629272fe="">我的主页</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/likes"><i
+                                                data-v-629272fe="" class="fengwei fw-like"></i><span data-v-629272fe="">我喜欢的</span></a>
+                                        </li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/collections"><i
+                                                data-v-629272fe="" class="fengwei fw-collection"></i><span
+                                                data-v-629272fe="">我的收藏集</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/books?type=bought"><i
+                                                data-v-629272fe="" class="fengwei fw-bought"></i><span
+                                                data-v-629272fe="">已购</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/subscribe"><i
+                                                data-v-629272fe="" class="fengwei fw-tag"></i><span data-v-629272fe="">标签管理</span></a>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/settings"><i
+                                                data-v-629272fe="" class="fengwei fw-setting"></i><span
+                                                data-v-629272fe="">设置</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item more"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-info"></i><span data-v-629272fe="">关于</span><i
+                                                data-v-629272fe="" class="ion-chevron-right more-icon"></i></a>
+                                            <div data-v-629272fe="" class="nav-menu more-dropdown-list">
+                                                <ul data-v-629272fe="" class="nav-menu-item-group">
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/app"
+                                                                                                    target="_blank">下载应用</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/about"
+                                                                                                    target="_blank">关于</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://xitu.io/jobs"
+                                                                                                    target="_blank">加入我们</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://github.com/xitu/gold-miner"
+                                                                                                    rel="nofollow noopener noreferrer"
+                                                                                                    target="_blank">翻译计划</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://bd.juejin.im/?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                                                                    target="_blank">合作伙伴</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-logout"></i><span
+                                                data-v-629272fe="">登出</span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!----></div><!----></div>
+                    <div data-v-097468bb="" class="book-body transition--next">
+                        <div data-v-5602b343="" data-v-097468bb="" class="section-view book-section-content">
+                            <div data-v-05bbf43a="" data-v-5602b343="" class="section-content">
+                                <div data-v-05bbf43a="" class="section-page book-section-view">
+                                    <div data-v-05bbf43a="" class="entry-content article-content"><h1 class="heading"
+                                                                                                      data-id="heading-0">
+                                        设计模式</h1>
+                                        <p>设计模式总的来说是一个抽象的概念，前人通过无数次的实践总结出的一套写代码的方式，通过这种方式写的代码可以让别人更加容易阅读、维护以及复用。</p>
+                                        <p>这一章节我们将来学习几种最常用的设计模式。</p>
+                                        <h2 class="heading" data-id="heading-1">工厂模式</h2>
+                                        <p>工厂模式分为好几种，这里就不一一讲解了，以下是一个简单工厂模式的例子</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-class"><span
+                                                class="hljs-keyword">class</span> <span
+                                                class="hljs-title">Man</span> </span>{
+  <span class="hljs-keyword">constructor</span>(name) {
+    <span class="hljs-keyword">this</span>.name = name
+  }
+  alertName() {
+    alert(<span class="hljs-keyword">this</span>.name)
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Factory</span> </span>{
+  <span class="hljs-keyword">static</span> create(name) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Man(name)
+  }
+}
+
+Factory.create(<span class="hljs-string">'yck'</span>).alertName()
+</code></pre>
+                                        <p>当然工厂模式并不仅仅是用来 new 出<strong>实例</strong>。</p>
+                                        <p>
+                                            可以想象一个场景。假设有一份很复杂的代码需要用户去调用，但是用户并不关心这些复杂的代码，只需要你提供给我一个接口去调用，用户只负责传递需要的参数，至于这些参数怎么使用，内部有什么逻辑是不关心的，只需要你最后返回我一个实例。这个构造过程就是工厂。</p>
+                                        <p>工厂起到的作用就是隐藏了创建实例的复杂度，只需要提供一个接口，简单清晰。</p>
+                                        <p>在 Vue 源码中，你也可以看到工厂模式的使用，比如创建异步组件</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-keyword">export</span> <span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">createComponent</span> (<span
+                                                class="hljs-params">
+  Ctor: Class&lt;Component&gt; | Function | Object | void,
+  data: ?VNodeData,
+  context: Component,
+  children: ?Array&lt;VNode&gt;,
+  tag?: string
+</span>): <span class="hljs-title">VNode</span> | <span class="hljs-title">Array</span>&lt;<span class="hljs-title">VNode</span>&gt; | <span
+                                                class="hljs-title">void</span> </span>{
+    
+    <span class="hljs-comment">// 逻辑处理...</span>
+  
+  <span class="hljs-keyword">const</span> vnode = <span class="hljs-keyword">new</span> VNode(
+    <span class="hljs-string">`vue-component-<span class="hljs-subst">${Ctor.cid}</span><span class="hljs-subst">${name ? <span
+            class="hljs-string">`-<span class="hljs-subst">${name}</span>`</span> : <span class="hljs-string">''</span>}</span>`</span>,
+    data, <span class="hljs-literal">undefined</span>, <span class="hljs-literal">undefined</span>, <span
+                                                    class="hljs-literal">undefined</span>, context,
+    { Ctor, propsData, listeners, tag, children },
+    asyncFactory
+  )
+
+  <span class="hljs-keyword">return</span> vnode
+}
+</code></pre>
+                                        <p>在上述代码中，我们可以看到我们只需要调用 <code>createComponent</code>
+                                            传入参数就能创建一个组件实例，但是创建这个实例是很复杂的一个过程，工厂帮助我们隐藏了这个复杂的过程，只需要一句代码调用就能实现功能。</p>
+                                        <h2 class="heading" data-id="heading-2">单例模式</h2>
+                                        <p>单例模式很常用，比如全局缓存、全局状态管理等等这些只需要一个对象，就可以使用单例模式。</p>
+                                        <p>单例模式的核心就是保证全局只有一个对象可以访问。因为 JS 是门无类的语言，所以别的语言实现单例的方式并不能套入 JS
+                                            中，我们只需要用一个变量确保实例只创建一次就行，以下是如何实现单例模式的例子</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-class"><span
+                                                class="hljs-keyword">class</span> <span
+                                                class="hljs-title">Singleton</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {}
+}
+
+Singleton.getInstance = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">let</span> instance
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (!instance) {
+      instance = <span class="hljs-keyword">new</span> Singleton()
+    }
+    <span class="hljs-keyword">return</span> instance
+  }
+})()
+
+<span class="hljs-keyword">let</span> s1 = Singleton.getInstance()
+<span class="hljs-keyword">let</span> s2 = Singleton.getInstance()
+<span class="hljs-built_in">console</span>.log(s1 === s2) <span class="hljs-comment">// true</span>
+</code></pre>
+                                        <p>在 Vuex 源码中，你也可以看到单例模式的使用，虽然它的实现方式不大一样，通过一个外部变量来控制只安装一次 Vuex</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-keyword">let</span> Vue <span class="hljs-comment">// bind on install</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span
+                                                    class="hljs-title">install</span> (<span
+                                                    class="hljs-params">_Vue</span>) </span>{
+  <span class="hljs-keyword">if</span> (Vue &amp;&amp; _Vue === Vue) {
+    <span class="hljs-comment">// 如果发现 Vue 有值，就不重新创建实例了</span>
+    <span class="hljs-keyword">return</span>
+  }
+  Vue = _Vue
+  applyMixin(Vue)
+}
+</code></pre>
+                                        <h2 class="heading" data-id="heading-3">适配器模式</h2>
+                                        <p>适配器用来解决两个接口不兼容的情况，不需要改变已有的接口，通过包装一层的方式实现两个接口的正常协作。</p>
+                                        <p>以下是如何实现适配器模式的例子</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-class"><span
+                                                class="hljs-keyword">class</span> <span class="hljs-title">Plug</span> </span>{
+  getName() {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">'港版插头'</span>
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Target</span> </span>{
+  <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">this</span>.plug = <span class="hljs-keyword">new</span> Plug()
+  }
+  getName() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.plug.getName() + <span
+                                                    class="hljs-string">' 适配器转二脚插头'</span>
+  }
+}
+
+<span class="hljs-keyword">let</span> target = <span class="hljs-keyword">new</span> Target()
+target.getName() <span class="hljs-comment">// 港版插头 适配器转二脚插头</span>
+</code></pre>
+                                        <p>在 Vue 中，我们其实经常使用到适配器模式。比如父组件传递给子组件一个时间戳属性，组件内部需要将时间戳转为正常的日期显示，一般会使用 <code>computed</code>
+                                            来做转换这件事情，这个过程就使用到了适配器模式。</p>
+                                        <h2 class="heading" data-id="heading-4">装饰模式</h2>
+                                        <p>装饰模式不需要改变已有的接口，作用是给对象添加功能。就像我们经常需要给手机戴个保护套防摔一样，不改变手机自身，给手机添加了保护套提供防摔功能。</p>
+                                        <p>以下是如何实现装饰模式的例子，使用了 ES7 中的装饰器语法</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">readonly</span>(<span class="hljs-params">target, key, descriptor</span>) </span>{
+  descriptor.writable = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">return</span> descriptor
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+  @readonly
+  name = <span class="hljs-string">'yck'</span>
+}
+
+<span class="hljs-keyword">let</span> t = <span class="hljs-keyword">new</span> Test()
+
+t.yck = <span class="hljs-string">'111'</span> <span class="hljs-comment">// 不可修改</span>
+</code></pre>
+                                        <p>在 React 中，装饰模式其实随处可见</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">import</span> { connect } <span
+                                                class="hljs-keyword">from</span> <span
+                                                class="hljs-string">'react-redux'</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyComponent</span> <span
+        class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span
+        class="hljs-title">Component</span> </span>{
+    <span class="hljs-comment">// ...</span>
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(mapStateToProps)(MyComponent)
+</code></pre>
+                                        <h2 class="heading" data-id="heading-5">代理模式</h2>
+                                        <p>代理是为了控制对对象的访问，不让外部直接访问到对象。在现实生活中，也有很多代理的场景。比如你需要买一件国外的产品，这时候你可以通过代购来购买产品。</p>
+                                        <p>在实际代码中其实代理的场景很多，也就不举框架中的例子了，比如事件代理就用到了代理模式。</p>
+                                        <pre><code class="hljs html" lang="html"><span class="hljs-tag">&lt;<span
+                                                class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span
+                                                class="hljs-string">"ul"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>1<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>2<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>3<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>4<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>5<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> ul = <span class="hljs-built_in">document</span>.querySelector(<span
+                                                    class="hljs-string">'#ul'</span>)
+    ul.addEventListener(<span class="hljs-string">'click'</span>, (event) =&gt; {
+        <span class="hljs-built_in">console</span>.log(event.target);
+    })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+                                        <p>因为存在太多的 <code>li</code>，不可能每个都去绑定事件。这时候可以通过给父节点绑定一个事件，让父节点作为代理去拿到真实点击的节点。</p>
+                                        <h2 class="heading" data-id="heading-6">发布-订阅模式</h2>
+                                        <p>
+                                            发布-订阅模式也叫做观察者模式。通过一对一或者一对多的依赖关系，当对象发生改变时，订阅方都会收到通知。在现实生活中，也有很多类似场景，比如我需要在购物网站上购买一个产品，但是发现该产品目前处于缺货状态，这时候我可以点击有货通知的按钮，让网站在产品有货的时候通过短信通知我。</p>
+                                        <p>在实际代码中其实发布-订阅模式也很常见，比如我们点击一个按钮触发了点击事件就是使用了该模式</p>
+                                        <pre><code class="hljs html" lang="html"><span class="hljs-tag">&lt;<span
+                                                class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span
+                                                class="hljs-string">"ul"</span>&gt;</span><span
+                                                class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">let</span> ul = <span class="hljs-built_in">document</span>.querySelector(<span
+                                                    class="hljs-string">'#ul'</span>)
+    ul.addEventListener(<span class="hljs-string">'click'</span>, (event) =&gt; {
+        <span class="hljs-built_in">console</span>.log(event.target);
+    })
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+                                        <p>在 Vue 中，如何实现响应式也是使用了该模式。对于需要实现响应式的对象来说，在 <code>get</code>
+                                            的时候会进行依赖收集，当改变了对象的属性时，就会触发派发更新。</p>
+                                        <h2 class="heading" data-id="heading-7">外观模式</h2>
+                                        <p>外观模式提供了一个接口，隐藏了内部的逻辑，更加方便外部调用。</p>
+                                        <p>举个例子来说，我们现在需要实现一个兼容多种浏览器的添加事件方法</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">addEvent</span>(<span class="hljs-params">elm, evType, fn, useCapture</span>) </span>{
+  <span class="hljs-keyword">if</span> (elm.addEventListener) {
+    elm.addEventListener(evType, fn, useCapture)
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (elm.attachEvent) {
+    <span class="hljs-keyword">var</span> r = elm.attachEvent(<span class="hljs-string">"on"</span> + evType, fn)
+    <span class="hljs-keyword">return</span> r
+  } <span class="hljs-keyword">else</span> {
+    elm[<span class="hljs-string">"on"</span> + evType] = fn
+  }
+}
+</code></pre>
+                                        <p>
+                                            对于不同的浏览器，添加事件的方式可能会存在兼容问题。如果每次都需要去这样写一遍的话肯定是不能接受的，所以我们将这些判断逻辑统一封装在一个接口中，外部需要添加事件只需要调用
+                                            <code>addEvent</code> 即可。</p>
+                                        <h2 class="heading" data-id="heading-8">小结</h2>
+                                        <p>
+                                            这一章节我们学习了几种常用的设计模式。其实设计模式还有很多，有一些内容很简单，我就没有写在章节中了，比如迭代器模式、原型模式，有一些内容也是不经常使用，所以也就不一一列举了。</p>
+                                        <p>如果你还想了解更多关于设计模式的内容，可以阅读<a target="_blank"
+                                                                     href="https://link.juejin.im/?target=https%3A%2F%2Fbook.douban.com%2Fsubject%2F26382780%2F"
+                                                                     rel="nofollow noopener noreferrer">这本书</a>。</p>
+                                    </div>
+                                    <section data-v-05bbf43a="" class="book-comments">
+                                        <div data-v-05bbf43a="" class="box-title">留言</div>
+                                        <div data-v-05bbf43a="" class="comment-box">
+                                            <div data-v-81313b1e="" data-v-05bbf43a="" class="comment-form comment-form"
+                                                 id="comment">
+                                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-81313b1e=""
+                                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                                     class="lazy avatar avatar loaded"
+                                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                                <textarea data-v-81313b1e="" placeholder="评论将在后台进行审核，审核通过后对所有人可见"
+                                                          class="content-input"
+                                                          style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea>
+                                                <div data-v-81313b1e="" class="action-box" style="display: none;">
+                                                    <div data-v-680eb36d="" data-v-81313b1e=""
+                                                         class="image-uploader image-uploader" style="display: none;">
+                                                        <input data-v-680eb36d="" type="file" class="input">
+                                                        <button data-v-680eb36d="" class="upload-btn"><i
+                                                                data-v-680eb36d="" class="icon ion-image"></i><span
+                                                                data-v-680eb36d="">上传图片</span></button>
+                                                    </div>
+                                                    <div data-v-81313b1e="" class="submit-box"><span data-v-81313b1e=""
+                                                                                                     class="submit-text">Ctrl or ⌘ + Enter</span>
+                                                        <button data-v-81313b1e="" class="submit-btn">评论</button>
+                                                    </div>
+                                                </div><!----></div>
+                                        </div>
+                                        <ul data-v-32e5a55b="" data-v-05bbf43a="" st:block="commentList"
+                                            class="comment-list comment-list"><!----></ul>
+                                    </section>
+                                </div>
+                            </div><!----><!----></div>
+                    </div>
+                    <div data-v-a9263a68="" data-v-097468bb="" class="book-handle book-direction">
+                        <div data-v-a9263a68="" class="step-btn step-btn--prev"><img data-v-a9263a68=""
+                                                                                     src="./30-设计模式_files/prev.87ad47e.svg">
+                        </div>
+                        <div data-v-a9263a68="" class="step-btn step-btn--next"><img data-v-a9263a68=""
+                                                                                     src="./30-设计模式_files/next.54d8a35.svg">
+                        </div><!----><!----></div><!----></div>
+            </div>
+        </section><!----><!----><!---->
+        <div data-v-1b0b9cb8="" data-v-097468bb="" class="image-viewer-box"><!----></div>
+    </div><!----></div>
+
+
+<script type="text/javascript" src="./30-设计模式_files/runtime.5902a8b1cc2b7567f479.js.下载"></script>
+<script type="text/javascript" src="./30-设计模式_files/0.e205fcdd4d4b6767f462.js.下载"></script>
+<script type="text/javascript" src="./30-设计模式_files/1.cbb1f8f5dcdee0086c6a.js.下载"></script>
+</body>
+</html>

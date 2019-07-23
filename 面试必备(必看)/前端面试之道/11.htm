@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5bdc71fbf265da6128599324 -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="google-site-verification" content="cCHsgG9ktuCTgWgYfqCJql8AeR4gAne4DTZqztPoirE">
+    <meta name="apple-itunes-app" content="app-id=987739104">
+    <meta name="baidu-site-verification" content="qiK2a1kcFc">
+    <meta name="360-site-verification" content="4c3c7d57d59f0e1a308462fbc7fd7e51">
+    <meta name="sogou_site_verification" content="c49WUDZczQ">
+    <style>body {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    a, button, input {
+        margin: 1rem 1.5rem;
+    }
+
+    img {
+        width: 0;
+        height: 0;
+    }
+
+    #juejin {
+        overflow-x: hidden;
+    }</style>
+    <title data-vue-meta="true">前端面试之道 - yck - 掘金小册</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://b-gold-cdn.xitu.io/favicons/v2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-16x16.png">
+    <link rel="manifest" href="https://b-gold-cdn.xitu.io/favicons/v2/manifest.json">
+    <link rel="mask-icon" href="https://b-gold-cdn.xitu.io/favicons/v2/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon.ico">
+    <meta name="msapplication-config" content="https://b-gold-cdn.xitu.io/favicons/v2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" title="掘金" href="https://b-gold-cdn.xitu.io/conf/search.xml"
+          type="application/opensearchdescription+xml">
+    <link rel="stylesheet" href="./11-浏览器基础知识点及常考面试题_files/ionicons.min.css">
+    <link rel="stylesheet" href="./11-浏览器基础知识点及常考面试题_files/iconfont.css">
+    <link href="./11-浏览器基础知识点及常考面试题_files/0.20e96f0e16539d696fbd.css" rel="stylesheet">
+    <script src="tools.js"></script>
+    <script async="" src="./11-浏览器基础知识点及常考面试题_files/hm.js.下载"></script>
+    <script async="" src="./11-浏览器基础知识点及常考面试题_files/analytics.js.下载"></script>
+    <script type="text/javascript" async="" src="./11-浏览器基础知识点及常考面试题_files/vds.js.下载"></script>
+    <script charset="utf-8" src="./11-浏览器基础知识点及常考面试题_files/13.46a6fc9d409a46c2798c.js.下载"></script>
+    <meta data-vmid="keywords" name="keywords"
+          content="掘金,稀土,Vue.js,微信小程序,Kotlin,RxJava,React Native,Wireshark,敏捷开发,Bootstrap,OKHttp,正则表达式,WebGL,Webpack,Docker,MVVM"
+          data-vue-meta="true">
+    <meta data-vmid="description" name="description"
+          content="掘金是一个帮助开发者成长的社区，是给开发者用的 Hacker News，给设计师用的 Designer News，和给产品经理用的 Medium。掘金的技术文章由稀土上聚集的技术大牛和极客共同编辑为你筛选出最优质的干货，其中包括：Android、iOS、前端、后端等方面的内容。用户每天都可以在这里找到技术世界的头条内容。与此同时，掘金内还有沸点、掘金翻译计划、线下活动、专栏文章等内容。即使你是 GitHub、StackOverflow、开源中国的用户，我们相信你也可以在这里有所收获。"
+          data-vue-meta="true">
+</head>
+<body>
+<div id="juejin" data-v-514f306c="">
+    <div class="global-component-box" data-v-514f306c=""><!---->
+        <div data-v-71cabb60="" data-v-514f306c="" class="alert-list alert-list"></div><!----><!----><!---->
+        <div class="emoji-barrage" data-v-e5f49d52="" data-v-514f306c=""><!----></div>
+        <div class="book-new-user-award-popup" style="display:none;" data-v-71b0e7b2="" data-v-514f306c="">
+            <div class="content-box" style="display:;" data-v-71b0e7b2="">
+                <div class="close ion-close-round" data-v-71b0e7b2=""></div>
+                <div class="header" data-v-71b0e7b2="">
+                    <div class="icon" data-v-71b0e7b2=""><img src="./11-浏览器基础知识点及常考面试题_files/icon.a87e5ae.svg"
+                                                              data-v-71b0e7b2=""></div>
+                    <div class="txt" data-v-71b0e7b2="">新人专享好礼</div>
+                </div>
+                <div class="desc" data-v-71b0e7b2="">凡未购买过小册的用户，均可领取三张 5 折新人专享券，购买小册时自动使用专享券，最高可节省 45 元。</div>
+                <div class="tickets" data-v-71b0e7b2="">
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="remark" data-v-71b0e7b2="">注：专享券的使用期限在领券的七天内。</div>
+                <div class="submit-btn" data-v-71b0e7b2="">一键领取</div>
+            </div>
+            <div class="model success" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取成功</div>
+                <div class="content-text" data-v-71b0e7b2="">购买小册时自动使用专享券</div>
+                <div class="btn-success-footer" data-v-71b0e7b2="">
+                    <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+                    <div class="btn-ok btn-link" data-v-71b0e7b2="">前往小册首页</div>
+                </div>
+            </div>
+            <div class="model fail" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取失败</div>
+                <div class="content-text" data-v-71b0e7b2="">本活动仅适用于小册新用户</div>
+                <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+            </div>
+        </div><!----></div><!---->
+    <div data-v-097468bb="" data-v-514f306c="" class="book-read-view">
+        <section data-v-097468bb="" class="book-section">
+            <div data-v-097468bb="" class="book-summary">
+                <div data-v-097468bb="" class="book-summary-masker"></div>
+                <div data-v-097468bb="" class="book-summary-inner">
+                    <div data-v-097468bb="" class="book-summary__header"><a data-v-097468bb=""
+                                                                            href="https://juejin.im/books" target=""
+                                                                            rel="" class="logo"><img data-v-097468bb=""
+                                                                                                     src="./11-浏览器基础知识点及常考面试题_files/logo.a7995ad.svg"></a>
+                        <div data-v-097468bb="" class="label">小册</div><!----></div><!---->
+                    <div data-v-d0eb2184="" data-v-097468bb="" class="book-directory book-directory bought"><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">1</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">小册食用指南</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">2</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（一）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">3</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（二）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">4</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">ES6 知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">5</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 异步编程及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">6</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">手写 Promise</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">7</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Event Loop</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">8</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 进阶知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">9</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 思考题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">10</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">DevTools Tips</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section route-active section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">11</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器基础知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">12</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器缓存机制</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">13</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器渲染原理</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">14</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">安全防范知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">15</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">从 V8 中看 JS 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">16</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">性能优化琐碎事</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">17</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Webpack 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">18</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">实现小型打包工具</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">19</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 和 Vue 两大框架之间的相爱相杀</div><!----><!----></div>
+                        <!----></a><a data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">20</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">21</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">22</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">23</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">24</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">监控</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">25</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">UDP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">26</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">TCP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">27</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP 及 TLS</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">28</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP/2 及 HTTP/3</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">29</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">输入 URL 到页面渲染的整个流程</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">30</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">设计模式</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">31</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常见数据结构</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">32</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常考算法题解析</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">33</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">CSS 常考面试题资料</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">34</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">如何写好一封简历</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">35</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">面试常用技巧</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">36</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">前方的路，让我们结伴同行</div><!----><!----></div><!----></a>
+                    </div>
+                    <div data-v-097468bb="" class="book-summary__footer">
+                        <div data-v-097468bb="" class="qr-icon"><img data-v-097468bb=""
+                                                                     src="./11-浏览器基础知识点及常考面试题_files/qr-icon.881015a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="qr-tips"><span data-v-097468bb="" class="ion-close"></span>
+                            <div data-v-097468bb="" class="title"><span data-v-097468bb="">关注公众号</span><span
+                                    data-v-097468bb="">领取优惠码</span></div>
+                            <div data-v-097468bb="" class="qr-img"><img data-v-097468bb=""
+                                                                        src="./11-浏览器基础知识点及常考面试题_files/wx-qr.13d8b4d.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-097468bb="" class="book-content">
+                <div data-v-097468bb="" class="book-content-inner">
+                    <div data-v-097468bb="" class="book-content__header visible">
+                        <div data-v-097468bb="" class="switch"><img data-v-097468bb=""
+                                                                    src="./11-浏览器基础知识点及常考面试题_files/icon.3e69d5a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="menu"><img data-v-097468bb=""
+                                                                  src="./11-浏览器基础知识点及常考面试题_files/menu.74b9add.svg">
+                        </div>
+                        <div data-v-097468bb="" class="title"><a data-v-097468bb=""
+                                                                 href="https://juejin.im/book/5bdc715fe51d454e755f75ef"
+                                                                 target="" rel="">前端面试之道</a></div>
+                        <div data-v-629272fe="" data-v-097468bb="" class="user-auth user-auth">
+                            <div data-v-629272fe="" class="nav-item menu">
+                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-629272fe=""
+                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                     class="lazy avatar avatar loaded"
+                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                <div data-v-629272fe="" class="nav-menu user-dropdown-list" style="display: none;">
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-write"></i><span
+                                                data-v-629272fe="">写文章</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-draft"></i><span
+                                                data-v-629272fe="">草稿</span></a></li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a"><i
+                                                data-v-629272fe="" class="fengwei fw-person"></i><span
+                                                data-v-629272fe="">我的主页</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/likes"><i
+                                                data-v-629272fe="" class="fengwei fw-like"></i><span data-v-629272fe="">我喜欢的</span></a>
+                                        </li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/collections"><i
+                                                data-v-629272fe="" class="fengwei fw-collection"></i><span
+                                                data-v-629272fe="">我的收藏集</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/books?type=bought"><i
+                                                data-v-629272fe="" class="fengwei fw-bought"></i><span
+                                                data-v-629272fe="">已购</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/subscribe"><i
+                                                data-v-629272fe="" class="fengwei fw-tag"></i><span data-v-629272fe="">标签管理</span></a>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/settings"><i
+                                                data-v-629272fe="" class="fengwei fw-setting"></i><span
+                                                data-v-629272fe="">设置</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item more"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-info"></i><span data-v-629272fe="">关于</span><i
+                                                data-v-629272fe="" class="ion-chevron-right more-icon"></i></a>
+                                            <div data-v-629272fe="" class="nav-menu more-dropdown-list">
+                                                <ul data-v-629272fe="" class="nav-menu-item-group">
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/app"
+                                                                                                    target="_blank">下载应用</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/about"
+                                                                                                    target="_blank">关于</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://xitu.io/jobs"
+                                                                                                    target="_blank">加入我们</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://github.com/xitu/gold-miner"
+                                                                                                    rel="nofollow noopener noreferrer"
+                                                                                                    target="_blank">翻译计划</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://bd.juejin.im/?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                                                                    target="_blank">合作伙伴</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-logout"></i><span
+                                                data-v-629272fe="">登出</span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!----></div><!----></div>
+                    <div data-v-097468bb="" class="book-body transition--next">
+                        <div data-v-5602b343="" data-v-097468bb="" class="section-view book-section-content">
+                            <div data-v-05bbf43a="" data-v-5602b343="" class="section-content">
+                                <div data-v-05bbf43a="" class="section-page book-section-view">
+                                    <div data-v-05bbf43a="" class="entry-content article-content"><h1 class="heading"
+                                                                                                      data-id="heading-0">
+                                        浏览器基础知识点及常考面试题</h1>
+                                        <p>这一章节我们将会来学习浏览器的一些基础知识点，包括：事件机制、跨域、存储相关，这几个知识点也是面试经常会考到的内容。</p>
+                                        <h2 class="heading" data-id="heading-1">事件机制</h2>
+                                        <blockquote class="warning"><p>涉及面试题：事件的触发过程是怎么样的？知道什么是事件代理嘛？
+                                        </p></blockquote>
+                                        <h3 class="heading" data-id="heading-2">事件触发三阶段</h3>
+                                        <p>事件触发有三个阶段：</p>
+                                        <ul>
+                                            <li><code>window</code> 往事件触发处传播，遇到注册的捕获事件会触发</li>
+                                            <li>传播到事件触发处时触发注册的事件</li>
+                                            <li>从事件触发处往 <code>window</code> 传播，遇到注册的冒泡事件会触发</li>
+                                        </ul>
+                                        <p>事件触发一般来说会按照上面的顺序进行，但是也有特例，<strong>如果给一个 <code>body</code>
+                                            中的子节点同时注册冒泡和捕获事件，事件触发会按照注册的顺序执行。</strong></p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-comment">// 以下会先打印冒泡然后是捕获</span>
+node.addEventListener(
+  <span class="hljs-string">'click'</span>,
+  event =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'冒泡'</span>)
+  },
+  <span class="hljs-literal">false</span>
+)
+node.addEventListener(
+  <span class="hljs-string">'click'</span>,
+  event =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'捕获 '</span>)
+  },
+  <span class="hljs-literal">true</span>
+)
+</code></pre>
+                                        <h3 class="heading" data-id="heading-3">注册事件</h3>
+                                        <p>通常我们使用 <code>addEventListener</code> 注册事件，该函数的第三个参数可以是布尔值，也可以是对象。对于布尔值 <code>useCapture</code>
+                                            参数来说，该参数默认值为 <code>false</code> ，<code>useCapture</code>
+                                            决定了注册的事件是捕获事件还是冒泡事件。对于对象参数来说，可以使用以下几个属性</p>
+                                        <ul>
+                                            <li><code>capture</code>：布尔值，和 <code>useCapture</code> 作用一样</li>
+                                            <li><code>once</code>：布尔值，值为 <code>true</code> 表示该回调只会调用一次，调用后会移除监听</li>
+                                            <li><code>passive</code>：布尔值，表示永远不会调用 <code>preventDefault</code></li>
+                                        </ul>
+                                        <p>一般来说，如果我们只希望事件只触发在目标上，这时候可以使用 <code>stopPropagation</code> 来阻止事件的进一步传播。通常我们认为
+                                            <code>stopPropagation</code> 是用来阻止事件冒泡的，其实该函数也可以阻止捕获事件。<code>stopImmediatePropagation</code>
+                                            同样也能实现阻止事件，但是还能阻止该事件目标执行别的注册事件。</p>
+                                        <pre><code class="hljs js" lang="js">node.addEventListener(
+  <span class="hljs-string">'click'</span>,
+  event =&gt; {
+    event.stopImmediatePropagation()
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'冒泡'</span>)
+  },
+  <span class="hljs-literal">false</span>
+)
+<span class="hljs-comment">// 点击 node 只会执行上面的函数，该函数不会执行</span>
+node.addEventListener(
+  <span class="hljs-string">'click'</span>,
+  event =&gt; {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'捕获 '</span>)
+  },
+  <span class="hljs-literal">true</span>
+)
+</code></pre>
+                                        <h3 class="heading" data-id="heading-4">事件代理</h3>
+                                        <p>如果一个节点中的子节点是动态生成的，那么子节点需要注册事件的话<strong>应该注册在父节点上</strong></p>
+                                        <pre><code class="hljs html" lang="html"><span class="hljs-tag">&lt;<span
+                                                class="hljs-name">ul</span> <span class="hljs-attr">id</span>=<span
+                                                class="hljs-string">"ul"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>1<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>2<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>3<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>4<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>5<span class="hljs-tag">&lt;/<span
+                                                    class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+	<span class="hljs-keyword">let</span> ul = <span class="hljs-built_in">document</span>.querySelector(<span
+                                                    class="hljs-string">'#ul'</span>)
+	ul.addEventListener(<span class="hljs-string">'click'</span>, (event) =&gt; {
+		<span class="hljs-built_in">console</span>.log(event.target);
+	})
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+                                        <p>事件代理的方式相较于直接给目标注册事件来说，有以下优点：</p>
+                                        <ul>
+                                            <li>节省内存</li>
+                                            <li>不需要给子节点注销事件</li>
+                                        </ul>
+                                        <h2 class="heading" data-id="heading-5">跨域</h2>
+                                        <blockquote class="warning"><p>涉及面试题：什么是跨域？为什么浏览器要使用同源策略？你有几种方式可以解决跨域问题？了解预检请求嘛？
+                                        </p></blockquote>
+                                        <p>因为浏览器出于安全考虑，有同源策略。也就是说，如果协议、域名或者端口有一个不同就是跨域，Ajax 请求会失败。</p>
+                                        <p><strong>那么是出于什么安全考虑才会引入这种机制呢？</strong> 其实主要是用来防止 CSRF 攻击的。简单点说，CSRF
+                                            攻击是利用用户的登录态发起恶意请求。</p>
+                                        <p>也就是说，没有同源策略的情况下，A 网站可以被任意其他来源的 Ajax 访问到内容。如果你当前 A 网站还存在登录态，那么对方就可以通过 Ajax
+                                            获得你的任何信息。当然跨域并不能完全阻止 CSRF。</p>
+                                        <p><strong>然后我们来考虑一个问题，请求跨域了，那么请求到底发出去没有？</strong>
+                                            请求必然是发出去了，但是浏览器拦截了响应。你可能会疑问明明通过表单的方式可以发起跨域请求，为什么 Ajax
+                                            就不会。因为归根结底，跨域是为了阻止用户读取到另一个域名下的内容，Ajax
+                                            可以获取响应，浏览器认为这不安全，所以拦截了响应。但是表单并不会获取新的内容，所以可以发起跨域请求。同时也说明了跨域并不能完全阻止
+                                            CSRF，因为请求毕竟是发出去了。</p>
+                                        <p>接下来我们将来学习几种常见的方式来解决跨域的问题。</p>
+                                        <h3 class="heading" data-id="heading-6">JSONP</h3>
+                                        <p>JSONP 的原理很简单，就是利用 <code>&lt;script&gt;</code> 标签没有跨域限制的漏洞。通过 <code>&lt;script&gt;</code>
+                                            标签指向一个需要访问的地址并提供一个回调函数来接收数据当需要通讯时。</p>
+                                        <pre><code class="hljs js" lang="js">&lt;script src="http://domain/api?param1=a&amp;param2=b&amp;callback=jsonp"&gt;&lt;/script&gt;
+&lt;script&gt;
+    function jsonp(data) {
+    	console.log(data)
+	}
+&lt;/script&gt;    
+</code></pre>
+                                        <p>JSONP 使用简单且兼容性不错，但是只限于 <code>get</code> 请求。</p>
+                                        <p>在开发中可能会遇到多个 JSONP 请求的回调函数名是相同的，这时候就需要自己封装一个 JSONP，以下是简单实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">jsonp</span>(<span class="hljs-params">url, jsonpCallback, success</span>) </span>{
+  <span class="hljs-keyword">let</span> script = <span class="hljs-built_in">document</span>.createElement(<span
+                                                    class="hljs-string">'script'</span>)
+  script.src = url
+  script.async = <span class="hljs-literal">true</span>
+  script.type = <span class="hljs-string">'text/javascript'</span>
+  <span class="hljs-built_in">window</span>[jsonpCallback] = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params">data</span>) </span>{
+    success &amp;&amp; success(data)
+  }
+  <span class="hljs-built_in">document</span>.body.appendChild(script)
+}
+jsonp(<span class="hljs-string">'http://xxx'</span>, <span class="hljs-string">'callback'</span>, <span
+                                                    class="hljs-function"><span
+                                                    class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params">value</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(value)
+})
+</code></pre>
+                                        <h3 class="heading" data-id="heading-7">CORS</h3>
+                                        <p>CORS 需要浏览器和后端同时支持。IE 8 和 9 需要通过 <code>XDomainRequest</code> 来实现。</p>
+                                        <p>浏览器会自动进行 CORS 通信，实现 CORS 通信的关键是后端。只要后端实现了 CORS，就实现了跨域。</p>
+                                        <p>服务端设置 <code>Access-Control-Allow-Origin</code> 就可以开启 CORS。
+                                            该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。</p>
+                                        <p>虽然设置 CORS
+                                            和前端没什么关系，但是通过这种方式解决跨域问题的话，会在发送请求时出现两种情况，分别为<strong>简单请求和复杂请求</strong>。</p>
+                                        <h4 class="heading" data-id="heading-8">简单请求</h4>
+                                        <p>以 Ajax 为例，当满足以下条件时，会触发简单请求</p>
+                                        <ol>
+                                            <li>
+                                                <p>使用下列方法之一：</p>
+                                                <ul>
+                                                    <li>
+                                                        <p><code>GET</code></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><code>HEAD</code></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><code>POST</code></p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <p><code>Content-Type</code> 的值仅限于下列三者之一：</p>
+                                                <ul>
+                                                    <li>
+                                                        <p><code>text/plain</code></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><code>multipart/form-data</code></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><code>application/x-www-form-urlencoded</code></p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                        <p>请求中的任意 <code>XMLHttpRequestUpload</code> 对象均没有注册任何事件监听器； <code>XMLHttpRequestUpload</code>
+                                            对象可以使用 <code>XMLHttpRequest.upload</code> 属性访问。</p>
+                                        <h4 class="heading" data-id="heading-9">复杂请求</h4>
+                                        <p>那么很显然，不符合以上条件的请求就肯定是复杂请求了。</p>
+                                        <p>对于复杂请求来说，首先会发起一个预检请求，该请求是 <code>option</code> 方法的，通过该请求来知道服务端是否允许跨域请求。</p>
+                                        <p>对于预检请求来说，如果你使用过 Node 来设置 CORS 的话，可能会遇到过这么一个坑。</p>
+                                        <p>以下以 express 框架举例：</p>
+                                        <pre><code class="hljs js" lang="js">app.use(<span class="hljs-function">(<span
+                                                class="hljs-params">req, res, next</span>) =&gt;</span> {
+  res.header(<span class="hljs-string">'Access-Control-Allow-Origin'</span>, <span class="hljs-string">'*'</span>)
+  res.header(<span class="hljs-string">'Access-Control-Allow-Methods'</span>, <span class="hljs-string">'PUT, GET, POST, DELETE, OPTIONS'</span>)
+  res.header(
+    <span class="hljs-string">'Access-Control-Allow-Headers'</span>,
+    <span class="hljs-string">'Origin, X-Requested-With, Content-Type, Accept, Authorization, Access-Control-Allow-Credentials'</span>
+  )
+  next()
+})
+</code></pre>
+                                        <p>该请求会验证你的 <code>Authorization</code> 字段，没有的话就会报错。</p>
+                                        <p>当前端发起了复杂请求后，你会发现就算你代码是正确的，返回结果也永远是报错的。因为预检请求也会进入回调中，也会触发 <code>next</code>
+                                            方法，因为预检请求并不包含 <code>Authorization</code> 字段，所以服务端会报错。</p>
+                                        <p>想解决这个问题很简单，只需要在回调中过滤 <code>option</code> 方法即可</p>
+                                        <pre><code class="hljs js" lang="js">res.statusCode = <span class="hljs-number">204</span>
+res.setHeader(<span class="hljs-string">'Content-Length'</span>, <span class="hljs-string">'0'</span>)
+res.end()
+</code></pre>
+                                        <h3 class="heading" data-id="heading-10">document.domain</h3>
+                                        <p>该方式只能用于<strong>二级域名相同</strong>的情况下，比如 <code>a.test.com</code> 和 <code>b.test.com</code>
+                                            适用于该方式。</p>
+                                        <p>只需要给页面添加 <code>document.domain = 'test.com'</code> 表示二级域名都相同就可以实现跨域</p>
+                                        <h3 class="heading" data-id="heading-11">postMessage</h3>
+                                        <p>这种方式通常用于获取嵌入页面中的第三方页面数据。一个页面发送消息，另一个页面判断来源并接收消息</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-comment">// 发送消息端</span>
+<span class="hljs-built_in">window</span>.parent.postMessage(<span class="hljs-string">'message'</span>, <span
+                                                    class="hljs-string">'http://test.com'</span>)
+<span class="hljs-comment">// 接收消息端</span>
+<span class="hljs-keyword">var</span> mc = <span class="hljs-keyword">new</span> MessageChannel()
+mc.addEventListener(<span class="hljs-string">'message'</span>, event =&gt; {
+  <span class="hljs-keyword">var</span> origin = event.origin || event.originalEvent.origin
+  <span class="hljs-keyword">if</span> (origin === <span class="hljs-string">'http://test.com'</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'验证通过'</span>)
+  }
+})
+</code></pre>
+                                        <h2 class="heading" data-id="heading-12">存储</h2>
+                                        <blockquote class="warning"><p>涉及面试题：有几种方式可以实现存储功能，分别有什么优缺点？什么是 Service Worker？
+                                        </p></blockquote>
+                                        <h3 class="heading" data-id="heading-13">
+                                            cookie，localStorage，sessionStorage，indexDB</h3>
+                                        <p>我们先来通过表格学习下这几种存储方式的区别</p>
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="text-align:center">特性</th>
+                                                <th style="text-align:center">cookie</th>
+                                                <th style="text-align:center">localStorage</th>
+                                                <th style="text-align:center">sessionStorage</th>
+                                                <th style="text-align:center">indexDB</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td style="text-align:center">数据生命周期</td>
+                                                <td style="text-align:center">一般由服务器生成，可以设置过期时间</td>
+                                                <td style="text-align:center">除非被清理，否则一直存在</td>
+                                                <td style="text-align:center">页面关闭就清理</td>
+                                                <td style="text-align:center">除非被清理，否则一直存在</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">数据存储大小</td>
+                                                <td style="text-align:center">4K</td>
+                                                <td style="text-align:center">5M</td>
+                                                <td style="text-align:center">5M</td>
+                                                <td style="text-align:center">无限</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">与服务端通信</td>
+                                                <td style="text-align:center">每次都会携带在 header 中，对于请求性能影响</td>
+                                                <td style="text-align:center">不参与</td>
+                                                <td style="text-align:center">不参与</td>
+                                                <td style="text-align:center">不参与</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>从上表可以看到，<code>cookie</code> 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用
+                                            <code>localStorage</code> 和 <code>sessionStorage</code> 。对于不怎么改变的数据尽量使用
+                                            <code>localStorage</code> 存储，否则可以用 <code>sessionStorage</code> 存储。</p>
+                                        <p>对于 <code>cookie</code> 来说，我们还需要注意安全性。</p>
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="text-align:center">属性</th>
+                                                <th style="text-align:center">作用</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td style="text-align:center">value</td>
+                                                <td style="text-align:center">如果用于保存用户登录态，应该将该值加密，不能使用明文的用户标识</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">http-only</td>
+                                                <td style="text-align:center">不能通过 JS 访问 Cookie，减少 XSS 攻击</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">secure</td>
+                                                <td style="text-align:center">只能在协议为 HTTPS 的请求中携带</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">same-site</td>
+                                                <td style="text-align:center">规定浏览器不能在跨域请求中携带 Cookie，减少 CSRF 攻击</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <h3 class="heading" data-id="heading-14">Service Worker</h3>
+                                        <p>Service Worker 是运行在浏览器背后的<strong>独立线程</strong>，一般可以用来实现缓存功能。使用 Service
+                                            Worker的话，传输协议必须为 <strong>HTTPS</strong>。因为 Service Worker 中涉及到请求拦截，所以必须使用
+                                            HTTPS 协议来保障安全。</p>
+                                        <p>Service Worker 实现缓存功能一般分为三个步骤：首先需要先注册 Service Worker，然后监听到
+                                            <code>install</code>
+                                            事件以后就可以缓存需要的文件，那么在下次用户访问的时候就可以通过拦截请求的方式查询是否存在缓存，存在缓存的话就可以直接读取缓存文件，否则就去请求数据。以下是这个步骤的实现：
+                                        </p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">if</span> (navigator.serviceWorker) {
+  navigator.serviceWorker
+    .register(<span class="hljs-string">'sw.js'</span>)
+    .then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params">registration</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'service worker 注册成功'</span>)
+    })
+    .catch(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'servcie worker 注册失败'</span>)
+    })
+}
+<span class="hljs-comment">// sw.js</span>
+<span class="hljs-comment">// 监听 `install` 事件，回调中缓存所需文件</span>
+self.addEventListener(<span class="hljs-string">'install'</span>, e =&gt; {
+  e.waitUntil(
+    caches.open(<span class="hljs-string">'my-cache'</span>).then(<span class="hljs-function"><span
+                                                    class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params">cache</span>) </span>{
+      <span class="hljs-keyword">return</span> cache.addAll([<span class="hljs-string">'./index.html'</span>, <span
+                                                    class="hljs-string">'./index.js'</span>])
+    })
+  )
+})
+
+<span class="hljs-comment">// 拦截所有请求事件</span>
+<span class="hljs-comment">// 如果缓存中已经有请求的数据就直接用缓存，否则去请求数据</span>
+self.addEventListener(<span class="hljs-string">'fetch'</span>, e =&gt; {
+  e.respondWith(
+    caches.match(e.request).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params">response</span>) </span>{
+      <span class="hljs-keyword">if</span> (response) {
+        <span class="hljs-keyword">return</span> response
+      }
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'fetch source'</span>)
+    })
+  )
+})
+</code></pre>
+                                        <p>打开页面，可以在开发者工具中的 <code>Application</code> 看到 Service Worker 已经启动了</p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/3/28/1626b1e8eba68e1c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="1280" data-height="522"
+                                                     src="./11-浏览器基础知识点及常考面试题_files/1626b1e8eba68e1c">
+                                            <figcaption></figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <p>在 Cache 中也可以发现我们所需的文件已被缓存</p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/3/28/1626b20dfc4fcd26?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="1118" data-height="728"
+                                                     src="./11-浏览器基础知识点及常考面试题_files/1626b20dfc4fcd26">
+                                            <figcaption></figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <p>当我们重新刷新页面可以发现我们缓存的数据是从 Service Worker 中读取的</p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/3/28/1626b20e4f8f3257?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="1280" data-height="135"
+                                                     src="./11-浏览器基础知识点及常考面试题_files/1626b20e4f8f3257">
+                                            <figcaption></figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <h2 class="heading" data-id="heading-15">小结</h2>
+                                        <p>以上就是浏览器基础知识点的内容了，如果大家对于这个章节的内容存在疑问，欢迎在评论区与我互动。</p>
+                                    </div>
+                                    <section data-v-05bbf43a="" class="book-comments">
+                                        <div data-v-05bbf43a="" class="box-title">留言</div>
+                                        <div data-v-05bbf43a="" class="comment-box">
+                                            <div data-v-81313b1e="" data-v-05bbf43a="" class="comment-form comment-form"
+                                                 id="comment">
+                                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-81313b1e=""
+                                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                                     class="lazy avatar avatar loaded"
+                                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                                <textarea data-v-81313b1e="" placeholder="评论将在后台进行审核，审核通过后对所有人可见"
+                                                          class="content-input"
+                                                          style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea>
+                                                <div data-v-81313b1e="" class="action-box" style="display: none;">
+                                                    <div data-v-680eb36d="" data-v-81313b1e=""
+                                                         class="image-uploader image-uploader" style="display: none;">
+                                                        <input data-v-680eb36d="" type="file" class="input">
+                                                        <button data-v-680eb36d="" class="upload-btn"><i
+                                                                data-v-680eb36d="" class="icon ion-image"></i><span
+                                                                data-v-680eb36d="">上传图片</span></button>
+                                                    </div>
+                                                    <div data-v-81313b1e="" class="submit-box"><span data-v-81313b1e=""
+                                                                                                     class="submit-text">Ctrl or ⌘ + Enter</span>
+                                                        <button data-v-81313b1e="" class="submit-btn">评论</button>
+                                                    </div>
+                                                </div><!----></div>
+                                        </div>
+                                        <ul data-v-32e5a55b="" data-v-05bbf43a="" st:block="commentList"
+                                            class="comment-list comment-list"><!----></ul>
+                                    </section>
+                                </div>
+                            </div><!----><!----></div>
+                    </div>
+                    <div data-v-a9263a68="" data-v-097468bb="" class="book-handle book-direction">
+                        <div data-v-a9263a68="" class="step-btn step-btn--prev"><img data-v-a9263a68=""
+                                                                                     src="./11-浏览器基础知识点及常考面试题_files/prev.87ad47e.svg">
+                        </div>
+                        <div data-v-a9263a68="" class="step-btn step-btn--next"><img data-v-a9263a68=""
+                                                                                     src="./11-浏览器基础知识点及常考面试题_files/next.54d8a35.svg">
+                        </div><!----><!----></div><!----></div>
+            </div>
+        </section><!----><!----><!---->
+        <div data-v-1b0b9cb8="" data-v-097468bb="" class="image-viewer-box"><!----></div>
+    </div><!----></div>
+
+
+<script type="text/javascript" src="./11-浏览器基础知识点及常考面试题_files/runtime.5902a8b1cc2b7567f479.js.下载"></script>
+<script type="text/javascript" src="./11-浏览器基础知识点及常考面试题_files/0.e205fcdd4d4b6767f462.js.下载"></script>
+<script type="text/javascript" src="./11-浏览器基础知识点及常考面试题_files/1.cbb1f8f5dcdee0086c6a.js.下载"></script>
+</body>
+</html>

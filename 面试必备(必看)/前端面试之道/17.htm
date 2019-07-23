@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5bdc775a6fb9a049f818b879 -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="google-site-verification" content="cCHsgG9ktuCTgWgYfqCJql8AeR4gAne4DTZqztPoirE">
+    <meta name="apple-itunes-app" content="app-id=987739104">
+    <meta name="baidu-site-verification" content="qiK2a1kcFc">
+    <meta name="360-site-verification" content="4c3c7d57d59f0e1a308462fbc7fd7e51">
+    <meta name="sogou_site_verification" content="c49WUDZczQ">
+    <style>body {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    a, button, input {
+        margin: 1rem 1.5rem;
+    }
+
+    img {
+        width: 0;
+        height: 0;
+    }
+
+    #juejin {
+        overflow-x: hidden;
+    }</style>
+    <title data-vue-meta="true">前端面试之道 - yck - 掘金小册</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://b-gold-cdn.xitu.io/favicons/v2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-16x16.png">
+    <link rel="manifest" href="https://b-gold-cdn.xitu.io/favicons/v2/manifest.json">
+    <link rel="mask-icon" href="https://b-gold-cdn.xitu.io/favicons/v2/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon.ico">
+    <meta name="msapplication-config" content="https://b-gold-cdn.xitu.io/favicons/v2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" title="掘金" href="https://b-gold-cdn.xitu.io/conf/search.xml"
+          type="application/opensearchdescription+xml">
+    <link rel="stylesheet" href="./17-Webpack 性能优化_files/ionicons.min.css">
+    <link rel="stylesheet" href="./17-Webpack 性能优化_files/iconfont.css">
+    <link href="./17-Webpack 性能优化_files/0.20e96f0e16539d696fbd.css" rel="stylesheet">
+    <script src="tools.js"></script>
+    <script async="" src="./17-Webpack 性能优化_files/hm.js.下载"></script>
+    <script async="" src="./17-Webpack 性能优化_files/analytics.js.下载"></script>
+    <script type="text/javascript" async="" src="./17-Webpack 性能优化_files/vds.js.下载"></script>
+    <script charset="utf-8" src="./17-Webpack 性能优化_files/13.46a6fc9d409a46c2798c.js.下载"></script>
+    <meta data-vmid="keywords" name="keywords"
+          content="掘金,稀土,Vue.js,微信小程序,Kotlin,RxJava,React Native,Wireshark,敏捷开发,Bootstrap,OKHttp,正则表达式,WebGL,Webpack,Docker,MVVM"
+          data-vue-meta="true">
+    <meta data-vmid="description" name="description"
+          content="掘金是一个帮助开发者成长的社区，是给开发者用的 Hacker News，给设计师用的 Designer News，和给产品经理用的 Medium。掘金的技术文章由稀土上聚集的技术大牛和极客共同编辑为你筛选出最优质的干货，其中包括：Android、iOS、前端、后端等方面的内容。用户每天都可以在这里找到技术世界的头条内容。与此同时，掘金内还有沸点、掘金翻译计划、线下活动、专栏文章等内容。即使你是 GitHub、StackOverflow、开源中国的用户，我们相信你也可以在这里有所收获。"
+          data-vue-meta="true">
+</head>
+<body>
+<div id="juejin" data-v-514f306c="">
+    <div class="global-component-box" data-v-514f306c=""><!---->
+        <div data-v-71cabb60="" data-v-514f306c="" class="alert-list alert-list"></div><!----><!----><!---->
+        <div class="emoji-barrage" data-v-e5f49d52="" data-v-514f306c=""><!----></div>
+        <div class="book-new-user-award-popup" style="display:none;" data-v-71b0e7b2="" data-v-514f306c="">
+            <div class="content-box" style="display:;" data-v-71b0e7b2="">
+                <div class="close ion-close-round" data-v-71b0e7b2=""></div>
+                <div class="header" data-v-71b0e7b2="">
+                    <div class="icon" data-v-71b0e7b2=""><img src="./17-Webpack 性能优化_files/icon.a87e5ae.svg"
+                                                              data-v-71b0e7b2=""></div>
+                    <div class="txt" data-v-71b0e7b2="">新人专享好礼</div>
+                </div>
+                <div class="desc" data-v-71b0e7b2="">凡未购买过小册的用户，均可领取三张 5 折新人专享券，购买小册时自动使用专享券，最高可节省 45 元。</div>
+                <div class="tickets" data-v-71b0e7b2="">
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="remark" data-v-71b0e7b2="">注：专享券的使用期限在领券的七天内。</div>
+                <div class="submit-btn" data-v-71b0e7b2="">一键领取</div>
+            </div>
+            <div class="model success" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取成功</div>
+                <div class="content-text" data-v-71b0e7b2="">购买小册时自动使用专享券</div>
+                <div class="btn-success-footer" data-v-71b0e7b2="">
+                    <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+                    <div class="btn-ok btn-link" data-v-71b0e7b2="">前往小册首页</div>
+                </div>
+            </div>
+            <div class="model fail" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取失败</div>
+                <div class="content-text" data-v-71b0e7b2="">本活动仅适用于小册新用户</div>
+                <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+            </div>
+        </div><!----></div><!---->
+    <div data-v-097468bb="" data-v-514f306c="" class="book-read-view">
+        <section data-v-097468bb="" class="book-section">
+            <div data-v-097468bb="" class="book-summary">
+                <div data-v-097468bb="" class="book-summary-masker"></div>
+                <div data-v-097468bb="" class="book-summary-inner">
+                    <div data-v-097468bb="" class="book-summary__header"><a data-v-097468bb=""
+                                                                            href="https://juejin.im/books" target=""
+                                                                            rel="" class="logo"><img data-v-097468bb=""
+                                                                                                     src="./17-Webpack 性能优化_files/logo.a7995ad.svg"></a>
+                        <div data-v-097468bb="" class="label">小册</div><!----></div><!---->
+                    <div data-v-d0eb2184="" data-v-097468bb="" class="book-directory book-directory bought"><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">1</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">小册食用指南</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">2</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（一）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">3</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（二）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">4</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">ES6 知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">5</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 异步编程及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">6</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">手写 Promise</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">7</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Event Loop</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">8</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 进阶知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">9</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 思考题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">10</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">DevTools Tips</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">11</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器基础知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">12</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器缓存机制</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">13</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器渲染原理</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">14</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">安全防范知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">15</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">从 V8 中看 JS 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">16</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">性能优化琐碎事</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section route-active section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">17</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Webpack 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">18</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">实现小型打包工具</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">19</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 和 Vue 两大框架之间的相爱相杀</div><!----><!----></div>
+                        <!----></a><a data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">20</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">21</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">22</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">23</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">24</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">监控</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">25</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">UDP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">26</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">TCP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">27</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP 及 TLS</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">28</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP/2 及 HTTP/3</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">29</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">输入 URL 到页面渲染的整个流程</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">30</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">设计模式</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">31</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常见数据结构</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">32</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常考算法题解析</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">33</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">CSS 常考面试题资料</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">34</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">如何写好一封简历</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">35</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">面试常用技巧</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">36</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">前方的路，让我们结伴同行</div><!----><!----></div><!----></a>
+                    </div>
+                    <div data-v-097468bb="" class="book-summary__footer">
+                        <div data-v-097468bb="" class="qr-icon"><img data-v-097468bb=""
+                                                                     src="./17-Webpack 性能优化_files/qr-icon.881015a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="qr-tips"><span data-v-097468bb="" class="ion-close"></span>
+                            <div data-v-097468bb="" class="title"><span data-v-097468bb="">关注公众号</span><span
+                                    data-v-097468bb="">领取优惠码</span></div>
+                            <div data-v-097468bb="" class="qr-img"><img data-v-097468bb=""
+                                                                        src="./17-Webpack 性能优化_files/wx-qr.13d8b4d.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-097468bb="" class="book-content">
+                <div data-v-097468bb="" class="book-content-inner">
+                    <div data-v-097468bb="" class="book-content__header">
+                        <div data-v-097468bb="" class="switch"><img data-v-097468bb=""
+                                                                    src="./17-Webpack 性能优化_files/icon.3e69d5a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="menu"><img data-v-097468bb=""
+                                                                  src="./17-Webpack 性能优化_files/menu.74b9add.svg"></div>
+                        <div data-v-097468bb="" class="title"><a data-v-097468bb=""
+                                                                 href="https://juejin.im/book/5bdc715fe51d454e755f75ef"
+                                                                 target="" rel="">前端面试之道</a></div>
+                        <div data-v-629272fe="" data-v-097468bb="" class="user-auth user-auth">
+                            <div data-v-629272fe="" class="nav-item menu">
+                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-629272fe=""
+                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                     class="lazy avatar avatar loaded"
+                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                <div data-v-629272fe="" class="nav-menu user-dropdown-list" style="display: none;">
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-write"></i><span
+                                                data-v-629272fe="">写文章</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-draft"></i><span
+                                                data-v-629272fe="">草稿</span></a></li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a"><i
+                                                data-v-629272fe="" class="fengwei fw-person"></i><span
+                                                data-v-629272fe="">我的主页</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/likes"><i
+                                                data-v-629272fe="" class="fengwei fw-like"></i><span data-v-629272fe="">我喜欢的</span></a>
+                                        </li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/collections"><i
+                                                data-v-629272fe="" class="fengwei fw-collection"></i><span
+                                                data-v-629272fe="">我的收藏集</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/books?type=bought"><i
+                                                data-v-629272fe="" class="fengwei fw-bought"></i><span
+                                                data-v-629272fe="">已购</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/subscribe"><i
+                                                data-v-629272fe="" class="fengwei fw-tag"></i><span data-v-629272fe="">标签管理</span></a>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/settings"><i
+                                                data-v-629272fe="" class="fengwei fw-setting"></i><span
+                                                data-v-629272fe="">设置</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item more"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-info"></i><span data-v-629272fe="">关于</span><i
+                                                data-v-629272fe="" class="ion-chevron-right more-icon"></i></a>
+                                            <div data-v-629272fe="" class="nav-menu more-dropdown-list">
+                                                <ul data-v-629272fe="" class="nav-menu-item-group">
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/app"
+                                                                                                    target="_blank">下载应用</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/about"
+                                                                                                    target="_blank">关于</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://xitu.io/jobs"
+                                                                                                    target="_blank">加入我们</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://github.com/xitu/gold-miner"
+                                                                                                    rel="nofollow noopener noreferrer"
+                                                                                                    target="_blank">翻译计划</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://bd.juejin.im/?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                                                                    target="_blank">合作伙伴</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-logout"></i><span
+                                                data-v-629272fe="">登出</span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!----></div><!----></div>
+                    <div data-v-097468bb="" class="book-body transition--next">
+                        <div data-v-5602b343="" data-v-097468bb="" class="section-view book-section-content">
+                            <div data-v-05bbf43a="" data-v-5602b343="" class="section-content">
+                                <div data-v-05bbf43a="" class="section-page book-section-view">
+                                    <div data-v-05bbf43a="" class="entry-content article-content"><h1 class="heading"
+                                                                                                      data-id="heading-0">
+                                        Webpack 性能优化</h1>
+                                        <p>在这一的章节中，我不会浪费篇幅给大家讲如何写配置文件。<strong>如果你想学习这方面的内容，那么完全可以去官网学习</strong>。在这部分的内容中，我们会聚焦于以下两个知识点，并且每一个知识点都属于高频考点：
+                                        </p>
+                                        <ul>
+                                            <li>有哪些方式可以减少 Webpack 的打包时间</li>
+                                            <li>有哪些方式可以让 Webpack 打出来的包更小</li>
+                                        </ul>
+                                        <h2 class="heading" data-id="heading-1">减少 Webpack 打包时间</h2>
+                                        <h3 class="heading" data-id="heading-2">优化 Loader</h3>
+                                        <p>对于 Loader 来说，影响打包效率首当其冲必属 Babel 了。因为 Babel 会将代码转为字符串生成 AST，然后对 AST
+                                            继续进行转变最后再生成新的代码，项目越大，<strong>转换代码越多，效率就越低</strong>。当然了，我们是有办法优化的。</p>
+                                        <p>首先我们可以<strong>优化 Loader 的文件搜索范围</strong></p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-comment">// js 文件才使用 babel</span>
+        test: <span class="hljs-regexp">/\.js$/</span>,
+        <span class="hljs-attr">loader</span>: <span class="hljs-string">'babel-loader'</span>,
+        <span class="hljs-comment">// 只在 src 文件夹下查找</span>
+        include: [resolve(<span class="hljs-string">'src'</span>)],
+        <span class="hljs-comment">// 不会去查找的路径</span>
+        exclude: <span class="hljs-regexp">/node_modules/</span>
+      }
+    ]
+  }
+}
+</code></pre>
+                                        <p>对于 Babel 来说，我们肯定是希望只作用在 JS 代码上的，然后 <code>node_modules</code>
+                                            中使用的代码都是编译过的，所以我们也完全没有必要再去处理一遍。</p>
+                                        <p>当然这样做还不够，我们还可以将 Babel 编译过的文件<strong>缓存</strong>起来，下次只需要编译更改过的代码文件即可，这样可以大幅度加快打包时间
+                                        </p>
+                                        <pre><code class="hljs js" lang="js">loader: <span class="hljs-string">'babel-loader?cacheDirectory=true'</span>
+</code></pre>
+                                        <h3 class="heading" data-id="heading-3">HappyPack</h3>
+                                        <p>受限于 Node 是单线程运行的，所以 Webpack 在打包的过程中也是单线程的，特别是在执行 Loader
+                                            的时候，长时间编译的任务很多，这样就会导致等待的情况。</p>
+                                        <p><strong>HappyPack 可以将 Loader 的同步执行转换为并行的</strong>，这样就能充分利用系统资源来加快打包效率了</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-built_in">module</span>: {
+  <span class="hljs-attr">loaders</span>: [
+    {
+      <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,
+      <span class="hljs-attr">include</span>: [resolve(<span class="hljs-string">'src'</span>)],
+      <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>,
+      <span class="hljs-comment">// id 后面的内容对应下面</span>
+      loader: <span class="hljs-string">'happypack/loader?id=happybabel'</span>
+    }
+  ]
+},
+<span class="hljs-attr">plugins</span>: [
+  <span class="hljs-keyword">new</span> HappyPack({
+    <span class="hljs-attr">id</span>: <span class="hljs-string">'happybabel'</span>,
+    <span class="hljs-attr">loaders</span>: [<span class="hljs-string">'babel-loader?cacheDirectory'</span>],
+    <span class="hljs-comment">// 开启 4 个线程</span>
+    threads: <span class="hljs-number">4</span>
+  })
+]
+</code></pre>
+                                        <h3 class="heading" data-id="heading-4">DllPlugin</h3>
+                                        <p><strong>DllPlugin 可以将特定的类库提前打包然后引入</strong>。这种方式可以极大的减少打包类库的次数，只有当类库更新版本才有需要重新打包，并且也实现了将公共代码抽离成单独文件的优化方案。
+                                        </p>
+                                        <p>接下来我们就来学习如何使用 DllPlugin</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-comment">// 单独配置在一个文件中</span>
+<span class="hljs-comment">// webpack.dll.conf.js</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+<span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>)
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">entry</span>: {
+    <span class="hljs-comment">// 想统一打包的类库</span>
+    vendor: [<span class="hljs-string">'react'</span>]
+  },
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'dist'</span>),
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].dll.js'</span>,
+    <span class="hljs-attr">library</span>: <span class="hljs-string">'[name]-[hash]'</span>
+  },
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> webpack.DllPlugin({
+      <span class="hljs-comment">// name 必须和 output.library 一致</span>
+      name: <span class="hljs-string">'[name]-[hash]'</span>,
+      <span class="hljs-comment">// 该属性需要与 DllReferencePlugin 中一致</span>
+      context: __dirname,
+      <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'dist'</span>, <span
+                                                    class="hljs-string">'[name]-manifest.json'</span>)
+    })
+  ]
+}
+</code></pre>
+                                        <p>然后我们需要执行这个配置文件生成依赖文件，接下来我们需要使用 <code>DllReferencePlugin</code> 将依赖文件引入项目中</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-comment">// webpack.conf.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-comment">// ...省略其他配置</span>
+  plugins: [
+    <span class="hljs-keyword">new</span> webpack.DllReferencePlugin({
+      <span class="hljs-attr">context</span>: __dirname,
+      <span class="hljs-comment">// manifest 就是之前打包出来的 json 文件</span>
+      manifest: <span class="hljs-built_in">require</span>(<span
+                                                    class="hljs-string">'./dist/vendor-manifest.json'</span>),
+    })
+  ]
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-5">代码压缩</h3>
+                                        <p>在 Webpack3 中，我们一般使用 <code>UglifyJS</code> 来压缩代码，但是这个是单线程运行的，为了加快效率，我们可以使用
+                                            <code>webpack-parallel-uglify-plugin</code> 来并行运行 <code>UglifyJS</code>，从而提高效率。
+                                        </p>
+                                        <p>在 Webpack4 中，我们就不需要以上这些操作了，只需要将 <code>mode</code> 设置为 <code>production</code>
+                                            就可以默认开启以上功能。代码压缩也是我们必做的性能优化方案，当然我们不止可以压缩 JS 代码，还可以压缩 HTML、CSS 代码，并且在压缩 JS
+                                            代码的过程中，我们还可以通过配置实现比如删除 <code>console.log</code> 这类代码的功能。</p>
+                                        <h3 class="heading" data-id="heading-6">一些小的优化点</h3>
+                                        <p>我们还可以通过一些小的优化点来加快打包速度</p>
+                                        <ul>
+                                            <li><code>resolve.extensions</code>：用来表明文件后缀列表，默认查找顺序是 <code>['.js',
+                                                '.json']</code>，如果你的导入文件没有添加后缀就会按照这个顺序查找文件。我们应该尽可能减少后缀列表长度，然后将出现频率高的后缀排在前面
+                                            </li>
+                                            <li><code>resolve.alias</code>：可以通过别名的方式来映射一个路径，能让 Webpack 更快找到路径</li>
+                                            <li><code>module.noParse</code>：如果你确定一个文件下没有其他依赖，就可以使用该属性让 Webpack
+                                                不扫描该文件，这种方式对于大型的类库很有帮助
+                                            </li>
+                                        </ul>
+                                        <h2 class="heading" data-id="heading-7">减少 Webpack 打包后的文件体积</h2>
+                                        <blockquote class="warning"><p>注意：该内容也属于性能优化领域。
+                                        </p></blockquote>
+                                        <h3 class="heading" data-id="heading-8">按需加载</h3>
+                                        <p>想必大家在开发 SPA 项目的时候，项目中都会存在十几甚至更多的路由页面。如果我们将这些页面全部打包进一个 JS
+                                            文件的话，虽然将多个请求合并了，但是同样也加载了很多并不需要的代码，耗费了更长的时间。那么为了首页能更快地呈现给用户，我们肯定是希望首页能加载的文件体积越小越好，<strong>这时候我们就可以使用按需加载，将每个路由页面单独打包为一个文件</strong>。当然不仅仅路由可以按需加载，对于
+                                            <code>loadash</code> 这种大型类库同样可以使用这个功能。</p>
+                                        <p>
+                                            按需加载的代码实现这里就不详细展开了，因为鉴于用的框架不同，实现起来都是不一样的。当然了，虽然他们的用法可能不同，但是底层的机制都是一样的。都是当使用的时候再去下载对应文件，返回一个
+                                            <code>Promise</code>，当 <code>Promise</code> 成功以后去执行回调。</p>
+                                        <h3 class="heading" data-id="heading-9">Scope Hoisting</h3>
+                                        <p><strong>Scope Hoisting 会分析出模块之间的依赖关系，尽可能的把打包出来的模块合并到一个函数中去。</strong></p>
+                                        <p>比如我们希望打包两个文件</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-comment">// test.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>
+<span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">import</span> { a } <span class="hljs-keyword">from</span> <span class="hljs-string">'./test.js'</span>
+</code></pre>
+                                        <p>对于这种情况，我们打包出来的代码会类似这样</p>
+                                        <pre><code class="hljs js" lang="js">[
+  <span class="hljs-comment">/* 0 */</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports, require</span>) </span>{
+    <span class="hljs-comment">//...</span>
+  },
+  <span class="hljs-comment">/* 1 */</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports, require</span>) </span>{
+    <span class="hljs-comment">//...</span>
+  }
+]
+</code></pre>
+                                        <p>但是如果我们使用 Scope Hoisting 的话，代码就会尽可能的合并到一个函数中去，也就变成了这样的类似代码</p>
+                                        <pre><code class="hljs js" lang="js">[
+  <span class="hljs-comment">/* 0 */</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports, require</span>) </span>{
+    <span class="hljs-comment">//...</span>
+  }
+]
+</code></pre>
+                                        <p>这样的打包方式生成的代码明显比之前的少多了。如果在 Webpack4 中你希望开启这个功能，只需要启用 <code>optimization.concatenateModules</code>
+                                            就可以了。</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">optimization</span>: {
+    <span class="hljs-attr">concatenateModules</span>: <span class="hljs-literal">true</span>
+  }
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-10">Tree Shaking</h3>
+                                        <p><strong>Tree Shaking 可以实现删除项目中未被引用的代码</strong>，比如</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-comment">// test.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> b = <span class="hljs-number">2</span>
+<span class="hljs-comment">// index.js</span>
+<span class="hljs-keyword">import</span> { a } <span class="hljs-keyword">from</span> <span class="hljs-string">'./test.js'</span>
+</code></pre>
+                                        <p>对于以上情况，<code>test</code> 文件中的变量 <code>b</code> 如果没有在项目中使用到的话，就不会被打包到文件中。</p>
+                                        <p>如果你使用 Webpack 4 的话，开启生产环境就会自动启动这个优化功能。</p>
+                                        <h2 class="heading" data-id="heading-11">小结</h2>
+                                        <p>在这一章节中，我们学习了如何使用 Webpack 去进行性能优化以及如何减少打包时间。</p>
+                                        <p>Webpack 的版本更新很快，各个版本之间实现优化的方式可能都会有区别，所以我没有使用过多的代码去展示如何实现一个功能。<strong>这一章节的重点是学习到我们可以通过什么方式去优化，具体的代码实现可以查找具体版本对应的代码即可。</strong>
+                                        </p>
+                                    </div>
+                                    <section data-v-05bbf43a="" class="book-comments">
+                                        <div data-v-05bbf43a="" class="box-title">留言</div>
+                                        <div data-v-05bbf43a="" class="comment-box">
+                                            <div data-v-81313b1e="" data-v-05bbf43a="" class="comment-form comment-form"
+                                                 id="comment">
+                                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-81313b1e=""
+                                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                                     class="lazy avatar avatar loaded"
+                                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                                <textarea data-v-81313b1e="" placeholder="评论将在后台进行审核，审核通过后对所有人可见"
+                                                          class="content-input"
+                                                          style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea>
+                                                <div data-v-81313b1e="" class="action-box" style="display: none;">
+                                                    <div data-v-680eb36d="" data-v-81313b1e=""
+                                                         class="image-uploader image-uploader" style="display: none;">
+                                                        <input data-v-680eb36d="" type="file" class="input">
+                                                        <button data-v-680eb36d="" class="upload-btn"><i
+                                                                data-v-680eb36d="" class="icon ion-image"></i><span
+                                                                data-v-680eb36d="">上传图片</span></button>
+                                                    </div>
+                                                    <div data-v-81313b1e="" class="submit-box"><span data-v-81313b1e=""
+                                                                                                     class="submit-text">Ctrl or ⌘ + Enter</span>
+                                                        <button data-v-81313b1e="" class="submit-btn">评论</button>
+                                                    </div>
+                                                </div><!----></div>
+                                        </div>
+                                        <ul data-v-32e5a55b="" data-v-05bbf43a="" st:block="commentList"
+                                            class="comment-list comment-list"><!----></ul>
+                                    </section>
+                                </div>
+                            </div><!----><!----></div>
+                    </div>
+                    <div data-v-a9263a68="" data-v-097468bb="" class="book-handle book-direction">
+                        <div data-v-a9263a68="" class="step-btn step-btn--prev"><img data-v-a9263a68=""
+                                                                                     src="./17-Webpack 性能优化_files/prev.87ad47e.svg">
+                        </div>
+                        <div data-v-a9263a68="" class="step-btn step-btn--next"><img data-v-a9263a68=""
+                                                                                     src="./17-Webpack 性能优化_files/next.54d8a35.svg">
+                        </div><!----><!----></div><!----></div>
+            </div>
+        </section><!----><!----><!---->
+        <div data-v-1b0b9cb8="" data-v-097468bb="" class="image-viewer-box"><!----></div>
+    </div><!----></div>
+
+
+<script type="text/javascript" src="./17-Webpack 性能优化_files/runtime.5902a8b1cc2b7567f479.js.下载"></script>
+<script type="text/javascript" src="./17-Webpack 性能优化_files/0.e205fcdd4d4b6767f462.js.下载"></script>
+<script type="text/javascript" src="./17-Webpack 性能优化_files/1.cbb1f8f5dcdee0086c6a.js.下载"></script>
+</body>
+</html>

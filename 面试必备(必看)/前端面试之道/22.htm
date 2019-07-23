@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5bdc7333f265da611d661be0 -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="google-site-verification" content="cCHsgG9ktuCTgWgYfqCJql8AeR4gAne4DTZqztPoirE">
+    <meta name="apple-itunes-app" content="app-id=987739104">
+    <meta name="baidu-site-verification" content="qiK2a1kcFc">
+    <meta name="360-site-verification" content="4c3c7d57d59f0e1a308462fbc7fd7e51">
+    <meta name="sogou_site_verification" content="c49WUDZczQ">
+    <style>body {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    a, button, input {
+        margin: 1rem 1.5rem;
+    }
+
+    img {
+        width: 0;
+        height: 0;
+    }
+
+    #juejin {
+        overflow-x: hidden;
+    }</style>
+    <title data-vue-meta="true">前端面试之道 - yck - 掘金小册</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://b-gold-cdn.xitu.io/favicons/v2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-16x16.png">
+    <link rel="manifest" href="https://b-gold-cdn.xitu.io/favicons/v2/manifest.json">
+    <link rel="mask-icon" href="https://b-gold-cdn.xitu.io/favicons/v2/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon.ico">
+    <meta name="msapplication-config" content="https://b-gold-cdn.xitu.io/favicons/v2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" title="掘金" href="https://b-gold-cdn.xitu.io/conf/search.xml"
+          type="application/opensearchdescription+xml">
+    <link rel="stylesheet" href="./22-React 常考基础知识点_files/ionicons.min.css">
+    <link rel="stylesheet" href="./22-React 常考基础知识点_files/iconfont.css">
+    <link href="./22-React 常考基础知识点_files/0.20e96f0e16539d696fbd.css" rel="stylesheet">
+    <script src="tools.js"></script>
+    <script async="" src="./22-React 常考基础知识点_files/hm.js.下载"></script>
+    <script async="" src="./22-React 常考基础知识点_files/analytics.js.下载"></script>
+    <script type="text/javascript" async="" src="./22-React 常考基础知识点_files/vds.js.下载"></script>
+    <script charset="utf-8" src="./22-React 常考基础知识点_files/13.46a6fc9d409a46c2798c.js.下载"></script>
+    <meta data-vmid="keywords" name="keywords"
+          content="掘金,稀土,Vue.js,微信小程序,Kotlin,RxJava,React Native,Wireshark,敏捷开发,Bootstrap,OKHttp,正则表达式,WebGL,Webpack,Docker,MVVM"
+          data-vue-meta="true">
+    <meta data-vmid="description" name="description"
+          content="掘金是一个帮助开发者成长的社区，是给开发者用的 Hacker News，给设计师用的 Designer News，和给产品经理用的 Medium。掘金的技术文章由稀土上聚集的技术大牛和极客共同编辑为你筛选出最优质的干货，其中包括：Android、iOS、前端、后端等方面的内容。用户每天都可以在这里找到技术世界的头条内容。与此同时，掘金内还有沸点、掘金翻译计划、线下活动、专栏文章等内容。即使你是 GitHub、StackOverflow、开源中国的用户，我们相信你也可以在这里有所收获。"
+          data-vue-meta="true">
+</head>
+<body>
+<div id="juejin" data-v-514f306c="">
+    <div class="global-component-box" data-v-514f306c=""><!---->
+        <div data-v-71cabb60="" data-v-514f306c="" class="alert-list alert-list"></div><!----><!----><!---->
+        <div class="emoji-barrage" data-v-e5f49d52="" data-v-514f306c=""><!----></div>
+        <div class="book-new-user-award-popup" style="display:none;" data-v-71b0e7b2="" data-v-514f306c="">
+            <div class="content-box" style="display:;" data-v-71b0e7b2="">
+                <div class="close ion-close-round" data-v-71b0e7b2=""></div>
+                <div class="header" data-v-71b0e7b2="">
+                    <div class="icon" data-v-71b0e7b2=""><img src="./22-React 常考基础知识点_files/icon.a87e5ae.svg"
+                                                              data-v-71b0e7b2=""></div>
+                    <div class="txt" data-v-71b0e7b2="">新人专享好礼</div>
+                </div>
+                <div class="desc" data-v-71b0e7b2="">凡未购买过小册的用户，均可领取三张 5 折新人专享券，购买小册时自动使用专享券，最高可节省 45 元。</div>
+                <div class="tickets" data-v-71b0e7b2="">
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="remark" data-v-71b0e7b2="">注：专享券的使用期限在领券的七天内。</div>
+                <div class="submit-btn" data-v-71b0e7b2="">一键领取</div>
+            </div>
+            <div class="model success" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取成功</div>
+                <div class="content-text" data-v-71b0e7b2="">购买小册时自动使用专享券</div>
+                <div class="btn-success-footer" data-v-71b0e7b2="">
+                    <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+                    <div class="btn-ok btn-link" data-v-71b0e7b2="">前往小册首页</div>
+                </div>
+            </div>
+            <div class="model fail" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取失败</div>
+                <div class="content-text" data-v-71b0e7b2="">本活动仅适用于小册新用户</div>
+                <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+            </div>
+        </div><!----></div><!---->
+    <div data-v-097468bb="" data-v-514f306c="" class="book-read-view">
+        <section data-v-097468bb="" class="book-section">
+            <div data-v-097468bb="" class="book-summary">
+                <div data-v-097468bb="" class="book-summary-masker"></div>
+                <div data-v-097468bb="" class="book-summary-inner">
+                    <div data-v-097468bb="" class="book-summary__header"><a data-v-097468bb=""
+                                                                            href="https://juejin.im/books" target=""
+                                                                            rel="" class="logo"><img data-v-097468bb=""
+                                                                                                     src="./22-React 常考基础知识点_files/logo.a7995ad.svg"></a>
+                        <div data-v-097468bb="" class="label">小册</div><!----></div><!---->
+                    <div data-v-d0eb2184="" data-v-097468bb="" class="book-directory book-directory bought"><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">1</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">小册食用指南</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">2</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（一）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">3</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（二）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">4</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">ES6 知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">5</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 异步编程及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">6</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">手写 Promise</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">7</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Event Loop</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">8</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 进阶知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">9</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 思考题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">10</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">DevTools Tips</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">11</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器基础知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">12</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器缓存机制</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">13</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器渲染原理</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">14</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">安全防范知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">15</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">从 V8 中看 JS 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">16</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">性能优化琐碎事</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">17</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Webpack 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">18</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">实现小型打包工具</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">19</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 和 Vue 两大框架之间的相爱相杀</div><!----><!----></div>
+                        <!----></a><a data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">20</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">21</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section route-active section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">22</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">23</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">24</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">监控</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">25</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">UDP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">26</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">TCP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">27</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP 及 TLS</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">28</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP/2 及 HTTP/3</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">29</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">输入 URL 到页面渲染的整个流程</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">30</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">设计模式</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">31</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常见数据结构</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">32</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常考算法题解析</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">33</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">CSS 常考面试题资料</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">34</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">如何写好一封简历</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">35</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">面试常用技巧</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">36</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">前方的路，让我们结伴同行</div><!----><!----></div><!----></a>
+                    </div>
+                    <div data-v-097468bb="" class="book-summary__footer">
+                        <div data-v-097468bb="" class="qr-icon"><img data-v-097468bb=""
+                                                                     src="./22-React 常考基础知识点_files/qr-icon.881015a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="qr-tips"><span data-v-097468bb="" class="ion-close"></span>
+                            <div data-v-097468bb="" class="title"><span data-v-097468bb="">关注公众号</span><span
+                                    data-v-097468bb="">领取优惠码</span></div>
+                            <div data-v-097468bb="" class="qr-img"><img data-v-097468bb=""
+                                                                        src="./22-React 常考基础知识点_files/wx-qr.13d8b4d.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-097468bb="" class="book-content">
+                <div data-v-097468bb="" class="book-content-inner">
+                    <div data-v-097468bb="" class="book-content__header">
+                        <div data-v-097468bb="" class="switch"><img data-v-097468bb=""
+                                                                    src="./22-React 常考基础知识点_files/icon.3e69d5a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="menu"><img data-v-097468bb=""
+                                                                  src="./22-React 常考基础知识点_files/menu.74b9add.svg"></div>
+                        <div data-v-097468bb="" class="title"><a data-v-097468bb=""
+                                                                 href="https://juejin.im/book/5bdc715fe51d454e755f75ef"
+                                                                 target="" rel="">前端面试之道</a></div>
+                        <div data-v-629272fe="" data-v-097468bb="" class="user-auth user-auth">
+                            <div data-v-629272fe="" class="nav-item menu">
+                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-629272fe=""
+                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                     class="lazy avatar avatar loaded"
+                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                <div data-v-629272fe="" class="nav-menu user-dropdown-list" style="display: none;">
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-write"></i><span
+                                                data-v-629272fe="">写文章</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-draft"></i><span
+                                                data-v-629272fe="">草稿</span></a></li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a"><i
+                                                data-v-629272fe="" class="fengwei fw-person"></i><span
+                                                data-v-629272fe="">我的主页</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/likes"><i
+                                                data-v-629272fe="" class="fengwei fw-like"></i><span data-v-629272fe="">我喜欢的</span></a>
+                                        </li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/collections"><i
+                                                data-v-629272fe="" class="fengwei fw-collection"></i><span
+                                                data-v-629272fe="">我的收藏集</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/books?type=bought"><i
+                                                data-v-629272fe="" class="fengwei fw-bought"></i><span
+                                                data-v-629272fe="">已购</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/subscribe"><i
+                                                data-v-629272fe="" class="fengwei fw-tag"></i><span data-v-629272fe="">标签管理</span></a>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/settings"><i
+                                                data-v-629272fe="" class="fengwei fw-setting"></i><span
+                                                data-v-629272fe="">设置</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item more"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-info"></i><span data-v-629272fe="">关于</span><i
+                                                data-v-629272fe="" class="ion-chevron-right more-icon"></i></a>
+                                            <div data-v-629272fe="" class="nav-menu more-dropdown-list">
+                                                <ul data-v-629272fe="" class="nav-menu-item-group">
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/app"
+                                                                                                    target="_blank">下载应用</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/about"
+                                                                                                    target="_blank">关于</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://xitu.io/jobs"
+                                                                                                    target="_blank">加入我们</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://github.com/xitu/gold-miner"
+                                                                                                    rel="nofollow noopener noreferrer"
+                                                                                                    target="_blank">翻译计划</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://bd.juejin.im/?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                                                                    target="_blank">合作伙伴</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-logout"></i><span
+                                                data-v-629272fe="">登出</span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!----></div><!----></div>
+                    <div data-v-097468bb="" class="book-body transition--next">
+                        <div data-v-5602b343="" data-v-097468bb="" class="section-view book-section-content">
+                            <div data-v-05bbf43a="" data-v-5602b343="" class="section-content">
+                                <div data-v-05bbf43a="" class="section-page book-section-view">
+                                    <div data-v-05bbf43a="" class="entry-content article-content"><h1 class="heading"
+                                                                                                      data-id="heading-0">
+                                        React 常考基础知识点</h1>
+                                        <p>这一章节我们将来学习 React 的一些经常考到的基础知识点。</p>
+                                        <h2 class="heading" data-id="heading-1">生命周期</h2>
+                                        <p>在 V16 版本中引入了 Fiber 机制。这个机制一定程度上的影响了部分生命周期的调用，并且也引入了新的 2 个 API 来解决问题，关于 Fiber
+                                            的内容将会在下一章节中讲到。</p>
+                                        <p>在之前的版本中，如果你拥有一个很复杂的复合组件，然后改动了最上层组件的 <code>state</code>，那么调用栈可能会很长</p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/6/25/164358b0310f476c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="685" data-height="739"
+                                                     src="./22-React 常考基础知识点_files/164358b0310f476c">
+                                            <figcaption></figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <p>调用栈过长，再加上中间进行了复杂的操作，就可能导致长时间阻塞主线程，带来不好的用户体验。Fiber 就是为了解决该问题而生。</p>
+                                        <p>Fiber
+                                            本质上是一个虚拟的堆栈帧，新的调度器会按照优先级自由调度这些帧，从而将之前的同步渲染改成了异步渲染，在不影响体验的情况下去分段计算更新。</p>
+                                        <p></p>
+                                        <figure><img class="lazyload inited loaded"
+                                                     data-src="https://user-gold-cdn.xitu.io/2018/6/25/164358f89595d56f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                     data-width="1119" data-height="600"
+                                                     src="./22-React 常考基础知识点_files/164358f89595d56f">
+                                            <figcaption></figcaption>
+                                        </figure>
+                                        <p></p>
+                                        <p>对于如何区别优先级，React 有自己的一套逻辑。对于动画这种实时性很高的东西，也就是 16 ms 必须渲染一次保证不卡顿的情况下，React 会每 16
+                                            ms（以内） 暂停一下更新，返回来继续渲染动画。</p>
+                                        <p>对于异步渲染，现在渲染有两个阶段：<code>reconciliation</code> 和 <code>commit</code>
+                                            。前者过程是可以打断的，后者不能暂停，会一直更新界面直到完成。</p>
+                                        <p><strong>Reconciliation</strong> 阶段</p>
+                                        <ul>
+                                            <li><code>componentWillMount</code></li>
+                                            <li><code>componentWillReceiveProps</code></li>
+                                            <li><code>shouldComponentUpdate</code></li>
+                                            <li><code>componentWillUpdate</code></li>
+                                        </ul>
+                                        <p><strong>Commit</strong> 阶段</p>
+                                        <ul>
+                                            <li><code>componentDidMount</code></li>
+                                            <li><code>componentDidUpdate</code></li>
+                                            <li><code>componentWillUnmount</code></li>
+                                        </ul>
+                                        <p>因为 Reconciliation 阶段是可以被打断的，所以 Reconciliation 阶段会执行的生命周期函数就可能会出现调用多次的情况，从而引起
+                                            Bug。由此对于 Reconciliation 阶段调用的几个函数，除了 <code>shouldComponentUpdate</code>
+                                            以外，其他都应该避免去使用，并且 V16 中也引入了新的 API 来解决这个问题。</p>
+                                        <p><code>getDerivedStateFromProps</code> 用于替换
+                                            <code>componentWillReceiveProps</code> ，该函数会在初始化和 <code>update</code> 时被调用
+                                        </p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-class"><span
+                                                class="hljs-keyword">class</span> <span class="hljs-title">ExampleComponent</span> <span
+                                                class="hljs-keyword">extends</span> <span
+                                                class="hljs-title">React</span>.<span
+                                                class="hljs-title">Component</span> </span>{
+  <span class="hljs-comment">// Initialize state in constructor,</span>
+  <span class="hljs-comment">// Or with a property initializer.</span>
+  state = {};
+
+  <span class="hljs-keyword">static</span> getDerivedStateFromProps(nextProps, prevState) {
+    <span class="hljs-keyword">if</span> (prevState.someMirroredValue !== nextProps.someValue) {
+      <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">derivedData</span>: computeDerivedState(nextProps),
+        <span class="hljs-attr">someMirroredValue</span>: nextProps.someValue
+      };
+    }
+
+    <span class="hljs-comment">// Return null to indicate no change to state.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+  }
+}
+</code></pre>
+                                        <p><code>getSnapshotBeforeUpdate</code> 用于替换 <code>componentWillUpdate</code>
+                                            ，该函数会在 <code>update</code> 后 DOM 更新前被调用，用于读取最新的 DOM 数据。</p>
+                                        <h2 class="heading" data-id="heading-2">setState</h2>
+                                        <p><code>setState</code> 在 React 中是经常使用的一个 API，但是它存在一些的问题经常会导致初学者出错，核心原因就是因为这个
+                                            API 是异步的。</p>
+                                        <p>首先 <code>setState</code> 的调用并不会马上引起 <code>state</code> 的改变，并且如果你一次调用了多个
+                                            <code>setState</code> ，那么结果可能并不如你期待的一样。</p>
+                                        <pre><code class="hljs js" lang="js">handle() {
+  <span class="hljs-comment">// 初始化 `count` 为 0</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state.count) <span
+                                                    class="hljs-comment">// -&gt; 0</span>
+  <span class="hljs-keyword">this</span>.setState({ <span class="hljs-attr">count</span>: <span class="hljs-keyword">this</span>.state.count + <span
+                                                    class="hljs-number">1</span> })
+  <span class="hljs-keyword">this</span>.setState({ <span class="hljs-attr">count</span>: <span class="hljs-keyword">this</span>.state.count + <span
+                                                    class="hljs-number">1</span> })
+  <span class="hljs-keyword">this</span>.setState({ <span class="hljs-attr">count</span>: <span class="hljs-keyword">this</span>.state.count + <span
+                                                    class="hljs-number">1</span> })
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state.count) <span
+                                                    class="hljs-comment">// -&gt; 0</span>
+}
+</code></pre>
+                                        <p>第一，两次的打印都为 0，因为 <code>setState</code> 是个异步
+                                            API，只有同步代码运行完毕才会执行。<code>setState</code> 异步的原因我认为在于，<code>setState</code>
+                                            可能会导致 DOM
+                                            的重绘，如果调用一次就马上去进行重绘，那么调用多次就会造成不必要的性能损失。设计成异步的话，就可以将多次调用放入一个队列中，在恰当的时候统一进行更新过程。
+                                        </p>
+                                        <p>第二，虽然调用了三次 <code>setState</code> ，但是 <code>count</code> 的值还是为
+                                            1。因为多次调用会合并为一次，只有当更新结束后 <code>state</code> 才会改变，三次调用等同于如下代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-built_in">Object</span>.assign(
+  {},
+  { <span class="hljs-attr">count</span>: <span class="hljs-keyword">this</span>.state.count + <span
+                                                    class="hljs-number">1</span> },
+  { <span class="hljs-attr">count</span>: <span class="hljs-keyword">this</span>.state.count + <span
+                                                    class="hljs-number">1</span> },
+  { <span class="hljs-attr">count</span>: <span class="hljs-keyword">this</span>.state.count + <span
+                                                    class="hljs-number">1</span> },
+)w
+</code></pre>
+                                        <p>当然你也可以通过以下方式来实现调用三次 <code>setState</code> 使得 <code>count</code> 为 3</p>
+                                        <pre><code class="hljs js" lang="js">handle() {
+  <span class="hljs-keyword">this</span>.setState(<span class="hljs-function">(<span
+                                                    class="hljs-params">prevState</span>) =&gt;</span> ({ <span
+                                                    class="hljs-attr">count</span>: prevState.count + <span
+                                                    class="hljs-number">1</span> }))
+  <span class="hljs-keyword">this</span>.setState(<span class="hljs-function">(<span
+                                                    class="hljs-params">prevState</span>) =&gt;</span> ({ <span
+                                                    class="hljs-attr">count</span>: prevState.count + <span
+                                                    class="hljs-number">1</span> }))
+  <span class="hljs-keyword">this</span>.setState(<span class="hljs-function">(<span
+                                                    class="hljs-params">prevState</span>) =&gt;</span> ({ <span
+                                                    class="hljs-attr">count</span>: prevState.count + <span
+                                                    class="hljs-number">1</span> }))
+}
+</code></pre>
+                                        <p>如果你想在每次调用 <code>setState</code> 后获得正确的 <code>state</code> ，可以通过如下代码实现</p>
+                                        <pre><code class="hljs js" lang="js">handle() {
+    <span class="hljs-keyword">this</span>.setState(<span class="hljs-function">(<span
+                                                    class="hljs-params">prevState</span>) =&gt;</span> ({ <span
+                                                    class="hljs-attr">count</span>: prevState.count + <span
+                                                    class="hljs-number">1</span> }), () =&gt; {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.state)
+    })
+}
+</code></pre>
+                                        <h2 class="heading" data-id="heading-3">性能优化</h2>
+                                        <p>这小节内容集中在组件的性能优化上，这一方面的性能优化也基本集中在 <code>shouldComponentUpdate</code>
+                                            这个钩子函数上做文章。</p>
+                                        <blockquote class="warning"><p>PS：下文中的 state 指代了 state 及 props
+                                        </p></blockquote>
+                                        <p>在 <code>shouldComponentUpdate</code>
+                                            函数中我们可以通过返回布尔值来决定当前组件是否需要更新。这层代码逻辑可以是简单地浅比较一下当前 <code>state</code> 和之前的
+                                            <code>state</code> 是否相同，也可以是判断某个值更新了才触发组件更新。一般来说不推荐完整地对比当前
+                                            <code>state</code> 和之前的 <code>state</code>
+                                            是否相同，因为组件更新触发可能会很频繁，这样的完整对比性能开销会有点大，可能会造成得不偿失的情况。</p>
+                                        <p>当然如果真的想完整对比当前 <code>state</code> 和之前的 <code>state</code>
+                                            是否相同，并且不影响性能也是行得通的，可以通过 immutable 或者 immer
+                                            这些库来生成不可变对象。这类库对于操作大规模的数据来说会提升不错的性能，并且一旦改变数据就会生成一个新的对象，对比前后
+                                            <code>state</code> 是否一致也就方便多了，同时也很推荐阅读下 immer 的源码实现。</p>
+                                        <p>另外如果只是单纯的浅比较一下，可以直接使用 <code>PureComponent</code>，底层就是实现了浅比较
+                                            <code>state</code>。</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-class"><span
+                                                class="hljs-keyword">class</span> <span
+                                                class="hljs-title">Test</span> <span class="hljs-keyword">extends</span> <span
+                                                class="hljs-title">React</span>.<span
+                                                class="hljs-title">PureComponent</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        PureComponent
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+  }
+}
+</code></pre>
+                                        <p>这时候你可能会考虑到函数组件就不能使用这种方式了，如果你使用 16.6.0 之后的版本的话，可以使用 <code>React.memo</code>
+                                            来实现相同的功能。</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">const</span> Test = React.memo(<span
+                                                class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        PureComponent
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+))
+</code></pre>
+                                        <p>通过这种方式我们就可以既实现了 <code>shouldComponentUpdate</code> 的浅比较，又能够使用函数组件。</p>
+                                        <h2 class="heading" data-id="heading-4">通信</h2>
+                                        <p>其实 React 中的组件通信基本和 Vue 中的一致。同样也分为以下三种情况：</p>
+                                        <ul>
+                                            <li>父子组件通信</li>
+                                            <li>兄弟组件通信</li>
+                                            <li>跨多层级组件通信</li>
+                                            <li>任意组件</li>
+                                        </ul>
+                                        <h3 class="heading" data-id="heading-5">父子通信</h3>
+                                        <p>父组件通过 <code>props</code> 传递数据给子组件，子组件通过调用父组件传来的函数传递数据给父组件，这两种方式是最常用的父子通信实现办法。
+                                        </p>
+                                        <p>这种父子通信方式也就是典型的单向数据流，父组件通过 <code>props</code> 传递数据，子组件不能直接修改
+                                            <code>props</code>， 而是必须通过调用父组件函数的方式告知父组件修改数据。</p>
+                                        <h3 class="heading" data-id="heading-6">兄弟组件通信</h3>
+                                        <p>
+                                            对于这种情况可以通过共同的父组件来管理状态和事件函数。比如说其中一个兄弟组件调用父组件传递过来的事件函数修改父组件中的状态，然后父组件将状态传递给另一个兄弟组件。</p>
+                                        <h3 class="heading" data-id="heading-7">跨多层次组件通信</h3>
+                                        <p>如果你使用 16.3 以上版本的话，对于这种情况可以使用 Context API。</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-comment">// 创建 Context，可以在开始就传入值</span>
+<span class="hljs-keyword">const</span> StateContext = React.createContext()
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> <span
+        class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span
+        class="hljs-title">Component</span> </span>{
+  render () {
+    <span class="hljs-keyword">return</span> (
+      <span class="hljs-comment">// value 就是传入 Context 中的值</span>
+      &lt;StateContext.Provider value=<span class="hljs-string">'yck'</span>&gt;
+        &lt;Child /&gt;
+      &lt;/StateContext.Provider&gt;
+    )
+  }
+}
+class Child extends React.Component {
+  render () {
+    return (
+      &lt;ThemeContext.Consumer&gt;
+        // 取出值
+        {context =&gt; (
+          name is { context }
+        )}
+      &lt;/ThemeContext.Consumer&gt;
+    );
+  }
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-8">任意组件</h3>
+                                        <p>这种方式可以通过 Redux 或者 Event Bus 解决，另外如果你不怕麻烦的话，可以使用这种方式解决上述所有的通信情况</p>
+                                        <h2 class="heading" data-id="heading-9">小结</h2>
+                                        <p>总的来说这一章节的内容更多的偏向于 React 的基础，另外 React 的面试题还会经常考到 Virtual DOM
+                                            中的内容，所以这块内容大家也需要好好准备。</p>
+                                        <p>下一章节我们将来了解一些 React 的进阶知识内容。</p>
+                                    </div>
+                                    <section data-v-05bbf43a="" class="book-comments">
+                                        <div data-v-05bbf43a="" class="box-title">留言</div>
+                                        <div data-v-05bbf43a="" class="comment-box">
+                                            <div data-v-81313b1e="" data-v-05bbf43a="" class="comment-form comment-form"
+                                                 id="comment">
+                                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-81313b1e=""
+                                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                                     class="lazy avatar avatar loaded"
+                                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                                <textarea data-v-81313b1e="" placeholder="评论将在后台进行审核，审核通过后对所有人可见"
+                                                          class="content-input"
+                                                          style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea>
+                                                <div data-v-81313b1e="" class="action-box" style="display: none;">
+                                                    <div data-v-680eb36d="" data-v-81313b1e=""
+                                                         class="image-uploader image-uploader" style="display: none;">
+                                                        <input data-v-680eb36d="" type="file" class="input">
+                                                        <button data-v-680eb36d="" class="upload-btn"><i
+                                                                data-v-680eb36d="" class="icon ion-image"></i><span
+                                                                data-v-680eb36d="">上传图片</span></button>
+                                                    </div>
+                                                    <div data-v-81313b1e="" class="submit-box"><span data-v-81313b1e=""
+                                                                                                     class="submit-text">Ctrl or ⌘ + Enter</span>
+                                                        <button data-v-81313b1e="" class="submit-btn">评论</button>
+                                                    </div>
+                                                </div><!----></div>
+                                        </div>
+                                        <ul data-v-32e5a55b="" data-v-05bbf43a="" st:block="commentList"
+                                            class="comment-list comment-list"><!----></ul>
+                                    </section>
+                                </div>
+                            </div><!----><!----></div>
+                    </div>
+                    <div data-v-a9263a68="" data-v-097468bb="" class="book-handle book-direction">
+                        <div data-v-a9263a68="" class="step-btn step-btn--prev"><img data-v-a9263a68=""
+                                                                                     src="./22-React 常考基础知识点_files/prev.87ad47e.svg">
+                        </div>
+                        <div data-v-a9263a68="" class="step-btn step-btn--next"><img data-v-a9263a68=""
+                                                                                     src="./22-React 常考基础知识点_files/next.54d8a35.svg">
+                        </div><!----><!----></div><!----></div>
+            </div>
+        </section><!----><!----><!---->
+        <div data-v-1b0b9cb8="" data-v-097468bb="" class="image-viewer-box"><!----></div>
+    </div><!----></div>
+
+
+<script type="text/javascript" src="./22-React 常考基础知识点_files/runtime.5902a8b1cc2b7567f479.js.下载"></script>
+<script type="text/javascript" src="./22-React 常考基础知识点_files/0.e205fcdd4d4b6767f462.js.下载"></script>
+<script type="text/javascript" src="./22-React 常考基础知识点_files/1.cbb1f8f5dcdee0086c6a.js.下载"></script>
+</body>
+</html>

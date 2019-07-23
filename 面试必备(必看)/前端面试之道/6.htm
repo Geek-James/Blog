@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5be1a7e451882516bc477978 -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="google-site-verification" content="cCHsgG9ktuCTgWgYfqCJql8AeR4gAne4DTZqztPoirE">
+    <meta name="apple-itunes-app" content="app-id=987739104">
+    <meta name="baidu-site-verification" content="qiK2a1kcFc">
+    <meta name="360-site-verification" content="4c3c7d57d59f0e1a308462fbc7fd7e51">
+    <meta name="sogou_site_verification" content="c49WUDZczQ">
+    <style>body {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    a, button, input {
+        margin: 1rem 1.5rem;
+    }
+
+    img {
+        width: 0;
+        height: 0;
+    }
+
+    #juejin {
+        overflow-x: hidden;
+    }</style>
+    <title data-vue-meta="true">前端面试之道 - yck - 掘金小册</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://b-gold-cdn.xitu.io/favicons/v2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-16x16.png">
+    <link rel="manifest" href="https://b-gold-cdn.xitu.io/favicons/v2/manifest.json">
+    <link rel="mask-icon" href="https://b-gold-cdn.xitu.io/favicons/v2/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon.ico">
+    <meta name="msapplication-config" content="https://b-gold-cdn.xitu.io/favicons/v2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" title="掘金" href="https://b-gold-cdn.xitu.io/conf/search.xml"
+          type="application/opensearchdescription+xml">
+    <link rel="stylesheet" href="./6-手写 Promise_files/ionicons.min.css">
+    <link rel="stylesheet" href="./6-手写 Promise_files/iconfont.css">
+    <link href="./6-手写 Promise_files/0.20e96f0e16539d696fbd.css" rel="stylesheet">
+    <script src="tools.js"></script>
+    <script async="" src="./6-手写 Promise_files/hm.js.下载"></script>
+    <script async="" src="./6-手写 Promise_files/analytics.js.下载"></script>
+    <script type="text/javascript" async="" src="./6-手写 Promise_files/vds.js.下载"></script>
+    <script charset="utf-8" src="./6-手写 Promise_files/13.46a6fc9d409a46c2798c.js.下载"></script>
+    <meta data-vmid="keywords" name="keywords"
+          content="掘金,稀土,Vue.js,微信小程序,Kotlin,RxJava,React Native,Wireshark,敏捷开发,Bootstrap,OKHttp,正则表达式,WebGL,Webpack,Docker,MVVM"
+          data-vue-meta="true">
+    <meta data-vmid="description" name="description"
+          content="掘金是一个帮助开发者成长的社区，是给开发者用的 Hacker News，给设计师用的 Designer News，和给产品经理用的 Medium。掘金的技术文章由稀土上聚集的技术大牛和极客共同编辑为你筛选出最优质的干货，其中包括：Android、iOS、前端、后端等方面的内容。用户每天都可以在这里找到技术世界的头条内容。与此同时，掘金内还有沸点、掘金翻译计划、线下活动、专栏文章等内容。即使你是 GitHub、StackOverflow、开源中国的用户，我们相信你也可以在这里有所收获。"
+          data-vue-meta="true">
+</head>
+<body>
+<div id="juejin" data-v-514f306c="">
+    <div class="global-component-box" data-v-514f306c=""><!---->
+        <div data-v-71cabb60="" data-v-514f306c="" class="alert-list alert-list"></div><!----><!----><!---->
+        <div class="emoji-barrage" data-v-e5f49d52="" data-v-514f306c=""><!----></div>
+        <div class="book-new-user-award-popup" style="display:none;" data-v-71b0e7b2="" data-v-514f306c="">
+            <div class="content-box" style="display:;" data-v-71b0e7b2="">
+                <div class="close ion-close-round" data-v-71b0e7b2=""></div>
+                <div class="header" data-v-71b0e7b2="">
+                    <div class="icon" data-v-71b0e7b2=""><img src="./6-手写 Promise_files/icon.a87e5ae.svg"
+                                                              data-v-71b0e7b2=""></div>
+                    <div class="txt" data-v-71b0e7b2="">新人专享好礼</div>
+                </div>
+                <div class="desc" data-v-71b0e7b2="">凡未购买过小册的用户，均可领取三张 5 折新人专享券，购买小册时自动使用专享券，最高可节省 45 元。</div>
+                <div class="tickets" data-v-71b0e7b2="">
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="remark" data-v-71b0e7b2="">注：专享券的使用期限在领券的七天内。</div>
+                <div class="submit-btn" data-v-71b0e7b2="">一键领取</div>
+            </div>
+            <div class="model success" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取成功</div>
+                <div class="content-text" data-v-71b0e7b2="">购买小册时自动使用专享券</div>
+                <div class="btn-success-footer" data-v-71b0e7b2="">
+                    <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+                    <div class="btn-ok btn-link" data-v-71b0e7b2="">前往小册首页</div>
+                </div>
+            </div>
+            <div class="model fail" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取失败</div>
+                <div class="content-text" data-v-71b0e7b2="">本活动仅适用于小册新用户</div>
+                <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+            </div>
+        </div><!----></div><!---->
+    <div data-v-097468bb="" data-v-514f306c="" class="book-read-view">
+        <section data-v-097468bb="" class="book-section">
+            <div data-v-097468bb="" class="book-summary">
+                <div data-v-097468bb="" class="book-summary-masker"></div>
+                <div data-v-097468bb="" class="book-summary-inner">
+                    <div data-v-097468bb="" class="book-summary__header"><a data-v-097468bb=""
+                                                                            href="https://juejin.im/books" target=""
+                                                                            rel="" class="logo"><img data-v-097468bb=""
+                                                                                                     src="./6-手写 Promise_files/logo.a7995ad.svg"></a>
+                        <div data-v-097468bb="" class="label">小册</div><!----></div><!---->
+                    <div data-v-d0eb2184="" data-v-097468bb="" class="book-directory book-directory bought"><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">1</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">小册食用指南</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">2</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（一）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">3</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（二）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">4</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">ES6 知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">5</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 异步编程及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section route-active section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">6</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">手写 Promise</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">7</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Event Loop</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">8</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 进阶知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">9</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 思考题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">10</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">DevTools Tips</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">11</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器基础知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">12</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器缓存机制</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">13</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器渲染原理</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">14</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">安全防范知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">15</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">从 V8 中看 JS 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">16</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">性能优化琐碎事</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">17</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Webpack 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">18</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">实现小型打包工具</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">19</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 和 Vue 两大框架之间的相爱相杀</div><!----><!----></div>
+                        <!----></a><a data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">20</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">21</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">22</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">23</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">24</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">监控</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">25</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">UDP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">26</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">TCP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">27</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP 及 TLS</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">28</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP/2 及 HTTP/3</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">29</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">输入 URL 到页面渲染的整个流程</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">30</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">设计模式</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">31</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常见数据结构</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">32</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常考算法题解析</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">33</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">CSS 常考面试题资料</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">34</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">如何写好一封简历</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">35</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">面试常用技巧</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">36</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">前方的路，让我们结伴同行</div><!----><!----></div><!----></a>
+                    </div>
+                    <div data-v-097468bb="" class="book-summary__footer">
+                        <div data-v-097468bb="" class="qr-icon"><img data-v-097468bb=""
+                                                                     src="./6-手写 Promise_files/qr-icon.881015a.svg">
+                        </div>
+                        <div data-v-097468bb="" class="qr-tips"><span data-v-097468bb="" class="ion-close"></span>
+                            <div data-v-097468bb="" class="title"><span data-v-097468bb="">关注公众号</span><span
+                                    data-v-097468bb="">领取优惠码</span></div>
+                            <div data-v-097468bb="" class="qr-img"><img data-v-097468bb=""
+                                                                        src="./6-手写 Promise_files/wx-qr.13d8b4d.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-097468bb="" class="book-content">
+                <div data-v-097468bb="" class="book-content-inner">
+                    <div data-v-097468bb="" class="book-content__header visible">
+                        <div data-v-097468bb="" class="switch"><img data-v-097468bb=""
+                                                                    src="./6-手写 Promise_files/icon.3e69d5a.svg"></div>
+                        <div data-v-097468bb="" class="menu"><img data-v-097468bb=""
+                                                                  src="./6-手写 Promise_files/menu.74b9add.svg"></div>
+                        <div data-v-097468bb="" class="title"><a data-v-097468bb=""
+                                                                 href="https://juejin.im/book/5bdc715fe51d454e755f75ef"
+                                                                 target="" rel="">前端面试之道</a></div>
+                        <div data-v-629272fe="" data-v-097468bb="" class="user-auth user-auth">
+                            <div data-v-629272fe="" class="nav-item menu">
+                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-629272fe=""
+                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                     class="lazy avatar avatar loaded"
+                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                <div data-v-629272fe="" class="nav-menu user-dropdown-list" style="display: none;">
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-write"></i><span
+                                                data-v-629272fe="">写文章</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-draft"></i><span
+                                                data-v-629272fe="">草稿</span></a></li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a"><i
+                                                data-v-629272fe="" class="fengwei fw-person"></i><span
+                                                data-v-629272fe="">我的主页</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/likes"><i
+                                                data-v-629272fe="" class="fengwei fw-like"></i><span data-v-629272fe="">我喜欢的</span></a>
+                                        </li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/collections"><i
+                                                data-v-629272fe="" class="fengwei fw-collection"></i><span
+                                                data-v-629272fe="">我的收藏集</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/books?type=bought"><i
+                                                data-v-629272fe="" class="fengwei fw-bought"></i><span
+                                                data-v-629272fe="">已购</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/subscribe"><i
+                                                data-v-629272fe="" class="fengwei fw-tag"></i><span data-v-629272fe="">标签管理</span></a>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/settings"><i
+                                                data-v-629272fe="" class="fengwei fw-setting"></i><span
+                                                data-v-629272fe="">设置</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item more"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-info"></i><span data-v-629272fe="">关于</span><i
+                                                data-v-629272fe="" class="ion-chevron-right more-icon"></i></a>
+                                            <div data-v-629272fe="" class="nav-menu more-dropdown-list">
+                                                <ul data-v-629272fe="" class="nav-menu-item-group">
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/app"
+                                                                                                    target="_blank">下载应用</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/about"
+                                                                                                    target="_blank">关于</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://xitu.io/jobs"
+                                                                                                    target="_blank">加入我们</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://github.com/xitu/gold-miner"
+                                                                                                    rel="nofollow noopener noreferrer"
+                                                                                                    target="_blank">翻译计划</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://bd.juejin.im/?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                                                                    target="_blank">合作伙伴</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-logout"></i><span
+                                                data-v-629272fe="">登出</span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!----></div><!----></div>
+                    <div data-v-097468bb="" class="book-body transition--next">
+                        <div data-v-5602b343="" data-v-097468bb="" class="section-view book-section-content">
+                            <div data-v-05bbf43a="" data-v-5602b343="" class="section-content">
+                                <div data-v-05bbf43a="" class="section-page book-section-view">
+                                    <div data-v-05bbf43a="" class="entry-content article-content"><h1 class="heading"
+                                                                                                      data-id="heading-0">
+                                        手写 Promise</h1>
+                                        <p>在上一章节中我们了解了 <code>Promise</code> 的一些易错点，在这一章节中，我们会通过手写一个符合 Promise/A+ 规范的
+                                            <code>Promise</code> 来深入理解它，并且手写 <code>Promise</code>
+                                            也是一道大厂常考题，在进入正题之前，推荐各位阅读一下 <a target="_blank"
+                                                                          href="https://link.juejin.im/?target=http%3A%2F%2Fwww.ituring.com.cn%2Farticle%2F66566"
+                                                                          rel="nofollow noopener noreferrer">Promise/A+
+                                                规范</a>，这样才能更好地理解这个章节的代码。</p>
+                                        <h2 class="heading" data-id="heading-1">实现一个简易版 Promise</h2>
+                                        <p>在完成符合 Promise/A+ 规范的代码之前，我们可以先来实现一个简易版 <code>Promise</code>，因为在面试中，如果你能实现出一个简易版的
+                                            <code>Promise</code> 基本可以过关了。</p>
+                                        <p>那么我们先来搭建构建函数的大体框架</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">const</span> PENDING = <span
+                                                class="hljs-string">'pending'</span>
+<span class="hljs-keyword">const</span> RESOLVED = <span class="hljs-string">'resolved'</span>
+<span class="hljs-keyword">const</span> REJECTED = <span class="hljs-string">'rejected'</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyPromise</span>(<span
+        class="hljs-params">fn</span>) </span>{
+  <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>
+  that.state = PENDING
+  that.value = <span class="hljs-literal">null</span>
+  that.resolvedCallbacks = []
+  that.rejectedCallbacks = []
+  <span class="hljs-comment">// 待完善 resolve 和 reject 函数</span>
+  <span class="hljs-comment">// 待完善执行 fn 函数</span>
+}
+</code></pre>
+                                        <ul>
+                                            <li>首先我们创建了三个常量用于表示状态，对于经常使用的一些值都应该通过常量来管理，便于开发及后期维护</li>
+                                            <li>在函数体内部首先创建了常量 <code>that</code>，因为代码可能会异步执行，用于获取正确的 <code>this</code> 对象
+                                            </li>
+                                            <li>一开始 <code>Promise</code> 的状态应该是 <code>pending</code></li>
+                                            <li><code>value</code> 变量用于保存 <code>resolve</code> 或者 <code>reject</code>
+                                                中传入的值
+                                            </li>
+                                            <li><code>resolvedCallbacks</code> 和 <code>rejectedCallbacks</code> 用于保存
+                                                <code>then</code> 中的回调，因为当执行完 <code>Promise</code> 时状态可能还是等待中，这时候应该把
+                                                <code>then</code> 中的回调保存起来用于状态改变时使用
+                                            </li>
+                                        </ul>
+                                        <p>接下来我们来完善 <code>resolve</code> 和 <code>reject</code> 函数，添加在
+                                            <code>MyPromise</code> 函数体内部</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">resolve</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">if</span> (that.state === PENDING) {
+    that.state = RESOLVED
+    that.value = value
+    that.resolvedCallbacks.map(<span class="hljs-function"><span class="hljs-params">cb</span> =&gt;</span> cb(that.value))
+  }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reject</span>(<span
+        class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">if</span> (that.state === PENDING) {
+    that.state = REJECTED
+    that.value = value
+    that.rejectedCallbacks.map(<span class="hljs-function"><span class="hljs-params">cb</span> =&gt;</span> cb(that.value))
+  }
+}
+</code></pre>
+                                        <p>这两个函数代码类似，就一起解析了</p>
+                                        <ul>
+                                            <li>首先两个函数都得判断当前状态是否为等待中，因为规范规定只有等待态才可以改变状态</li>
+                                            <li>将当前状态更改为对应状态，并且将传入的值赋值给 <code>value</code></li>
+                                            <li>遍历回调数组并执行</li>
+                                        </ul>
+                                        <p>完成以上两个函数以后，我们就该实现如何执行 <code>Promise</code> 中传入的函数了</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">try</span> {
+  fn(resolve, reject)
+} <span class="hljs-keyword">catch</span> (e) {
+  reject(e)
+}
+</code></pre>
+                                        <ul>
+                                            <li>实现很简单，执行传入的参数并且将之前两个函数当做参数传进去</li>
+                                            <li>要注意的是，可能执行函数过程中会遇到错误，需要捕获错误并且执行 <code>reject</code> 函数</li>
+                                        </ul>
+                                        <p>最后我们来实现较为复杂的 <code>then</code> 函数</p>
+                                        <pre><code class="hljs js" lang="js">MyPromise.prototype.then = <span
+                                                class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                class="hljs-params">onFulfilled, onRejected</span>) </span>{
+  <span class="hljs-keyword">const</span> that = <span class="hljs-keyword">this</span>
+  onFulfilled = <span class="hljs-keyword">typeof</span> onFulfilled === <span class="hljs-string">'function'</span> ? onFulfilled : <span
+                                                    class="hljs-function"><span
+                                                    class="hljs-params">v</span> =&gt;</span> v
+  onRejected =
+    <span class="hljs-keyword">typeof</span> onRejected === <span class="hljs-string">'function'</span>
+      ? onRejected
+      : <span class="hljs-function"><span class="hljs-params">r</span> =&gt;</span> {
+          <span class="hljs-keyword">throw</span> r
+        }
+  <span class="hljs-keyword">if</span> (that.state === PENDING) {
+    that.resolvedCallbacks.push(onFulfilled)
+    that.rejectedCallbacks.push(onRejected)
+  }
+  <span class="hljs-keyword">if</span> (that.state === RESOLVED) {
+    onFulfilled(that.value)
+  }
+  <span class="hljs-keyword">if</span> (that.state === REJECTED) {
+    onRejected(that.value)
+  }
+}
+</code></pre>
+                                        <ul>
+                                            <li>
+                                                <p>首先判断两个参数是否为函数类型，因为这两个参数是可选参数</p>
+                                            </li>
+                                            <li>
+                                                <p>当参数不是函数类型时，需要创建一个函数赋值给对应的参数，同时也实现了透传，比如如下代码</p>
+                                                <pre><code class="hljs js" lang="js"><span class="hljs-comment">// 该代码目前在简单版中会报错</span>
+<span class="hljs-comment">// 只是作为一个透传的例子</span>
+<span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-number">4</span>).then().then(<span
+                                                            class="hljs-function">(<span
+                                                            class="hljs-params">value</span>) =&gt;</span> <span
+                                                            class="hljs-built_in">console</span>.log(value))
+</code></pre>
+                                            </li>
+                                            <li>
+                                                <p>接下来就是一系列判断状态的逻辑，当状态不是等待态时，就去执行相对应的函数。如果状态是等待态的话，就往回调函数中
+                                                    <code>push</code> 函数，比如如下代码就会进入等待态的逻辑</p>
+                                                <pre><code class="hljs js" lang="js"><span
+                                                        class="hljs-keyword">new</span> MyPromise(<span
+                                                        class="hljs-function">(<span
+                                                        class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    resolve(<span class="hljs-number">1</span>)
+  }, <span class="hljs-number">0</span>)
+}).then(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(value)
+})
+</code></pre>
+                                            </li>
+                                        </ul>
+                                        <p>以上就是简单版 <code>Promise</code> 实现，接下来一小节是实现完整版 <code>Promise</code>
+                                            的解析，相信看完完整版的你，一定会对于 <code>Promise</code> 的理解更上一层楼。</p>
+                                        <h2 class="heading" data-id="heading-2">实现一个符合 Promise/A+ 规范的 Promise</h2>
+                                        <p>这小节代码需要大家配合规范阅读，因为大部分代码都是根据规范去实现的。</p>
+                                        <p>我们先来改造一下 <code>resolve</code> 和 <code>reject</code> 函数</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">resolve</span>(<span class="hljs-params">value</span>) </span>{
+  <span class="hljs-keyword">if</span> (value <span class="hljs-keyword">instanceof</span> MyPromise) {
+    <span class="hljs-keyword">return</span> value.then(resolve, reject)
+  }
+  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (that.state === PENDING) {
+      that.state = RESOLVED
+      that.value = value
+      that.resolvedCallbacks.map(<span class="hljs-function"><span class="hljs-params">cb</span> =&gt;</span> cb(that.value))
+    }
+  }, <span class="hljs-number">0</span>)
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reject</span>(<span
+        class="hljs-params">value</span>) </span>{
+  setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-keyword">if</span> (that.state === PENDING) {
+      that.state = REJECTED
+      that.value = value
+      that.rejectedCallbacks.map(<span class="hljs-function"><span class="hljs-params">cb</span> =&gt;</span> cb(that.value))
+    }
+  }, <span class="hljs-number">0</span>)
+}
+</code></pre>
+                                        <ul>
+                                            <li>对于 <code>resolve</code> 函数来说，首先需要判断传入的值是否为 <code>Promise</code> 类型</li>
+                                            <li>为了保证函数执行顺序，需要将两个函数体代码使用 <code>setTimeout</code> 包裹起来</li>
+                                        </ul>
+                                        <p>接下来继续改造 <code>then</code> 函数中的代码，首先我们需要新增一个变量 <code>promise2</code>，因为每个
+                                            <code>then</code> 函数都需要返回一个新的 <code>Promise</code>
+                                            对象，该变量用于保存新的返回对象，然后我们先来改造判断等待态的逻辑</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">if</span> (that.state === PENDING) {
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">promise2 = <span
+                                                    class="hljs-keyword">new</span> MyPromise((resolve, reject</span>) =&gt;</span> {
+    that.resolvedCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> x = onFulfilled(that.value)
+        resolutionProcedure(promise2, x, resolve, reject)
+      } <span class="hljs-keyword">catch</span> (r) {
+        reject(r)
+      }
+    })
+
+    that.rejectedCallbacks.push(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> x = onRejected(that.value)
+        resolutionProcedure(promise2, x, resolve, reject)
+      } <span class="hljs-keyword">catch</span> (r) {
+        reject(r)
+      }
+    })
+  }))
+}
+</code></pre>
+                                        <ul>
+                                            <li>首先我们返回了一个新的 <code>Promise</code> 对象，并在 <code>Promise</code> 中传入了一个函数
+                                            </li>
+                                            <li>函数的基本逻辑还是和之前一样，往回调数组中 <code>push</code> 函数</li>
+                                            <li>同样，在执行函数的过程中可能会遇到错误，所以使用了 <code>try...catch</code> 包裹</li>
+                                            <li>规范规定，执行 <code>onFulfilled</code> 或者 <code>onRejected</code> 函数时会返回一个
+                                                <code>x</code>，并且执行 <code>Promise</code> 解决过程，这是为了不同的
+                                                <code>Promise</code> 都可以兼容使用，比如 JQuery 的 <code>Promise</code> 能兼容 ES6 的
+                                                <code>Promise</code></li>
+                                        </ul>
+                                        <p>接下来我们改造判断执行态的逻辑</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">if</span> (that.state === RESOLVED) {
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">promise2 = <span
+                                                    class="hljs-keyword">new</span> MyPromise((resolve, reject</span>) =&gt;</span> {
+    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> x = onFulfilled(that.value)
+        resolutionProcedure(promise2, x, resolve, reject)
+      } <span class="hljs-keyword">catch</span> (reason) {
+        reject(reason)
+      }
+    })
+  }))
+}
+</code></pre>
+                                        <ul>
+                                            <li>其实大家可以发现这段代码和判断等待态的逻辑基本一致，无非是传入的函数的函数体需要异步执行，这也是规范规定的</li>
+                                            <li>对于判断拒绝态的逻辑这里就不一一赘述了，留给大家自己完成这个作业</li>
+                                        </ul>
+                                        <p>最后，当然也是最难的一部分，也就是实现兼容多种 <code>Promise</code> 的
+                                            <code>resolutionProcedure</code> 函数</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">resolutionProcedure</span>(<span
+                                                class="hljs-params">promise2, x, resolve, reject</span>) </span>{
+  <span class="hljs-keyword">if</span> (promise2 === x) {
+    <span class="hljs-keyword">return</span> reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">TypeError</span>(<span
+                                                    class="hljs-string">'Error'</span>))
+  }
+}
+</code></pre>
+                                        <p>首先规范规定了 <code>x</code> 不能与 <code>promise2</code> 相等，这样会发生循环引用的问题，比如如下代码</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-keyword">let</span> p = <span
+                                                class="hljs-keyword">new</span> MyPromise(<span
+                                                class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  resolve(<span class="hljs-number">1</span>)
+})
+<span class="hljs-keyword">let</span> p1 = p.then(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+  <span class="hljs-keyword">return</span> p1
+})
+</code></pre>
+                                        <p>然后需要判断 <code>x</code> 的类型</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-keyword">if</span> (x <span
+                                                class="hljs-keyword">instanceof</span> MyPromise) {
+    x.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value</span>) </span>{
+        resolutionProcedure(promise2, value, resolve, reject)
+    }, reject)
+}
+</code></pre>
+                                        <p>这里的代码是完全按照规范实现的。如果 <code>x</code> 为 <code>Promise</code> 的话，需要判断以下几个情况：</p>
+                                        <ol>
+                                            <li>如果 <code>x</code> 处于等待态，<code>Promise</code> 需保持为等待态直至 <code>x</code>
+                                                被执行或拒绝
+                                            </li>
+                                            <li>如果 <code>x</code> 处于其他状态，则用相同的值处理 <code>Promise</code></li>
+                                        </ol>
+                                        <p>当然以上这些是规范需要我们判断的情况，实际上我们不判断状态也是可行的。</p>
+                                        <p>接下来我们继续按照规范来实现剩余的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">let</span> called = <span
+                                                class="hljs-literal">false</span>
+<span class="hljs-keyword">if</span> (x !== <span class="hljs-literal">null</span> &amp;&amp; (<span
+                                                    class="hljs-keyword">typeof</span> x === <span class="hljs-string">'object'</span> || <span
+                                                    class="hljs-keyword">typeof</span> x === <span class="hljs-string">'function'</span>)) {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">let</span> then = x.then
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> then === <span class="hljs-string">'function'</span>) {
+      then.call(
+        x,
+        y =&gt; {
+          <span class="hljs-keyword">if</span> (called) <span class="hljs-keyword">return</span>
+          called = <span class="hljs-literal">true</span>
+          resolutionProcedure(promise2, y, resolve, reject)
+        },
+        e =&gt; {
+          <span class="hljs-keyword">if</span> (called) <span class="hljs-keyword">return</span>
+          called = <span class="hljs-literal">true</span>
+          reject(e)
+        }
+      )
+    } <span class="hljs-keyword">else</span> {
+      resolve(x)
+    }
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-keyword">if</span> (called) <span class="hljs-keyword">return</span>
+    called = <span class="hljs-literal">true</span>
+    reject(e)
+  }
+} <span class="hljs-keyword">else</span> {
+  resolve(x)
+}
+</code></pre>
+                                        <ul>
+                                            <li>首先创建一个变量 <code>called</code> 用于判断是否已经调用过函数</li>
+                                            <li>然后判断 <code>x</code> 是否为对象或者函数，如果都不是的话，将 <code>x</code> 传入
+                                                <code>resolve</code> 中
+                                            </li>
+                                            <li>如果 <code>x</code> 是对象或者函数的话，先把 <code>x.then</code> 赋值给 <code>then</code>，然后判断
+                                                <code>then</code> 的类型，如果不是函数类型的话，就将 <code>x</code> 传入
+                                                <code>resolve</code> 中
+                                            </li>
+                                            <li>如果 <code>then</code> 是函数类型的话，就将 <code>x</code> 作为函数的作用域
+                                                <code>this</code> 调用之，并且传递两个回调函数作为参数，第一个参数叫做 <code>resolvePromise</code>
+                                                ，第二个参数叫做 <code>rejectPromise</code>，两个回调函数都需要判断是否已经执行过函数，然后进行相应的逻辑
+                                            </li>
+                                            <li>以上代码在执行的过程中如果抛错了，将错误传入 <code>reject</code> 函数中</li>
+                                        </ul>
+                                        <p>以上就是符合 Promise/A+ 规范的实现了，如果你对于这部分代码尚有疑问，欢迎在评论中与我互动。</p>
+                                        <h2 class="heading" data-id="heading-3">小结</h2>
+                                        <p>这一章节我们分别实现了简单版和符合 Promise/A+ 规范的 <code>Promise</code>，前者已经足够应付大部分面试的手写题目，毕竟写出一个符合规范的
+                                            <code>Promise</code> 在面试中不大现实。后者能让你更加深入地理解 <code>Promise</code>
+                                            的运行原理，做技术的深挖者。</p>
+                                    </div>
+                                    <section data-v-05bbf43a="" class="book-comments">
+                                        <div data-v-05bbf43a="" class="box-title">留言</div>
+                                        <div data-v-05bbf43a="" class="comment-box">
+                                            <div data-v-81313b1e="" data-v-05bbf43a="" class="comment-form comment-form"
+                                                 id="comment">
+                                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-81313b1e=""
+                                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                                     class="lazy avatar avatar loaded"
+                                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                                <textarea data-v-81313b1e="" placeholder="评论将在后台进行审核，审核通过后对所有人可见"
+                                                          class="content-input"
+                                                          style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea>
+                                                <div data-v-81313b1e="" class="action-box" style="display: none;">
+                                                    <div data-v-680eb36d="" data-v-81313b1e=""
+                                                         class="image-uploader image-uploader" style="display: none;">
+                                                        <input data-v-680eb36d="" type="file" class="input">
+                                                        <button data-v-680eb36d="" class="upload-btn"><i
+                                                                data-v-680eb36d="" class="icon ion-image"></i><span
+                                                                data-v-680eb36d="">上传图片</span></button>
+                                                    </div>
+                                                    <div data-v-81313b1e="" class="submit-box"><span data-v-81313b1e=""
+                                                                                                     class="submit-text">Ctrl or ⌘ + Enter</span>
+                                                        <button data-v-81313b1e="" class="submit-btn">评论</button>
+                                                    </div>
+                                                </div><!----></div>
+                                        </div>
+                                        <ul data-v-32e5a55b="" data-v-05bbf43a="" st:block="commentList"
+                                            class="comment-list comment-list"><!----></ul>
+                                    </section>
+                                </div>
+                            </div><!----><!----></div>
+                    </div>
+                    <div data-v-a9263a68="" data-v-097468bb="" class="book-handle book-direction">
+                        <div data-v-a9263a68="" class="step-btn step-btn--prev"><img data-v-a9263a68=""
+                                                                                     src="./6-手写 Promise_files/prev.87ad47e.svg">
+                        </div>
+                        <div data-v-a9263a68="" class="step-btn step-btn--next"><img data-v-a9263a68=""
+                                                                                     src="./6-手写 Promise_files/next.54d8a35.svg">
+                        </div><!----><!----></div><!----></div>
+            </div>
+        </section><!----><!----><!---->
+        <div data-v-1b0b9cb8="" data-v-097468bb="" class="image-viewer-box"><!----></div>
+    </div><!----></div>
+
+
+<script type="text/javascript" src="./6-手写 Promise_files/runtime.5902a8b1cc2b7567f479.js.下载"></script>
+<script type="text/javascript" src="./6-手写 Promise_files/0.e205fcdd4d4b6767f462.js.下载"></script>
+<script type="text/javascript" src="./6-手写 Promise_files/1.cbb1f8f5dcdee0086c6a.js.下载"></script>
+</body>
+</html>

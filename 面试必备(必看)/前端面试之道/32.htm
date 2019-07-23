@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://juejin.im/book/5bdc715fe51d454e755f75ef/section/5bdc724af265da610f632e41 -->
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+    <meta name="google-site-verification" content="cCHsgG9ktuCTgWgYfqCJql8AeR4gAne4DTZqztPoirE">
+    <meta name="apple-itunes-app" content="app-id=987739104">
+    <meta name="baidu-site-verification" content="qiK2a1kcFc">
+    <meta name="360-site-verification" content="4c3c7d57d59f0e1a308462fbc7fd7e51">
+    <meta name="sogou_site_verification" content="c49WUDZczQ">
+    <style>body {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    a, button, input {
+        margin: 1rem 1.5rem;
+    }
+
+    img {
+        width: 0;
+        height: 0;
+    }
+
+    #juejin {
+        overflow-x: hidden;
+    }</style>
+    <title data-vue-meta="true">前端面试之道 - yck - 掘金小册</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://b-gold-cdn.xitu.io/favicons/v2/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon-16x16.png">
+    <link rel="manifest" href="https://b-gold-cdn.xitu.io/favicons/v2/manifest.json">
+    <link rel="mask-icon" href="https://b-gold-cdn.xitu.io/favicons/v2/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://b-gold-cdn.xitu.io/favicons/v2/favicon.ico">
+    <meta name="msapplication-config" content="https://b-gold-cdn.xitu.io/favicons/v2/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" title="掘金" href="https://b-gold-cdn.xitu.io/conf/search.xml"
+          type="application/opensearchdescription+xml">
+    <link rel="stylesheet" href="./32-常考算法题解析_files/ionicons.min.css">
+    <link rel="stylesheet" href="./32-常考算法题解析_files/iconfont.css">
+    <link href="./32-常考算法题解析_files/0.20e96f0e16539d696fbd.css" rel="stylesheet">
+    <script src="tools.js"></script>
+    <script async="" src="./32-常考算法题解析_files/hm.js.下载"></script>
+    <script async="" src="./32-常考算法题解析_files/analytics.js.下载"></script>
+    <script type="text/javascript" async="" src="./32-常考算法题解析_files/vds.js.下载"></script>
+    <script charset="utf-8" src="./32-常考算法题解析_files/13.46a6fc9d409a46c2798c.js.下载"></script>
+    <meta data-vmid="keywords" name="keywords"
+          content="掘金,稀土,Vue.js,微信小程序,Kotlin,RxJava,React Native,Wireshark,敏捷开发,Bootstrap,OKHttp,正则表达式,WebGL,Webpack,Docker,MVVM"
+          data-vue-meta="true">
+    <meta data-vmid="description" name="description"
+          content="掘金是一个帮助开发者成长的社区，是给开发者用的 Hacker News，给设计师用的 Designer News，和给产品经理用的 Medium。掘金的技术文章由稀土上聚集的技术大牛和极客共同编辑为你筛选出最优质的干货，其中包括：Android、iOS、前端、后端等方面的内容。用户每天都可以在这里找到技术世界的头条内容。与此同时，掘金内还有沸点、掘金翻译计划、线下活动、专栏文章等内容。即使你是 GitHub、StackOverflow、开源中国的用户，我们相信你也可以在这里有所收获。"
+          data-vue-meta="true">
+</head>
+<body>
+<div id="juejin" data-v-514f306c="">
+    <div class="global-component-box" data-v-514f306c=""><!---->
+        <div data-v-71cabb60="" data-v-514f306c="" class="alert-list alert-list"></div><!----><!----><!---->
+        <div class="emoji-barrage" data-v-e5f49d52="" data-v-514f306c=""><!----></div>
+        <div class="book-new-user-award-popup" style="display:none;" data-v-71b0e7b2="" data-v-514f306c="">
+            <div class="content-box" style="display:;" data-v-71b0e7b2="">
+                <div class="close ion-close-round" data-v-71b0e7b2=""></div>
+                <div class="header" data-v-71b0e7b2="">
+                    <div class="icon" data-v-71b0e7b2=""><img src="./32-常考算法题解析_files/icon.a87e5ae.svg"
+                                                              data-v-71b0e7b2=""></div>
+                    <div class="txt" data-v-71b0e7b2="">新人专享好礼</div>
+                </div>
+                <div class="desc" data-v-71b0e7b2="">凡未购买过小册的用户，均可领取三张 5 折新人专享券，购买小册时自动使用专享券，最高可节省 45 元。</div>
+                <div class="tickets" data-v-71b0e7b2="">
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                    <div class="ticket" data-v-71b0e7b2="">
+                        <div class="ticket__inner" data-v-71b0e7b2="">
+                            <div class="enjoy" data-v-71b0e7b2=""><span class="new-title"
+                                                                        data-v-71b0e7b2="">小册新人 5 折券</span></div>
+                            <div class="sale" data-v-71b0e7b2="">最高可省 15 元</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="remark" data-v-71b0e7b2="">注：专享券的使用期限在领券的七天内。</div>
+                <div class="submit-btn" data-v-71b0e7b2="">一键领取</div>
+            </div>
+            <div class="model success" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取成功</div>
+                <div class="content-text" data-v-71b0e7b2="">购买小册时自动使用专享券</div>
+                <div class="btn-success-footer" data-v-71b0e7b2="">
+                    <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+                    <div class="btn-ok btn-link" data-v-71b0e7b2="">前往小册首页</div>
+                </div>
+            </div>
+            <div class="model fail" style="display:none;" data-v-71b0e7b2="">
+                <div class="heading" data-v-71b0e7b2="">领取失败</div>
+                <div class="content-text" data-v-71b0e7b2="">本活动仅适用于小册新用户</div>
+                <div class="btn-ok" data-v-71b0e7b2="">知道了</div>
+            </div>
+        </div><!----></div><!---->
+    <div data-v-097468bb="" data-v-514f306c="" class="book-read-view">
+        <section data-v-097468bb="" class="book-section">
+            <div data-v-097468bb="" class="book-summary">
+                <div data-v-097468bb="" class="book-summary-masker"></div>
+                <div data-v-097468bb="" class="book-summary-inner">
+                    <div data-v-097468bb="" class="book-summary__header"><a data-v-097468bb=""
+                                                                            href="https://juejin.im/books" target=""
+                                                                            rel="" class="logo"><img data-v-097468bb=""
+                                                                                                     src="./32-常考算法题解析_files/logo.a7995ad.svg"></a>
+                        <div data-v-097468bb="" class="label">小册</div><!----></div><!---->
+                    <div data-v-d0eb2184="" data-v-097468bb="" class="book-directory book-directory bought"><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">1</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">小册食用指南</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">2</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（一）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">3</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 基础知识点及常考面试题（二）</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">4</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">ES6 知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">5</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 异步编程及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">6</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">手写 Promise</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">7</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Event Loop</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">8</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 进阶知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">9</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">JS 思考题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">10</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">DevTools Tips</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">11</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器基础知识点及常考面试题</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">12</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器缓存机制</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">13</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">浏览器渲染原理</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">14</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">安全防范知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">15</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">从 V8 中看 JS 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">16</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">性能优化琐碎事</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">17</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Webpack 性能优化</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">18</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">实现小型打包工具</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">19</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 和 Vue 两大框架之间的相爱相杀</div><!----><!----></div>
+                        <!----></a><a data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">20</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">21</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">Vue 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">22</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考基础知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">23</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">React 常考进阶知识点</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">24</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">监控</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">25</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">UDP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">26</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">TCP</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">27</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP 及 TLS</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">28</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">HTTP/2 及 HTTP/3</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">29</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">输入 URL 到页面渲染的整个流程</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">30</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">设计模式</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link read">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">31</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常见数据结构</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section route-active section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">32</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">常考算法题解析</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">33</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">CSS 常考面试题资料</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">34</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">如何写好一封简历</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">35</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">面试常用技巧</div><!----><!----></div><!----></a><a
+                            data-v-d0eb2184="" class="section section-link">
+                        <div data-v-d0eb2184="" class="step">
+                            <div data-v-d0eb2184="" class="step-btn">36</div>
+                        </div>
+                        <div data-v-d0eb2184="" class="center">
+                            <div data-v-d0eb2184="" class="title">前方的路，让我们结伴同行</div><!----><!----></div><!----></a>
+                    </div>
+                    <div data-v-097468bb="" class="book-summary__footer">
+                        <div data-v-097468bb="" class="qr-icon"><img data-v-097468bb=""
+                                                                     src="./32-常考算法题解析_files/qr-icon.881015a.svg"></div>
+                        <div data-v-097468bb="" class="qr-tips"><span data-v-097468bb="" class="ion-close"></span>
+                            <div data-v-097468bb="" class="title"><span data-v-097468bb="">关注公众号</span><span
+                                    data-v-097468bb="">领取优惠码</span></div>
+                            <div data-v-097468bb="" class="qr-img"><img data-v-097468bb=""
+                                                                        src="./32-常考算法题解析_files/wx-qr.13d8b4d.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-097468bb="" class="book-content">
+                <div data-v-097468bb="" class="book-content-inner">
+                    <div data-v-097468bb="" class="book-content__header">
+                        <div data-v-097468bb="" class="switch"><img data-v-097468bb=""
+                                                                    src="./32-常考算法题解析_files/icon.3e69d5a.svg"></div>
+                        <div data-v-097468bb="" class="menu"><img data-v-097468bb=""
+                                                                  src="./32-常考算法题解析_files/menu.74b9add.svg"></div>
+                        <div data-v-097468bb="" class="title"><a data-v-097468bb=""
+                                                                 href="https://juejin.im/book/5bdc715fe51d454e755f75ef"
+                                                                 target="" rel="">前端面试之道</a></div>
+                        <div data-v-629272fe="" data-v-097468bb="" class="user-auth user-auth">
+                            <div data-v-629272fe="" class="nav-item menu">
+                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-629272fe=""
+                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                     class="lazy avatar avatar loaded"
+                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                <div data-v-629272fe="" class="nav-menu user-dropdown-list" style="display: none;">
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-write"></i><span
+                                                data-v-629272fe="">写文章</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-draft"></i><span
+                                                data-v-629272fe="">草稿</span></a></li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a"><i
+                                                data-v-629272fe="" class="fengwei fw-person"></i><span
+                                                data-v-629272fe="">我的主页</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/likes"><i
+                                                data-v-629272fe="" class="fengwei fw-like"></i><span data-v-629272fe="">我喜欢的</span></a>
+                                        </li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/collections"><i
+                                                data-v-629272fe="" class="fengwei fw-collection"></i><span
+                                                data-v-629272fe="">我的收藏集</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/5c2c54ca6fb9a049cb18da5a/books?type=bought"><i
+                                                data-v-629272fe="" class="fengwei fw-bought"></i><span
+                                                data-v-629272fe="">已购</span></a></li><!---->
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/subscribe"><i
+                                                data-v-629272fe="" class="fengwei fw-tag"></i><span data-v-629272fe="">标签管理</span></a>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                        href="https://juejin.im/user/settings"><i
+                                                data-v-629272fe="" class="fengwei fw-setting"></i><span
+                                                data-v-629272fe="">设置</span></a></li>
+                                        <li data-v-629272fe="" class="nav-menu-item more"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-info"></i><span data-v-629272fe="">关于</span><i
+                                                data-v-629272fe="" class="ion-chevron-right more-icon"></i></a>
+                                            <div data-v-629272fe="" class="nav-menu more-dropdown-list">
+                                                <ul data-v-629272fe="" class="nav-menu-item-group">
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/app"
+                                                                                                    target="_blank">下载应用</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://juejin.im/about"
+                                                                                                    target="_blank">关于</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://xitu.io/jobs"
+                                                                                                    target="_blank">加入我们</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://github.com/xitu/gold-miner"
+                                                                                                    rel="nofollow noopener noreferrer"
+                                                                                                    target="_blank">翻译计划</a>
+                                                    </li>
+                                                    <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""
+                                                                                                    href="https://bd.juejin.im/?utm_campaign=bd&amp;utm_source=web&amp;utm_medium=nav"
+                                                                                                    target="_blank">合作伙伴</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul data-v-629272fe="" class="nav-menu-item-group">
+                                        <li data-v-629272fe="" class="nav-menu-item"><a data-v-629272fe=""><i
+                                                data-v-629272fe="" class="fengwei fw-logout"></i><span
+                                                data-v-629272fe="">登出</span></a></li>
+                                    </ul>
+                                </div>
+                            </div><!----></div><!----></div>
+                    <div data-v-097468bb="" class="book-body transition--next">
+                        <div data-v-5602b343="" data-v-097468bb="" class="section-view book-section-content">
+                            <div data-v-05bbf43a="" data-v-5602b343="" class="section-content">
+                                <div data-v-05bbf43a="" class="section-page book-section-view">
+                                    <div data-v-05bbf43a="" class="entry-content article-content"><h1 class="heading"
+                                                                                                      data-id="heading-0">
+                                        常考算法题解析</h1>
+                                        <p>这一章节依托于上一章节的内容，毕竟了解了数据结构我们才能写出更好的算法。</p>
+                                        <p>
+                                            对于大部分公司的面试来说，排序的内容已经足以应付了，由此为了更好的符合大众需求，排序的内容是最多的。当然如果你还想冲击更好的公司，那么整一个章节的内容都是需要掌握的。对于字节跳动这类十分看重算法的公司来说，这一章节是远远不够的，<a
+                                                target="_blank"
+                                                href="https://link.juejin.im/?target=https%3A%2F%2Fbook.douban.com%2Fsubject%2F6966465%2F"
+                                                rel="nofollow noopener noreferrer">剑指Offer</a>应该是你更好的选择。</p>
+                                        <blockquote class="warning"><p>
+                                            这一章节的内容信息量会很大，不适合在非电脑环境下阅读，请各位打开代码编辑器，一行行的敲代码，单纯阅读是学习不了算法的。
+                                        </p></blockquote>
+                                        <p>另外学习算法的时候，有一个可视化界面会相对减少点学习的难度，具体可以阅读 <a target="_blank"
+                                                                                   href="https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Falgorithm-visualizer%2Falgorithm-visualizer"
+                                                                                   rel="nofollow noopener noreferrer">algorithm-visualizer</a>
+                                            这个仓库。</p>
+                                        <h2 class="heading" data-id="heading-1">位运算</h2>
+                                        <p>在进入正题之前，我们先来学习一下位运算的内容。因为位运算在算法中很有用，速度可以比四则运算快很多。</p>
+                                        <p>在学习位运算之前应该知道十进制如何转二进制，二进制如何转十进制。这里说明下简单的计算方式</p>
+                                        <ul>
+                                            <li>十进制 <code>33</code> 可以看成是 <code>32 + 1</code> ，并且 <code>33</code>
+                                                应该是六位二进制的（因为 <code>33</code> 近似 <code>32</code>，而 <code>32</code> 是 2
+                                                的五次方，所以是六位），那么 十进制 <code>33</code> 就是 <code>100001</code> ，只要是 2
+                                                的次方，那么就是 1否则都为 0
+                                            </li>
+                                            <li>那么二进制 <code>100001</code> 同理，首位是 <code>2^5</code> ，末位是 <code>2^0</code>
+                                                ，相加得出 33
+                                            </li>
+                                        </ul>
+                                        <h3 class="heading" data-id="heading-2">左移 &lt;&lt;</h3>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-number">10</span> &lt;&lt; <span
+                                                class="hljs-number">1</span> <span
+                                                class="hljs-comment">// -&gt; 20</span>
+</code></pre>
+                                        <p>左移就是将二进制全部往左移动，<code>10</code> 在二进制中表示为 <code>1010</code> ，左移一位后变成 <code>10100</code>
+                                            ，转换为十进制也就是 20，所以基本可以把左移看成以下公式 <code>a * (2 ^ b)</code></p>
+                                        <h3 class="heading" data-id="heading-3">算数右移 &gt;&gt;</h3>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-number">10</span> &gt;&gt; <span
+                                                class="hljs-number">1</span> <span
+                                                class="hljs-comment">// -&gt; 5</span>
+</code></pre>
+                                        <p>算数右移就是将二进制全部往右移动并去除多余的右边，<code>10</code> 在二进制中表示为 <code>1010</code> ，右移一位后变成
+                                            <code>101</code> ，转换为十进制也就是 5，所以基本可以把右移看成以下公式 <code>int v = a / (2 ^
+                                                b)</code></p>
+                                        <p>右移很好用，比如可以用在二分算法中取中间值</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-number">13</span> &gt;&gt; <span
+                                                class="hljs-number">1</span> <span
+                                                class="hljs-comment">// -&gt; 6</span>
+</code></pre>
+                                        <h3 class="heading" data-id="heading-4">按位操作</h3>
+                                        <p><strong>按位与</strong></p>
+                                        <p>每一位都为 1，结果才为 1</p>
+                                        <pre><code class="hljs js" lang="js"><span
+                                                class="hljs-number">8</span> &amp; <span
+                                                class="hljs-number">7</span> <span
+                                                class="hljs-comment">// -&gt; 0</span>
+<span class="hljs-comment">// 1000 &amp; 0111 -&gt; 0000 -&gt; 0</span>
+</code></pre>
+                                        <p><strong>按位或</strong></p>
+                                        <p>其中一位为 1，结果就是 1</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-number">8</span> | <span
+                                                class="hljs-number">7</span> <span
+                                                class="hljs-comment">// -&gt; 15</span>
+<span class="hljs-comment">// 1000 | 0111 -&gt; 1111 -&gt; 15</span>
+</code></pre>
+                                        <p><strong>按位异或</strong></p>
+                                        <p>每一位都不同，结果才为 1</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-number">8</span> ^ <span
+                                                class="hljs-number">7</span> <span
+                                                class="hljs-comment">// -&gt; 15</span>
+<span class="hljs-number">8</span> ^ <span class="hljs-number">8</span> <span class="hljs-comment">// -&gt; 0</span>
+<span class="hljs-comment">// 1000 ^ 0111 -&gt; 1111 -&gt; 15</span>
+<span class="hljs-comment">// 1000 ^ 1000 -&gt; 0000 -&gt; 0</span>
+</code></pre>
+                                        <p>从以上代码中可以发现按位异或就是不进位加法</p>
+                                        <p><strong>面试题</strong>：两个数不使用四则运算得出和</p>
+                                        <p>这道题中可以按位异或，因为按位异或就是不进位加法，<code>8 ^ 8 = 0</code> 如果进位了，就是 16
+                                            了，所以我们只需要将两个数进行异或操作，然后进位。那么也就是说两个二进制都是 1 的位置，左边应该有一个进位 1，所以可以得出以下公式 <code>a
+                                                + b = (a ^ b) + ((a &amp; b) &lt;&lt; 1)</code> ，然后通过迭代的方式模拟加法</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span
+                                                class="hljs-params">a, b</span>) </span>{
+    <span class="hljs-keyword">if</span> (a == <span class="hljs-number">0</span>) <span
+                                                    class="hljs-keyword">return</span> b
+    <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) <span
+                                                    class="hljs-keyword">return</span> a
+    <span class="hljs-keyword">let</span> newA = a ^ b
+    <span class="hljs-keyword">let</span> newB = (a &amp; b) &lt;&lt; <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> sum(newA, newB)
+}
+</code></pre>
+                                        <h2 class="heading" data-id="heading-5">排序</h2>
+                                        <p>以下两个函数是排序中会用到的通用函数，就不一一写了</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">checkArray</span>(<span
+                                                class="hljs-params">array</span>) </span>{
+    <span class="hljs-keyword">if</span> (!array) <span class="hljs-keyword">return</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">swap</span>(<span
+        class="hljs-params">array, left, right</span>) </span>{
+    <span class="hljs-keyword">let</span> rightValue = array[right]
+    array[right] = array[left]
+    array[left] = rightValue
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-6">冒泡排序</h3>
+                                        <p>
+                                            冒泡排序的原理如下，从第一个元素开始，把当前元素和下一个索引元素进行比较。如果当前元素大，那么就交换位置，重复操作直到比较到最后一个元素，那么此时最后一个元素就是该数组中最大的数。下一轮重复以上操作，但是此时最后一个元素已经是最大数了，所以不需要再比较最后一个元素，只需要比较到
+                                            <code>length - 2</code> 的位置。</p>
+                                        <div align="center">
+                                            <img width="500" class="lazyload inited loaded"
+                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/12/162b895b452b306c?imageslim"
+                                                 data-width="670" data-height="508"
+                                                 src="./32-常考算法题解析_files/162b895b452b306c">
+                                        </div>
+                                        <p>以下是实现该算法的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">bubble</span>(<span class="hljs-params">array</span>) </span>{
+  checkArray(array);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = array.length - <span
+                                                    class="hljs-number">1</span>; i &gt; <span
+                                                    class="hljs-number">0</span>; i--) {
+    <span class="hljs-comment">// 从 0 到 `length - 1` 遍历</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) {
+      <span class="hljs-keyword">if</span> (array[j] &gt; array[j + <span class="hljs-number">1</span>]) swap(array, j, j + <span
+                                                    class="hljs-number">1</span>)
+    }
+  }
+  <span class="hljs-keyword">return</span> array;
+}
+</code></pre>
+                                        <p>该算法的操作次数是一个等差数列 <code>n + (n - 1) + (n - 2) + 1</code> ，去掉常数项以后得出时间复杂度是 O(n *
+                                            n)</p>
+                                        <h3 class="heading" data-id="heading-7">插入排序</h3>
+                                        <p>
+                                            插入排序的原理如下。第一个元素默认是已排序元素，取出下一个元素和当前元素比较，如果当前元素大就交换位置。那么此时第一个元素就是当前的最小数，所以下次取出操作从第三个元素开始，向前对比，重复之前的操作。</p>
+                                        <div align="center"><img style="display:block;margin: 0 auto" width="500"
+                                                                 class="lazyload inited loaded"
+                                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/12/162b895c7e59dcd1?imageslim"
+                                                                 data-width="670" data-height="508"
+                                                                 src="./32-常考算法题解析_files/162b895c7e59dcd1"></div>
+                                        <p>以下是实现该算法的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">insertion</span>(<span
+                                                class="hljs-params">array</span>) </span>{
+  checkArray(array);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; array.length; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i - <span
+                                                    class="hljs-number">1</span>; j &gt;= <span
+                                                    class="hljs-number">0</span> &amp;&amp; array[j] &gt; array[j + <span
+                                                    class="hljs-number">1</span>]; j--)
+      swap(array, j, j + <span class="hljs-number">1</span>);
+  }
+  <span class="hljs-keyword">return</span> array;
+}
+</code></pre>
+                                        <p>该算法的操作次数是一个等差数列 <code>n + (n - 1) + (n - 2) + 1</code> ，去掉常数项以后得出时间复杂度是 O(n *
+                                            n)</p>
+                                        <h3 class="heading" data-id="heading-8">选择排序</h3>
+                                        <p>选择排序的原理如下。遍历数组，设置最小值的索引为
+                                            0，如果取出的值比当前最小值小，就替换最小值索引，遍历完成后，将第一个元素和最小值索引上的值交换。如上操作后，第一个元素就是数组中的最小值，下次遍历就可以从索引
+                                            1 开始重复上述操作。</p>
+                                        <div align="center"><img style="display:block;margin: 0 auto" width="500"
+                                                                 class="lazyload inited loaded"
+                                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/13/162bc8ea14567e2e?imageslim"
+                                                                 data-width="670" data-height="508"
+                                                                 src="./32-常考算法题解析_files/162bc8ea14567e2e"></div>
+                                        <p>以下是实现该算法的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">selection</span>(<span
+                                                class="hljs-params">array</span>) </span>{
+  checkArray(array);
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length - <span
+                                                    class="hljs-number">1</span>; i++) {
+    <span class="hljs-keyword">let</span> minIndex = i;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = i + <span
+                                                    class="hljs-number">1</span>; j &lt; array.length; j++) {
+      minIndex = array[j] &lt; array[minIndex] ? j : minIndex;
+    }
+    swap(array, i, minIndex);
+  }
+  <span class="hljs-keyword">return</span> array;
+}
+</code></pre>
+                                        <p>该算法的操作次数是一个等差数列 <code>n + (n - 1) + (n - 2) + 1</code> ，去掉常数项以后得出时间复杂度是 O(n *
+                                            n)</p>
+                                        <h3 class="heading" data-id="heading-9">归并排序</h3>
+                                        <p>归并排序的原理如下。递归的将数组两两分开直到最多包含两个元素，然后将数组排序合并，最终合并为排序好的数组。假设我有一组数组 <code>[3, 1, 2,
+                                            8, 9, 7, 6]</code>，中间数索引是 3，先排序数组 <code>[3, 1, 2, 8]</code>
+                                            。在这个左边数组上，继续拆分直到变成数组包含两个元素（如果数组长度是奇数的话，会有一个拆分数组只包含一个元素）。然后排序数组 <code>[3,
+                                                1]</code> 和 <code>[2, 8]</code> ，然后再排序数组 <code>[1, 3, 2, 8]</code>
+                                            ，这样左边数组就排序完成，然后按照以上思路排序右边数组，最后将数组 <code>[1, 2, 3, 8]</code> 和 <code>[6, 7,
+                                                9]</code> 排序。</p>
+                                        <div align="center"><img width="500" class="lazyload inited loaded"
+                                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/13/162be13c7e30bd86?imageslim"
+                                                                 data-width="896" data-height="1008"
+                                                                 src="./32-常考算法题解析_files/162be13c7e30bd86"></div>
+                                        <p>以下是实现该算法的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">sort</span>(<span class="hljs-params">array</span>) </span>{
+  checkArray(array);
+  mergeSort(array, <span class="hljs-number">0</span>, array.length - <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">return</span> array;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mergeSort</span>(<span
+        class="hljs-params">array, left, right</span>) </span>{
+  <span class="hljs-comment">// 左右索引相同说明已经只有一个数</span>
+  <span class="hljs-keyword">if</span> (left === right) <span class="hljs-keyword">return</span>;
+  <span class="hljs-comment">// 等同于 `left + (right - left) / 2`</span>
+  <span class="hljs-comment">// 相比 `(left + right) / 2` 来说更加安全，不会溢出</span>
+  <span class="hljs-comment">// 使用位运算是因为位运算比四则运算快</span>
+  <span class="hljs-keyword">let</span> mid = <span class="hljs-built_in">parseInt</span>(left + ((right - left) &gt;&gt; <span
+                                                    class="hljs-number">1</span>));
+  mergeSort(array, left, mid);
+  mergeSort(array, mid + <span class="hljs-number">1</span>, right);
+
+  <span class="hljs-keyword">let</span> help = [];
+  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">let</span> p1 = left;
+  <span class="hljs-keyword">let</span> p2 = mid + <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">while</span> (p1 &lt;= mid &amp;&amp; p2 &lt;= right) {
+    help[i++] = array[p1] &lt; array[p2] ? array[p1++] : array[p2++];
+  }
+  <span class="hljs-keyword">while</span> (p1 &lt;= mid) {
+    help[i++] = array[p1++];
+  }
+  <span class="hljs-keyword">while</span> (p2 &lt;= right) {
+    help[i++] = array[p2++];
+  }
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; help.length; i++) {
+    array[left + i] = help[i];
+  }
+  <span class="hljs-keyword">return</span> array;
+}
+</code></pre>
+                                        <p>
+                                            以上算法使用了递归的思想。递归的本质就是压栈，每递归执行一次函数，就将该函数的信息（比如参数，内部的变量，执行到的行数）压栈，直到遇到终止条件，然后出栈并继续执行函数。对于以上递归函数的调用轨迹如下</p>
+                                        <pre><code class="hljs js" lang="js">mergeSort(data, <span
+                                                class="hljs-number">0</span>, <span class="hljs-number">6</span>) <span
+                                                class="hljs-comment">// mid = 3</span>
+  mergeSort(data, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// mid = 1</span>
+    mergeSort(data, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// mid = 0</span>
+      mergeSort(data, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>) <span
+                                                    class="hljs-comment">// 遇到终止，回退到上一步</span>
+    mergeSort(data, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>) <span class="hljs-comment">// 遇到终止，回退到上一步</span>
+    <span class="hljs-comment">// 排序 p1 = 0, p2 = mid + 1 = 1</span>
+    <span class="hljs-comment">// 回退到 `mergeSort(data, 0, 3)` 执行下一个递归</span>
+  mergeSort(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// mid = 2</span>
+    mergeSort(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// 遇到终止，回退到上一步</span>
+  <span class="hljs-comment">// 排序 p1 = 2, p2 = mid + 1 = 3</span>
+  <span class="hljs-comment">// 回退到 `mergeSort(data, 0, 3)` 执行合并逻辑</span>
+  <span class="hljs-comment">// 排序 p1 = 0, p2 = mid + 1 = 2</span>
+  <span class="hljs-comment">// 执行完毕回退</span>
+  <span class="hljs-comment">// 左边数组排序完毕，右边也是如上轨迹</span>
+</code></pre>
+                                        <p>该算法的操作次数是可以这样计算：递归了两次，每次数据量是数组的一半，并且最后把整个数组迭代了一次，所以得出表达式 <code>2T(N / 2) +
+                                            T(N)</code> （T 代表时间，N 代表数据量）。根据该表达式可以套用 <a target="_blank"
+                                                                                       href="https://link.juejin.im/?target=https%3A%2F%2Fwww.wikiwand.com%2Fzh-hans%2F%25E4%25B8%25BB%25E5%25AE%259A%25E7%2590%2586"
+                                                                                       rel="nofollow noopener noreferrer">该公式</a>
+                                            得出时间复杂度为 <code>O(N * logN)</code></p>
+                                        <h3 class="heading" data-id="heading-10">快排</h3>
+                                        <p>
+                                            快排的原理如下。随机选取一个数组中的值作为基准值，从左至右取值与基准值对比大小。比基准值小的放数组左边，大的放右边，对比完成后将基准值和第一个比基准值大的值交换位置。然后将数组以基准值的位置分为两部分，继续递归以上操作。</p>
+                                        <div align="center"><img width="500" class="lazyload inited loaded"
+                                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/16/162cd23e69ca9ea3?imageslim"
+                                                                 data-width="824" data-height="506"
+                                                                 src="./32-常考算法题解析_files/162cd23e69ca9ea3"></div>
+                                        <p>以下是实现该算法的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">sort</span>(<span class="hljs-params">array</span>) </span>{
+  checkArray(array);
+  quickSort(array, <span class="hljs-number">0</span>, array.length - <span class="hljs-number">1</span>);
+  <span class="hljs-keyword">return</span> array;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">quickSort</span>(<span
+        class="hljs-params">array, left, right</span>) </span>{
+  <span class="hljs-keyword">if</span> (left &lt; right) {
+    swap(array, , right)
+    <span class="hljs-comment">// 随机取值，然后和末尾交换，这样做比固定取一个位置的复杂度略低</span>
+    <span class="hljs-keyword">let</span> indexs = part(array, <span class="hljs-built_in">parseInt</span>(<span
+                                                    class="hljs-built_in">Math</span>.random() * (right - left + <span
+                                                    class="hljs-number">1</span>)) + left, right);
+    quickSort(array, left, indexs[<span class="hljs-number">0</span>]);
+    quickSort(array, indexs[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>, right);
+  }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">part</span>(<span
+        class="hljs-params">array, left, right</span>) </span>{
+  <span class="hljs-keyword">let</span> less = left - <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> more = right;
+  <span class="hljs-keyword">while</span> (left &lt; more) {
+    <span class="hljs-keyword">if</span> (array[left] &lt; array[right]) {
+      <span class="hljs-comment">// 当前值比基准值小，`less` 和 `left` 都加一</span>
+	   ++less;
+       ++left;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (array[left] &gt; array[right]) {
+      <span class="hljs-comment">// 当前值比基准值大，将当前值和右边的值交换</span>
+      <span class="hljs-comment">// 并且不改变 `left`，因为当前换过来的值还没有判断过大小</span>
+      swap(array, --more, left);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">// 和基准值相同，只移动下标</span>
+      left++;
+    }
+  }
+  <span class="hljs-comment">// 将基准值和比基准值大的第一个值交换位置</span>
+  <span class="hljs-comment">// 这样数组就变成 `[比基准值小, 基准值, 比基准值大]`</span>
+  swap(array, right, more);
+  <span class="hljs-keyword">return</span> [less, more];
+}
+</code></pre>
+                                        <p>该算法的复杂度和归并排序是相同的，但是额外空间复杂度比归并排序少，只需 O(logN)，并且相比归并排序来说，所需的常数时间也更少。</p>
+                                        <h4 class="heading" data-id="heading-11">面试题</h4>
+                                        <p><strong>Sort Colors</strong>：该题目来自 <a target="_blank"
+                                                                                 href="https://link.juejin.im/?target=https%3A%2F%2Fleetcode.com%2Fproblems%2Fsort-colors%2Fdescription%2F"
+                                                                                 rel="nofollow noopener noreferrer">LeetCode</a>，题目需要我们将
+                                            <code>[2,0,2,1,1,0]</code> 排序成 <code>[0,0,1,1,2,2]</code> ，这个问题就可以使用三路快排的思想。
+                                        </p>
+                                        <p>以下是代码实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">var</span> sortColors = <span
+                                                class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                class="hljs-params">nums</span>) </span>{
+  <span class="hljs-keyword">let</span> left = <span class="hljs-number">-1</span>;
+  <span class="hljs-keyword">let</span> right = nums.length;
+  <span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>;
+  <span class="hljs-comment">// 下标如果遇到 right，说明已经排序完成</span>
+  <span class="hljs-keyword">while</span> (i &lt; right) {
+    <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>) {
+      swap(nums, i++, ++left);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">1</span>) {
+      i++;
+    } <span class="hljs-keyword">else</span> {
+      swap(nums, i, --right);
+    }
+  }
+};
+</code></pre>
+                                        <p><strong>Kth Largest Element in an Array</strong>：该题目来自 <a target="_blank"
+                                                                                                     href="https://link.juejin.im/?target=https%3A%2F%2Fleetcode.com%2Fproblems%2Fkth-largest-element-in-an-array%2Fdescription%2F"
+                                                                                                     rel="nofollow noopener noreferrer">LeetCode</a>，题目需要找出数组中第
+                                            K 大的元素，这问题也可以使用快排的思路。并且因为是找出第 K
+                                            大元素，所以在分离数组的过程中，可以找出需要的元素在哪边，然后只需要排序相应的一边数组就好。</p>
+                                        <p>以下是代码实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">var</span> findKthLargest = <span
+                                                class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                class="hljs-params">nums, k</span>) </span>{
+  <span class="hljs-keyword">let</span> l = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">let</span> r = nums.length - <span class="hljs-number">1</span>
+  <span class="hljs-comment">// 得出第 K 大元素的索引位置</span>
+  k = nums.length - k
+  <span class="hljs-keyword">while</span> (l &lt; r) {
+    <span class="hljs-comment">// 分离数组后获得比基准树大的第一个元素索引</span>
+    <span class="hljs-keyword">let</span> index = part(nums, l, r)
+    <span class="hljs-comment">// 判断该索引和 k 的大小</span>
+    <span class="hljs-keyword">if</span> (index &lt; k) {
+      l = index + <span class="hljs-number">1</span>
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (index &gt; k) {
+      r = index - <span class="hljs-number">1</span>
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">break</span>
+    }
+  }
+  <span class="hljs-keyword">return</span> nums[k]
+};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">part</span>(<span
+        class="hljs-params">array, left, right</span>) </span>{
+  <span class="hljs-keyword">let</span> less = left - <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">let</span> more = right;
+  <span class="hljs-keyword">while</span> (left &lt; more) {
+    <span class="hljs-keyword">if</span> (array[left] &lt; array[right]) {
+	   ++less;
+       ++left;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (array[left] &gt; array[right]) {
+      swap(array, --more, left);
+    } <span class="hljs-keyword">else</span> {
+      left++;
+    }
+  }
+  swap(array, right, more);
+  <span class="hljs-keyword">return</span> more;
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-12">堆排序</h3>
+                                        <p>
+                                            堆排序利用了二叉堆的特性来做，二叉堆通常用数组表示，并且二叉堆是一颗完全二叉树（所有叶节点（最底层的节点）都是从左往右顺序排序，并且其他层的节点都是满的）。二叉堆又分为大根堆与小根堆。</p>
+                                        <ul>
+                                            <li>大根堆是某个节点的所有子节点的值都比他小</li>
+                                            <li>小根堆是某个节点的所有子节点的值都比他大</li>
+                                        </ul>
+                                        <p>堆排序的原理就是组成一个大根堆或者小根堆。以小根堆为例，某个节点的左边子节点索引是 <code>i * 2 + 1</code>，右边是 <code>i
+                                            * 2 + 2</code>，父节点是 <code>(i - 1) /2</code>。</p>
+                                        <ol>
+                                            <li>首先遍历数组，判断该节点的父节点是否比他小，如果小就交换位置并继续判断，直到他的父节点比他大</li>
+                                            <li>重新以上操作 1，直到数组首位是最大值</li>
+                                            <li>然后将首位和末尾交换位置并将数组长度减一，表示数组末尾已是最大值，不需要再比较大小</li>
+                                            <li>对比左右节点哪个大，然后记住大的节点的索引并且和父节点对比大小，如果子节点大就交换位置</li>
+                                            <li>重复以上操作 3 - 4 直到整个数组都是大根堆。</li>
+                                        </ol>
+                                        <div align="center"><img width="500" class="lazyload inited loaded"
+                                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/17/162d2a9ff258dfe1?imageslim"
+                                                                 data-width="1280" data-height="367"
+                                                                 src="./32-常考算法题解析_files/162d2a9ff258dfe1"></div>
+                                        <p>以下是实现该算法的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">heap</span>(<span class="hljs-params">array</span>) </span>{
+  checkArray(array);
+  <span class="hljs-comment">// 将最大值交换到首位</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+    heapInsert(array, i);
+  }
+  <span class="hljs-keyword">let</span> size = array.length;
+  <span class="hljs-comment">// 交换首位和末尾</span>
+  swap(array, <span class="hljs-number">0</span>, --size);
+  <span class="hljs-keyword">while</span> (size &gt; <span class="hljs-number">0</span>) {
+    heapify(array, <span class="hljs-number">0</span>, size);
+    swap(array, <span class="hljs-number">0</span>, --size);
+  }
+  <span class="hljs-keyword">return</span> array;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">heapInsert</span>(<span
+        class="hljs-params">array, index</span>) </span>{
+  <span class="hljs-comment">// 如果当前节点比父节点大，就交换</span>
+  <span class="hljs-keyword">while</span> (array[index] &gt; array[<span class="hljs-built_in">parseInt</span>((index - <span
+                                                    class="hljs-number">1</span>) / <span class="hljs-number">2</span>)]) {
+    swap(array, index, <span class="hljs-built_in">parseInt</span>((index - <span class="hljs-number">1</span>) / <span
+                                                    class="hljs-number">2</span>));
+    <span class="hljs-comment">// 将索引变成父节点</span>
+    index = <span class="hljs-built_in">parseInt</span>((index - <span class="hljs-number">1</span>) / <span
+                                                    class="hljs-number">2</span>);
+  }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">heapify</span>(<span
+        class="hljs-params">array, index, size</span>) </span>{
+  <span class="hljs-keyword">let</span> left = index * <span class="hljs-number">2</span> + <span
+                                                    class="hljs-number">1</span>;
+  <span class="hljs-keyword">while</span> (left &lt; size) {
+    <span class="hljs-comment">// 判断左右节点大小</span>
+    <span class="hljs-keyword">let</span> largest =
+      left + <span class="hljs-number">1</span> &lt; size &amp;&amp; array[left] &lt; array[left + <span
+                                                    class="hljs-number">1</span>] ? left + <span
+                                                    class="hljs-number">1</span> : left;
+    <span class="hljs-comment">// 判断子节点和父节点大小</span>
+    largest = array[index] &lt; array[largest] ? largest : index;
+    <span class="hljs-keyword">if</span> (largest === index) <span class="hljs-keyword">break</span>;
+    swap(array, index, largest);
+    index = largest;
+    left = index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;
+  }
+}
+</code></pre>
+                                        <p>以上代码实现了小根堆，如果需要实现大根堆，只需要把节点对比反一下就好。</p>
+                                        <p>该算法的复杂度是 O(logN)</p>
+                                        <h3 class="heading" data-id="heading-13">系统自带排序实现</h3>
+                                        <p>每个语言的排序内部实现都是不同的。</p>
+                                        <p>对于 JS 来说，数组长度大于 10 会采用快排，否则使用插入排序 <a target="_blank"
+                                                                                href="https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Fv8%2Fv8%2Fblob%2Fad82a40509c5b5b4680d4299c8f08d6c6d31af3c%2Fsrc%2Fjs%2Farray.js%23L760%3A7"
+                                                                                rel="nofollow noopener noreferrer">源码实现</a>
+                                            。选择插入排序是因为虽然时间复杂度很差，但是在数据量很小的情况下和 <code>O(N * logN)</code>相差无几，然而插入排序需要的常数时间很小，所以相对别的排序来说更快。
+                                        </p>
+                                        <p>对于 Java 来说，还会考虑内部的元素的类型。对于存储对象的数组来说，会采用稳定性好的算法。稳定性的意思就是对于相同值来说，相对顺序不能改变。</p>
+                                        <div align="center"><img height="500" class="lazyload inited loaded"
+                                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/18/162d7df247dcda00?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                                 data-width="440" data-height="727"
+                                                                 src="./32-常考算法题解析_files/162d7df247dcda00"></div>
+                                        <h2 class="heading" data-id="heading-14">链表</h2>
+                                        <h3 class="heading" data-id="heading-15">反转单向链表</h3>
+                                        <p>该题目来自 <a target="_blank"
+                                                    href="https://link.juejin.im/?target=https%3A%2F%2Fleetcode.com%2Fproblems%2Freverse-linked-list%2Fdescription%2F"
+                                                    rel="nofollow noopener noreferrer">LeetCode</a>，题目需要将一个单向链表反转。思路很简单，使用三个变量分别表示当前节点和当前节点的前后节点，虽然这题很简单，但是却是一道面试常考题
+                                        </p>
+                                        <p>以下是实现该算法的代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">var</span> reverseList = <span
+                                                class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                class="hljs-params">head</span>) </span>{
+    <span class="hljs-comment">// 判断下变量边界问题</span>
+    <span class="hljs-keyword">if</span> (!head || !head.next) <span class="hljs-keyword">return</span> head
+    <span class="hljs-comment">// 初始设置为空，因为第一个节点反转后就是尾部，尾部节点指向 null</span>
+    <span class="hljs-keyword">let</span> pre = <span class="hljs-literal">null</span>
+    <span class="hljs-keyword">let</span> current = head
+    <span class="hljs-keyword">let</span> next
+    <span class="hljs-comment">// 判断当前节点是否为空</span>
+    <span class="hljs-comment">// 不为空就先获取当前节点的下一节点</span>
+    <span class="hljs-comment">// 然后把当前节点的 next 设为上一个节点</span>
+    <span class="hljs-comment">// 然后把 current 设为下一个节点，pre 设为当前节点</span>
+    <span class="hljs-keyword">while</span>(current) {
+        next = current.next
+        current.next = pre
+        pre = current
+        current = next
+    }
+    <span class="hljs-keyword">return</span> pre
+};
+</code></pre>
+                                        <h2 class="heading" data-id="heading-16">树</h2>
+                                        <h3 class="heading" data-id="heading-17">二叉树的先序，中序，后序遍历</h3>
+                                        <p>先序遍历表示先访问根节点，然后访问左节点，最后访问右节点。</p>
+                                        <p>中序遍历表示先访问左节点，然后访问根节点，最后访问右节点。</p>
+                                        <p>后序遍历表示先访问左节点，然后访问右节点，最后访问根节点。</p>
+                                        <h4 class="heading" data-id="heading-18">递归实现</h4>
+                                        <p>递归实现相当简单，代码如下</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">TreeNode</span>(<span class="hljs-params">val</span>) </span>{
+  <span class="hljs-keyword">this</span>.val = val;
+  <span class="hljs-keyword">this</span>.left = <span class="hljs-keyword">this</span>.right = <span
+                                                    class="hljs-literal">null</span>;
+}
+<span class="hljs-keyword">var</span> traversal = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                    class="hljs-params">root</span>) </span>{
+  <span class="hljs-keyword">if</span> (root) {
+    <span class="hljs-comment">// 先序</span>
+    <span class="hljs-built_in">console</span>.log(root); 
+    traversal(root.left);
+    <span class="hljs-comment">// 中序</span>
+    <span class="hljs-comment">// console.log(root); </span>
+    traversal(root.right);
+    <span class="hljs-comment">// 后序</span>
+    <span class="hljs-comment">// console.log(root);</span>
+  }
+};
+</code></pre>
+                                        <p>对于递归的实现来说，只需要理解每个节点都会被访问三次就明白为什么这样实现了。</p>
+                                        <h4 class="heading" data-id="heading-19">非递归实现</h4>
+                                        <p>非递归实现使用了栈的结构，通过栈的先进后出模拟递归实现。</p>
+                                        <p>以下是先序遍历代码实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">pre</span>(<span
+                                                class="hljs-params">root</span>) </span>{
+  <span class="hljs-keyword">if</span> (root) {
+    <span class="hljs-keyword">let</span> stack = [];
+    <span class="hljs-comment">// 先将根节点 push</span>
+    stack.push(root);
+    <span class="hljs-comment">// 判断栈中是否为空</span>
+    <span class="hljs-keyword">while</span> (stack.length &gt; <span class="hljs-number">0</span>) {
+      <span class="hljs-comment">// 弹出栈顶元素</span>
+      root = stack.pop();
+      <span class="hljs-built_in">console</span>.log(root);
+      <span class="hljs-comment">// 因为先序遍历是先左后右，栈是先进后出结构</span>
+      <span class="hljs-comment">// 所以先 push 右边再 push 左边</span>
+      <span class="hljs-keyword">if</span> (root.right) {
+        stack.push(root.right);
+      }
+      <span class="hljs-keyword">if</span> (root.left) {
+        stack.push(root.left);
+      }
+    }
+  }
+}
+</code></pre>
+                                        <p>以下是中序遍历代码实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">mid</span>(<span
+                                                class="hljs-params">root</span>) </span>{
+  <span class="hljs-keyword">if</span> (root) {
+    <span class="hljs-keyword">let</span> stack = [];
+    <span class="hljs-comment">// 中序遍历是先左再根最后右</span>
+    <span class="hljs-comment">// 所以首先应该先把最左边节点遍历到底依次 push 进栈</span>
+    <span class="hljs-comment">// 当左边没有节点时，就打印栈顶元素，然后寻找右节点</span>
+    <span class="hljs-comment">// 对于最左边的叶节点来说，可以把它看成是两个 null 节点的父节点</span>
+    <span class="hljs-comment">// 左边打印不出东西就把父节点拿出来打印，然后再看右节点</span>
+    <span class="hljs-keyword">while</span> (stack.length &gt; <span class="hljs-number">0</span> || root) {
+      <span class="hljs-keyword">if</span> (root) {
+        stack.push(root);
+        root = root.left;
+      } <span class="hljs-keyword">else</span> {
+        root = stack.pop();
+        <span class="hljs-built_in">console</span>.log(root);
+        root = root.right;
+      }
+    }
+  }
+}
+</code></pre>
+                                        <p>以下是后序遍历代码实现，该代码使用了两个栈来实现遍历，相比一个栈的遍历来说要容易理解很多</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">pos</span>(<span
+                                                class="hljs-params">root</span>) </span>{
+  <span class="hljs-keyword">if</span> (root) {
+    <span class="hljs-keyword">let</span> stack1 = [];
+    <span class="hljs-keyword">let</span> stack2 = [];
+    <span class="hljs-comment">// 后序遍历是先左再右最后根</span>
+	<span class="hljs-comment">// 所以对于一个栈来说，应该先 push 根节点</span>
+    <span class="hljs-comment">// 然后 push 右节点，最后 push 左节点</span>
+    stack1.push(root);
+    <span class="hljs-keyword">while</span> (stack1.length &gt; <span class="hljs-number">0</span>) {
+      root = stack1.pop();
+      stack2.push(root);
+      <span class="hljs-keyword">if</span> (root.left) {
+        stack1.push(root.left);
+      }
+      <span class="hljs-keyword">if</span> (root.right) {
+        stack1.push(root.right);
+      }
+    }
+    <span class="hljs-keyword">while</span> (stack2.length &gt; <span class="hljs-number">0</span>) {
+      <span class="hljs-built_in">console</span>.log(s2.pop());
+    }
+  }
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-20">中序遍历的前驱后继节点</h3>
+                                        <p>实现这个算法的前提是节点有一个 <code>parent</code> 的指针指向父节点，根节点指向 <code>null</code> 。</p>
+                                        <div align="center"><img width="400" class="lazyload inited loaded"
+                                                                 data-src="https://user-gold-cdn.xitu.io/2018/4/24/162f61ad8e8588b7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"
+                                                                 data-width="682" data-height="486"
+                                                                 src="./32-常考算法题解析_files/162f61ad8e8588b7"></div>
+                                        <p>如图所示，该树的中序遍历结果是 <code>4, 2, 5, 1, 6, 3, 7</code></p>
+                                        <h4 class="heading" data-id="heading-21">前驱节点</h4>
+                                        <p>对于节点 <code>2</code> 来说，他的前驱节点就是 <code>4</code> ，按照中序遍历原则，可以得出以下结论</p>
+                                        <ol>
+                                            <li>如果选取的节点的左节点不为空，就找该左节点最右的节点。对于节点 <code>1</code> 来说，他有左节点 <code>2</code>
+                                                ，那么节点 <code>2</code> 的最右节点就是 <code>5</code></li>
+                                            <li>如果左节点为空，且目标节点是父节点的右节点，那么前驱节点为父节点。对于节点 <code>5</code> 来说，没有左节点，且是节点
+                                                <code>2</code> 的右节点，所以节点 <code>2</code> 是前驱节点
+                                            </li>
+                                            <li>如果左节点为空，且目标节点是父节点的左节点，向上寻找到第一个是父节点的右节点的节点。对于节点 <code>6</code>
+                                                来说，没有左节点，且是节点 <code>3</code> 的左节点，所以向上寻找到节点 <code>1</code> ，发现节点
+                                                <code>3</code> 是节点 <code>1</code> 的右节点，所以节点 <code>1</code> 是节点
+                                                <code>6</code> 的前驱节点
+                                            </li>
+                                        </ol>
+                                        <p>以下是算法实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">predecessor</span>(<span
+                                                class="hljs-params">node</span>) </span>{
+  <span class="hljs-keyword">if</span> (!node) <span class="hljs-keyword">return</span> 
+  <span class="hljs-comment">// 结论 1</span>
+  <span class="hljs-keyword">if</span> (node.left) {
+    <span class="hljs-keyword">return</span> getRight(node.left)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">let</span> parent = node.parent
+    <span class="hljs-comment">// 结论 2 3 的判断</span>
+    <span class="hljs-keyword">while</span>(parent &amp;&amp; parent.right === node) {
+      node = parent
+      parent = node.parent
+    }
+    <span class="hljs-keyword">return</span> parent
+  }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRight</span>(<span
+        class="hljs-params">node</span>) </span>{
+  <span class="hljs-keyword">if</span> (!node) <span class="hljs-keyword">return</span> 
+  node = node.right
+  <span class="hljs-keyword">while</span>(node) node = node.right
+  <span class="hljs-keyword">return</span> node
+}
+</code></pre>
+                                        <h4 class="heading" data-id="heading-22">后继节点</h4>
+                                        <p>对于节点 <code>2</code> 来说，他的后继节点就是 <code>5</code> ，按照中序遍历原则，可以得出以下结论</p>
+                                        <ol>
+                                            <li>如果有右节点，就找到该右节点的最左节点。对于节点 <code>1</code> 来说，他有右节点 <code>3</code> ，那么节点
+                                                <code>3</code> 的最左节点就是 <code>6</code></li>
+                                            <li>如果没有右节点，就向上遍历直到找到一个节点是父节点的左节点。对于节点 <code>5</code> 来说，没有右节点，就向上寻找到节点
+                                                <code>2</code> ，该节点是父节点 <code>1</code> 的左节点，所以节点 <code>1</code> 是后继节点
+                                            </li>
+                                        </ol>
+                                        <p>以下是算法实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span
+                                                class="hljs-title">successor</span>(<span
+                                                class="hljs-params">node</span>) </span>{
+  <span class="hljs-keyword">if</span> (!node) <span class="hljs-keyword">return</span> 
+  <span class="hljs-comment">// 结论 1</span>
+  <span class="hljs-keyword">if</span> (node.right) {
+    <span class="hljs-keyword">return</span> getLeft(node.right)
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// 结论 2</span>
+    <span class="hljs-keyword">let</span> parent = node.parent
+    <span class="hljs-comment">// 判断 parent 为空</span>
+    <span class="hljs-keyword">while</span>(parent &amp;&amp; parent.left === node) {
+      node = parent
+      parent = node.parent
+    }
+    <span class="hljs-keyword">return</span> parent
+  }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getLeft</span>(<span
+        class="hljs-params">node</span>) </span>{
+  <span class="hljs-keyword">if</span> (!node) <span class="hljs-keyword">return</span> 
+  node = node.left
+  <span class="hljs-keyword">while</span>(node) node = node.left
+  <span class="hljs-keyword">return</span> node
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-23">树的深度</h3>
+                                        <p><strong>树的最大深度</strong>：该题目来自 <a target="_blank"
+                                                                            href="https://link.juejin.im/?target=https%3A%2F%2Fleetcode.com%2Fproblems%2Fmaximum-depth-of-binary-tree%2Fdescription%2F"
+                                                                            rel="nofollow noopener noreferrer">Leetcode</a>，题目需要求出一颗二叉树的最大深度
+                                        </p>
+                                        <p>以下是算法实现</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-keyword">var</span> maxDepth = <span
+                                                class="hljs-function"><span class="hljs-keyword">function</span>(<span
+                                                class="hljs-params">root</span>) </span>{
+    <span class="hljs-keyword">if</span> (!root) <span class="hljs-keyword">return</span> <span
+                                                    class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.max(maxDepth(root.left), maxDepth(root.right)) + <span
+                                                    class="hljs-number">1</span>
+};
+</code></pre>
+                                        <p>对于该递归函数可以这样理解：一旦没有找到节点就会返回 0，每弹出一次递归函数就会加一，树有三层就会得到3。</p>
+                                        <h2 class="heading" data-id="heading-24">动态规划</h2>
+                                        <p>
+                                            动态规划背后的基本思想非常简单。就是将一个问题拆分为子问题，一般来说这些子问题都是非常相似的，那么我们可以通过只解决一次每个子问题来达到减少计算量的目的。</p>
+                                        <p>一旦得出每个子问题的解，就存储该结果以便下次使用。</p>
+                                        <h3 class="heading" data-id="heading-25">斐波那契数列</h3>
+                                        <p>斐波那契数列就是从 0 和 1 开始，后面的数都是前两个数之和</p>
+                                        <p>0，1，1，2，3，5，8，13，21，34，55，89....</p>
+                                        <p>那么显然易见，我们可以通过递归的方式来完成求解斐波那契数列</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">fib</span>(<span
+                                                class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">2</span> &amp;&amp; n &gt;= <span
+                                                    class="hljs-number">0</span>) <span
+                                                    class="hljs-keyword">return</span> n
+  <span class="hljs-keyword">return</span> fib(n - <span class="hljs-number">1</span>) + fib(n - <span
+                                                    class="hljs-number">2</span>)
+}
+fib(<span class="hljs-number">10</span>)
+</code></pre>
+                                        <p>以上代码已经可以完美的解决问题。但是以上解法却存在很严重的性能问题，当 n
+                                            越大的时候，需要的时间是指数增长的，这时候就可以通过动态规划来解决这个问题。</p>
+                                        <p>动态规划的本质其实就是两点</p>
+                                        <ol>
+                                            <li>自底向上分解子问题</li>
+                                            <li>通过变量存储已经计算过的解</li>
+                                        </ol>
+                                        <p>根据上面两点，我们的斐波那契数列的动态规划思路也就出来了</p>
+                                        <ol>
+                                            <li>斐波那契数列从 0 和 1 开始，那么这就是这个子问题的最底层</li>
+                                            <li>通过数组来存储每一位所对应的斐波那契数列的值</li>
+                                        </ol>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">fib</span>(<span
+                                                class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">let</span> array = <span class="hljs-keyword">new</span> <span
+                                                    class="hljs-built_in">Array</span>(n + <span
+                                                    class="hljs-number">1</span>).fill(<span
+                                                    class="hljs-literal">null</span>)
+  array[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>
+  array[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) {
+    array[i] = array[i - <span class="hljs-number">1</span>] + array[i - <span class="hljs-number">2</span>]
+  }
+  <span class="hljs-keyword">return</span> array[n]
+}
+fib(<span class="hljs-number">10</span>)
+</code></pre>
+                                        <h3 class="heading" data-id="heading-26">0 - 1背包问题</h3>
+                                        <p>该问题可以描述为：给定一组物品，每种物品都有自己的重量和价格，在限定的总重量内，我们如何选择，才能使得物品的总价格最高。每个问题只能放入至多一次。</p>
+                                        <p>假设我们有以下物品</p>
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="text-align:center">物品 ID / 重量</th>
+                                                <th style="text-align:center">价值</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td style="text-align:center">1</td>
+                                                <td style="text-align:center">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">2</td>
+                                                <td style="text-align:center">7</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">12</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>对于一个总容量为 5 的背包来说，我们可以放入重量 2 和 3 的物品来达到背包内的物品总价值最高。</p>
+                                        <p>对于这个问题来说，子问题就两个，分别是放物品和不放物品，可以通过以下表格来理解子问题</p>
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="text-align:center">物品 ID / 剩余容量</th>
+                                                <th style="text-align:center">0</th>
+                                                <th style="text-align:center">1</th>
+                                                <th style="text-align:center">2</th>
+                                                <th style="text-align:center">3</th>
+                                                <th style="text-align:center">4</th>
+                                                <th style="text-align:center">5</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td style="text-align:center">1</td>
+                                                <td style="text-align:center">0</td>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">3</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">2</td>
+                                                <td style="text-align:center">0</td>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">7</td>
+                                                <td style="text-align:center">10</td>
+                                                <td style="text-align:center">10</td>
+                                                <td style="text-align:center">10</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">0</td>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">7</td>
+                                                <td style="text-align:center">12</td>
+                                                <td style="text-align:center">15</td>
+                                                <td style="text-align:center">19</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>直接来分析能放三种物品的情况，也就是最后一行</p>
+                                        <ul>
+                                            <li>当容量少于 3 时，只取上一行对应的数据，因为当前容量不能容纳物品 3</li>
+                                            <li>当容量 为 3 时，考虑两种情况，分别为放入物品 3 和不放物品 3
+                                                <ul>
+                                                    <li>不放物品 3 的情况下，总价值为 10</li>
+                                                    <li>放入物品 3 的情况下，总价值为 12，所以应该放入物品 3</li>
+                                                </ul>
+                                            </li>
+                                            <li>当容量 为 4 时，考虑两种情况，分别为放入物品 3 和不放物品 3
+                                                <ul>
+                                                    <li>不放物品 3 的情况下，总价值为 10</li>
+                                                    <li>放入物品 3 的情况下，和放入物品 1 的价值相加，得出总价值为 15，所以应该放入物品 3</li>
+                                                </ul>
+                                            </li>
+                                            <li>当容量 为 5 时，考虑两种情况，分别为放入物品 3 和不放物品 3
+                                                <ul>
+                                                    <li>不放物品 3 的情况下，总价值为 10</li>
+                                                    <li>放入物品 3 的情况下，和放入物品 2 的价值相加，得出总价值为 19，所以应该放入物品 3</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <p>以下代码对照上表更容易理解</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-comment">/**
+ * @param {*} w 物品重量
+ * @param {*} v 物品价值
+ * @param {*} C 总容量
+ * @returns
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">knapsack</span>(<span
+        class="hljs-params">w, v, C</span>) </span>{
+  <span class="hljs-keyword">let</span> length = w.length
+  <span class="hljs-keyword">if</span> (length === <span class="hljs-number">0</span>) <span
+                                                    class="hljs-keyword">return</span> <span
+                                                    class="hljs-number">0</span>
+
+  <span class="hljs-comment">// 对照表格，生成的二维数组，第一维代表物品，第二维代表背包剩余容量</span>
+  <span class="hljs-comment">// 第二维中的元素代表背包物品总价值</span>
+  <span class="hljs-keyword">let</span> array = <span class="hljs-keyword">new</span> <span
+                                                    class="hljs-built_in">Array</span>(length).fill(<span
+                                                    class="hljs-keyword">new</span> <span
+                                                    class="hljs-built_in">Array</span>(C + <span
+                                                    class="hljs-number">1</span>).fill(<span
+                                                    class="hljs-literal">null</span>))
+
+  <span class="hljs-comment">// 完成底部子问题的解</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;= C; i++) {
+    <span class="hljs-comment">// 对照表格第一行， array[0] 代表物品 1</span>
+    <span class="hljs-comment">// i 代表剩余总容量</span>
+    <span class="hljs-comment">// 当剩余总容量大于物品 1 的重量时，记录下背包物品总价值，否则价值为 0</span>
+    array[<span class="hljs-number">0</span>][i] = i &gt;= w[<span class="hljs-number">0</span>] ? v[<span
+                                                    class="hljs-number">0</span>] : <span class="hljs-number">0</span>
+  }
+
+  <span class="hljs-comment">// 自底向上开始解决子问题，从物品 2 开始</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; length; i++) {
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt;= C; j++) {
+      <span class="hljs-comment">// 这里求解子问题，分别为不放当前物品和放当前物品</span>
+      <span class="hljs-comment">// 先求不放当前物品的背包总价值，这里的值也就是对应表格中上一行对应的值</span>
+      array[i][j] = array[i - <span class="hljs-number">1</span>][j]
+      <span class="hljs-comment">// 判断当前剩余容量是否可以放入当前物品</span>
+      <span class="hljs-keyword">if</span> (j &gt;= w[i]) {
+        <span class="hljs-comment">// 可以放入的话，就比大小</span>
+        <span class="hljs-comment">// 放入当前物品和不放入当前物品，哪个背包总价值大</span>
+        array[i][j] = <span class="hljs-built_in">Math</span>.max(array[i][j], v[i] + array[i - <span
+                                                    class="hljs-number">1</span>][j - w[i]])
+      }
+    }
+  }
+  <span class="hljs-keyword">return</span> array[length - <span class="hljs-number">1</span>][C]
+}
+</code></pre>
+                                        <h3 class="heading" data-id="heading-27">最长递增子序列</h3>
+                                        <p>最长递增子序列意思是在一组数字中，找出最长一串递增的数字，比如</p>
+                                        <p>0, 3, 4, 17, 2, 8, 6, 10</p>
+                                        <p>对于以上这串数字来说，最长递增子序列就是 0, 3, 4, 8, 10，可以通过以下表格更清晰的理解</p>
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th style="text-align:center">数字</th>
+                                                <th style="text-align:center">0</th>
+                                                <th style="text-align:center">3</th>
+                                                <th style="text-align:center">4</th>
+                                                <th style="text-align:center">17</th>
+                                                <th style="text-align:center">2</th>
+                                                <th style="text-align:center">8</th>
+                                                <th style="text-align:center">6</th>
+                                                <th style="text-align:center">10</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td style="text-align:center">长度</td>
+                                                <td style="text-align:center">1</td>
+                                                <td style="text-align:center">2</td>
+                                                <td style="text-align:center">3</td>
+                                                <td style="text-align:center">4</td>
+                                                <td style="text-align:center">2</td>
+                                                <td style="text-align:center">4</td>
+                                                <td style="text-align:center">4</td>
+                                                <td style="text-align:center">5</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>通过以上表格可以很清晰的发现一个规律，找出刚好比当前数字小的数，并且在小的数组成的长度基础上加一。</p>
+                                        <p>这个问题的动态思路解法很简单，直接上代码</p>
+                                        <pre><code class="hljs js" lang="js"><span class="hljs-function"><span
+                                                class="hljs-keyword">function</span> <span class="hljs-title">lis</span>(<span
+                                                class="hljs-params">n</span>) </span>{
+  <span class="hljs-keyword">if</span> (n.length === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span
+                                                    class="hljs-number">0</span>
+  <span class="hljs-comment">// 创建一个和参数相同大小的数组，并填充值为 1</span>
+  <span class="hljs-keyword">let</span> array = <span class="hljs-keyword">new</span> <span
+                                                    class="hljs-built_in">Array</span>(n.length).fill(<span
+                                                    class="hljs-number">1</span>)
+  <span class="hljs-comment">// 从索引 1 开始遍历，因为数组已经所有都填充为 1 了</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt; n.length; i++) {
+    <span class="hljs-comment">// 从索引 0 遍历到 i</span>
+    <span class="hljs-comment">// 判断索引 i 上的值是否大于之前的值</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; i; j++) {
+      <span class="hljs-keyword">if</span> (n[i] &gt; n[j]) {
+        array[i] = <span class="hljs-built_in">Math</span>.max(array[i], <span class="hljs-number">1</span> + array[j])
+      }
+    }
+  }
+  <span class="hljs-keyword">let</span> res = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i++) {
+    res = <span class="hljs-built_in">Math</span>.max(res, array[i])
+  }
+  <span class="hljs-keyword">return</span> res
+}
+</code></pre>
+                                    </div>
+                                    <section data-v-05bbf43a="" class="book-comments">
+                                        <div data-v-05bbf43a="" class="box-title">留言</div>
+                                        <div data-v-05bbf43a="" class="comment-box">
+                                            <div data-v-81313b1e="" data-v-05bbf43a="" class="comment-form comment-form"
+                                                 id="comment">
+                                                <div data-v-3b1ba6d2="" data-v-afcc6e34="" data-v-81313b1e=""
+                                                     data-src="https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg"
+                                                     class="lazy avatar avatar loaded"
+                                                     style="background-image: url(&quot;https://b-gold-cdn.xitu.io/v3/static/img/default-avatar.e30559a.svg&quot;);"></div>
+                                                <textarea data-v-81313b1e="" placeholder="评论将在后台进行审核，审核通过后对所有人可见"
+                                                          class="content-input"
+                                                          style="overflow: hidden; overflow-wrap: break-word; height: 60px;"></textarea>
+                                                <div data-v-81313b1e="" class="action-box" style="display: none;">
+                                                    <div data-v-680eb36d="" data-v-81313b1e=""
+                                                         class="image-uploader image-uploader" style="display: none;">
+                                                        <input data-v-680eb36d="" type="file" class="input">
+                                                        <button data-v-680eb36d="" class="upload-btn"><i
+                                                                data-v-680eb36d="" class="icon ion-image"></i><span
+                                                                data-v-680eb36d="">上传图片</span></button>
+                                                    </div>
+                                                    <div data-v-81313b1e="" class="submit-box"><span data-v-81313b1e=""
+                                                                                                     class="submit-text">Ctrl or ⌘ + Enter</span>
+                                                        <button data-v-81313b1e="" class="submit-btn">评论</button>
+                                                    </div>
+                                                </div><!----></div>
+                                        </div>
+                                        <ul data-v-32e5a55b="" data-v-05bbf43a="" st:block="commentList"
+                                            class="comment-list comment-list"><!----></ul>
+                                    </section>
+                                </div>
+                            </div><!----><!----></div>
+                    </div>
+                    <div data-v-a9263a68="" data-v-097468bb="" class="book-handle book-direction">
+                        <div data-v-a9263a68="" class="step-btn step-btn--prev"><img data-v-a9263a68=""
+                                                                                     src="./32-常考算法题解析_files/prev.87ad47e.svg">
+                        </div>
+                        <div data-v-a9263a68="" class="step-btn step-btn--next"><img data-v-a9263a68=""
+                                                                                     src="./32-常考算法题解析_files/next.54d8a35.svg">
+                        </div><!----><!----></div><!----></div>
+            </div>
+        </section><!----><!----><!---->
+        <div data-v-1b0b9cb8="" data-v-097468bb="" class="image-viewer-box"><!----></div>
+    </div><!----></div>
+
+
+<script type="text/javascript" src="./32-常考算法题解析_files/runtime.5902a8b1cc2b7567f479.js.下载"></script>
+<script type="text/javascript" src="./32-常考算法题解析_files/0.e205fcdd4d4b6767f462.js.下载"></script>
+<script type="text/javascript" src="./32-常考算法题解析_files/1.cbb1f8f5dcdee0086c6a.js.下载"></script>
+</body>
+</html>
