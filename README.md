@@ -64,6 +64,3 @@
 ## | 算法及数据结构系列目录
  1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
 
- 
-## | 面试必看系列
-[猛戳我下载](https://github.com/Geek-James/Blog/tree/master/%E9%9D%A2%E8%AF%95%E5%BF%85%E5%A4%87(%E5%BF%85%E7%9C%8B))
