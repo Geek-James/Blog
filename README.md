@@ -30,7 +30,7 @@
 
  4.[彻底搞懂-构造函数和原型对象](https://github.com/zc639143029/Blog/issues/4)
 
- 5.[彻底搞懂-call apply band 小结](https://github.com/zc639143029/Blog/issues/5)
+ 5.[彻底搞懂-call apply bind 小结](https://github.com/zc639143029/Blog/issues/5)
 
  6.[彻底搞懂-instance和typeOf](https://github.com/zc639143029/Blog/issues/6)
 
