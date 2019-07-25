@@ -5,8 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deferred 原理剖析</title>
+    <!-- jQuery 官方文件 -->
+    <!-- <script src="./js/jquery-3.4.1.js"></script> -->
+    <!-- my-jQuery-1.0.4.js 实现Deferred 原理 -->
+    <script src="./js/my-jQuery-1.0.4.js"></script>
 </head>
 <body>
+    <script>
+        // jQuery Deferred 写法
+        var dtd = $.Deferred();// 新建一个Deferred对象
+        var wait = function(dtd){
+            var tasks = function(){
+                alert("执行完毕");
+                // dtd.resolve();//改变Deferred对象的执行状态
+                dtd.reject();
+            };
+           setTimeout(tasks,2000);
+           return dtd;
+        };
+        // $.when(wait(dtd))
+        // .done(function(){
+        //     alert("成功啦");
+        // }).fail(function(){
+        //     alert("出错了");
+        // })
+        //  dtd.resolve(); 改变dtd的执行状态导致done立刻执行 
+        //   dtd.reject(); 改变dtd的执行状态导致fail立刻执行 
+        // dtd.resolve();
+    
+    </script>
     
 </body>
 </html>

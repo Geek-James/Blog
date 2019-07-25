@@ -2,7 +2,7 @@
  * @Description: Deferred 延迟对象处理解析
  * @Author: James
  * @Date: 2019-07-21 13:38:17
- * @LastEditTime: 2019-07-22 15:13:57
+ * @LastEditTime: 2019-07-25 09:18:33
  * @LastEditors: Please set LastEditors
  */
 
@@ -18,6 +18,7 @@
         // 如果调用了jQuery，则需要init（如果不包含则只允许抛出错误
         return new jQuery.prototype.init(selector,context);
     }
+    
     // var rootjQuery = jQuery(document);
     jQuery.fn = jQuery.prototype = {
         length:0,
@@ -83,102 +84,6 @@
                 jQuery.readylist.push(fn);
             }
         }
-    }
-    
-    /**
-     * [Callbacks] Callbacks回调方法
-     * [options] 外界传进来的参数 可以是多个
-     * **/
-    var optionsCache = {};
-    jQuery.Callbacks = function (options){
-        // 检测options的类型
-       options = typeof options === "string"?(optionsCache[options]||createOpeions(options)):{};
-        // 定义一个数组用来存放add将来的方法
-        var list = [],
-        length,
-        index,
-        startAdd,
-        memory,
-        start,
-        memorySarts;
-        var fire = function(data){
-            // memory
-            memory = options.memory && data;
-            // 为了防止memory再次调用一次定义了starts
-            index = memorySarts || 0;
-            start = 0;
-            length = list.length;
-            startAdd = true; // 用来记录fire()方式是否执行 便于"once"方法操作
-            // 遍历循环list
-            for(; index < length; index++){
-                // 通过遍历查找list[index]的值为false 且options有stopOnfalse这个参数时遍历终止返回
-                if (list[index].apply(data[0],data[1]) == false && options.stopOnfalse){
-                    break;
-                }
-            }
-        }
-        var self = {
-            // 添加 方法
-            add:function(){
-                // Array.prototype.slice.call(arguments 伪数组转真数组
-                var args = Array.prototype.slice.call(arguments);
-                start = list.length;
-                // 遍历args 找出里面的Function
-                args.forEach(function(fn){
-                    // 检索fn是是否是Function
-                    if (toString.call(fn) === "[object Function]") {
-                        // unique 不存在 且fn在list中 那么可以把fn添加到队里中
-                        if(!options.unique || !self.has(fn,list)) {
-                            list.push(fn);
-                        }
-                    }
-                });
-                // memory 
-                if (memory) {
-                    memorySarts = start;
-                    fire(memory);
-                }
-            },
-            // 定义一个上下文绑定函数
-            fileWith:function(context,arguments){
-                var args = [context,arguments];
-                // 非fire做限制调用
-                if(!options.once || !startAdd) {
-                    fire(args);
-                }
-            },
-            fire:function(){
-                self.fileWith(this,arguments);
-            },
-            has:function(fn,array){
-                return arr = jQuery.inArray(fn,array) > -1;
-            }
-        }
-        return self;
-    }
-    /**
-     * createOpeions 
-     * [options]  用户输入的字符串
-     * 支持多个字符串的输入
-     * /\s+/ 去除空格的正则
-     * **/
-    function createOpeions(options){
-     // 记录
-     var obj = optionsCache[options] = {};
-     // 多个字符串通过空格切割重组
-     options.split(/\s+/).forEach(function(value){
-         // 将切割的字符串给obj 并赋为true
-         obj[value] =  true;
-     });
-     return obj;  
-    }
-    /**
-     * [inArray] 某个元素是否存在于某个数组中
-     * [elem]    元素
-     * arr       数组   
-     * **/ 
-    jQuery.inArray = function (elem,arr){
-        return arr == null?-1:[].indexOf.call(arr,elem);
     }
 
     jQuery.extend = jQuery.fn.extend = function () {
@@ -251,10 +156,17 @@
         //返回修改后的对象 
         return target;
     };
-
+    var optionsCache = {};
     // 扩展属性和方法
     jQuery.extend({
-        
+        /**
+         * [inArray] 某个元素是否存在于某个数组中
+         * [elem]    元素
+         * arr       数组   
+         * **/ 
+        inArray : function (elem,arr){
+            return arr == null?-1:[].indexOf.call(arr,elem);
+        },
         // 类型检测
         isPlainObject: function(obj) {
             // "[object Object]" 第二个O一定是大写,坑了我好几个小时.......
@@ -332,8 +244,161 @@
            })  
            // 清空
            jQuery.readylist = null;
+        },
+    /**
+     * [Callbacks] Callbacks回调方法
+     * [options] 外界传进来的参数 可以是多个
+     * **/
+    // var optionsCache = {};
+    Callbacks : function (options){
+        // 检测options的类型
+       options = typeof options === "string"?(optionsCache[options]||createOpeions(options)):{};
+        // 定义一个数组用来存放add将来的方法
+        var list = [],
+        length,
+        index,
+        startAdd,
+        memory,
+        start,
+        memorySarts;
+        var fire = function(data){
+            // memory
+            memory = options.memory && data;
+            // 为了防止memory再次调用一次定义了starts
+            index = memorySarts || 0;
+            start = 0;
+            length = list.length;
+            startAdd = true; // 用来记录fire()方式是否执行 便于"once"方法操作
+            // 遍历循环list
+            for(; index < length; index++){
+                // 通过遍历查找list[index]的值为false 且options有stopOnfalse这个参数时遍历终止返回
+                if (list[index].apply(data[0],data[1]) == false && options.stopOnfalse){
+                    break;
+                }
+            }
         }
+        var self = {
+            // 添加 方法
+            add:function(){
+                // Array.prototype.slice.call(arguments 伪数组转真数组
+                var args = Array.prototype.slice.call(arguments);
+                start = list.length;
+                // 遍历args 找出里面的Function
+                args.forEach(function(fn){
+                    // 检索fn是是否是Function
+                    if (toString.call(fn) === "[object Function]") {
+                        // unique 不存在 且fn在list中 那么可以把fn添加到队里中
+                        if(!options.unique || !self.has(fn,list)) {
+                            list.push(fn);
+                        }
+                    }
+                });
+                // memory 
+                if (memory) {
+                    memorySarts = start;
+                    fire(memory);
+                }
+                // 方便链式编程
+                return this;
+            },
+            // 定义一个上下文绑定函数
+            fileWith:function(context,arguments){
+                var args = [context,arguments];
+                // 非fire做限制调用
+                if(!options.once || !startAdd) {
+                    fire(args);
+                }
+            },
+            fire:function(){
+                self.fileWith(this,arguments);
+            },
+            has:function(fn,array){
+                return arr = jQuery.inArray(fn,array) > -1;
+            }
+        }
+        return self;
+    },
+    /**
+     * Deferred  异步回调解决方案
+     * 
+     * **/
+    Deferred : function(func){
+        /**
+         *  tuples     定义一个数组来存储三种不同状态信息的描述
+         *  第一个参数  延时对象的状态
+         *  第二个参数  往队列里添加处理函数
+         *  第三个参数  创建不同状态的队列
+         *  第四个参数  记录最终状态信息
+         * **/
+        var tuples = [
+                  ["resolve","done",jQuery.Callbacks("once memory"),"resolved"],
+                  ["reject","fail",jQuery.Callbacks("once memory"),"rejected"],
+                  ["notify","progress",jQuery.Callbacks("memory")]        
+        ],
+        state = "pending",  // 进行中的状态
+        promise = {
+            state :function(){
+                return state;
+            },
+            then:function() {
+            },
+            promise:function(obj) {
+                console.log(promise);
+                debugger
+                return obj !=null ? jQuery.extend(obj,promise):promise;
+            }
+        },
+        // 延迟对象   属性 方法 
+        deferred = {};
+        // 遍历 tuples
+        tuples.forEach(function(tuple,i){
+            var list = tuple[2], // 创建队列  创建三次 self对象的引用 映射 调用Callbacks里面的方法 
+                stateString = tuple[3]; // 拿到当前最终信息的描述
+            // promise[done | fail |progress]  将这三个状态都拿到Callbacks self里面方法的引用 添加处理函数
+            promise[tuple[1]] = list.add;
+            
+            // Handle state 成功或者失败
+            if (stateString) { //添加第一个处理程序
+                list.add(function(){
+                    // state = [resolved | rejected]
+                    state = stateString;
+                });
+            }
+            // deferred [resolve | reject | notify ]  延时对象的状态拿到函数的引用
+            deferred[tuple[0]] = function(){
+                deferred[tuple[0] + "With"] (this === deferred ? promise : this, arguments);
+                return this;
+            };
+            // list.fireWith 执行队列并且传参
+            // 调用队列中的处理函数 并且给他们传参 绑定执行时的上下文对象
+            deferred[tuple[0] + "With"] = list.fireWith;
+        });
+        // Make the deferred a promise
+        promise.promise(deferred);
+        return deferred;
+    },
+    // 执行一个或多个对象的延迟函数的回调函数
+    when : function(subordinate){
+        return subordinate.promise();
+    }
     });
+
+    /**
+     * createOpeions 
+     * [options]  用户输入的字符串
+     * 支持多个字符串的输入
+     * /\s+/ 去除空格的正则
+     * **/
+    function createOpeions(options){
+        // 记录
+        var obj = optionsCache[options] = {};
+        // 多个字符串通过空格切割重组
+        options.split(/\s+/).forEach(function(value){
+            // 将切割的字符串给obj 并赋为true
+            obj[value] =  true;
+        });
+        return obj;  
+       }
 
     /**
      *  定义全局函数
