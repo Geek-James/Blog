@@ -67,6 +67,6 @@
  ## | JavaScript 进阶必知必会及面试锦集
 1.[JavaScript 进阶必会问题](https://github.com/zc639143029/Blog/issues/22)
 
-## (*￣︶￣)个人公众号
-<img width="100" height="100"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
+## | 个人微信公众号
+<img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
 
