@@ -65,4 +65,4 @@
  1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
  
  ## | JavaScript 进阶必知必会及面试锦集
-1.[JavaScript 进阶必会问题](https://github.com/zc639143029/Blog/issues/21)
+1.[JavaScript 进阶必会问题](https://github.com/zc639143029/Blog/issues/22)
