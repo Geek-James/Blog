@@ -21,6 +21,8 @@
 
 4.[Deferred异步回调 - 原理分析及实现](https://github.com/zc639143029/Blog/issues/21)
 
+5.[事件绑定 - 原理分析及实现](https://github.com/zc639143029/Blog/issues/23) 
+
 ## | JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
 
