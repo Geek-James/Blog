@@ -52,15 +52,17 @@
 
 
 ## | ES6 系列
-1.[ES6详解-迭代器for of](https://github.com/zc639143029/Blog/issues/13)
+1.[ES6详解 - 基础扫盲大集结](https://github.com/Geek-James/Blog/issues/24)
 
-2.[ES6详解-Map Set Symbol ](https://github.com/zc639143029/Blog/issues/14)
+2.[ES6详解-迭代器for of](https://github.com/zc639143029/Blog/issues/13)
 
-3.[ES6详解-模拟Set实现](https://github.com/Geek-James/Blog/issues/17)
+3.[ES6详解-Map Set Symbol ](https://github.com/zc639143029/Blog/issues/14)
 
-4.[ES6详解-Proxy](https://github.com/zc639143029/Blog/issues/15)
+4.[ES6详解-模拟Set实现](https://github.com/Geek-James/Blog/issues/17)
 
-5.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
+5.[ES6详解-Proxy](https://github.com/zc639143029/Blog/issues/15)
+
+6.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
 
 
 ## | 算法及数据结构系列目录
