@@ -9,7 +9,8 @@
 
 [掘金](https://juejin.im/user/5c4ebc72e51d4511dc7306ce/posts)
 
-## | JQuery 源码剖析系列
+## |JavaScript流行框架系列
+### | JQuery 源码剖析系列
 ### 为什么要写源码剖析系列?
 > 提到jQuery,相信很多前端工程师都知道,这个已经🔥了十来年的框架,为前端开发提供便利性的同时也解决了各种各样的浏览器兼容性问题,一个框架为什么这么🔥其中的原因不言而喻,但能否以一种第三人称的方式,站在作者的角度来来思考设计,这估计是很多人不愿意去做的事,那么从现在开始,以第三人称的方式来剖析源码,自问自答的方式,读懂作者的意图,体会大牛的编程思想,学以致用,相信你耐心认真的仔细阅读完本专题,一定会有意外的编码思想和编码格局的提升。
 
@@ -22,6 +23,9 @@
 4.[Deferred异步回调 - 原理分析及实现](https://github.com/zc639143029/Blog/issues/21)
 
 5.[事件绑定 - 原理分析及实现](https://github.com/zc639143029/Blog/issues/23) 
+
+### 从零开始学Vue
+1.[Vue 基础指令汇总](https://github.com/Geek-James/Blog/issues/23)
 
 ## | JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
@@ -63,10 +67,6 @@
 5.[ES6详解-Proxy](https://github.com/zc639143029/Blog/issues/15)
 
 6.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
-
-## 流行框架系列
-### 从零开始学Vue
-1.[Vue 基础指令汇总](https://github.com/Geek-James/Blog/issues/23)
 
 ## | 算法及数据结构系列目录
  1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
