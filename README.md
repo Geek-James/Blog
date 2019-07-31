@@ -25,7 +25,7 @@
 - 1.5 [事件绑定 - 原理分析及实现](https://github.com/zc639143029/Blog/issues/23) 
 
 ### 2.从零开始学Vue
-- 2.1 [Vue 基础指令汇总](https://github.com/Geek-James/Blog/issues/23)
+- 2.1 [Vue 常用基本指令汇总](https://github.com/Geek-James/Blog/issues/26)
 
 ## | JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
