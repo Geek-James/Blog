@@ -76,6 +76,8 @@
 
 2.[面试技巧](https://github.com/Geek-James/Blog/tree/master/%E9%9D%A2%E8%AF%95%E7%9B%B8%E5%85%B3/%E9%9D%A2%E8%AF%95%E6%8A%80%E5%B7%A7)
 
+3.[进大厂必会这20道JS原理题](https://github.com/zc639143029/Blog/issues/27)
+
 ## | 个人微信公众号
 <img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
 
