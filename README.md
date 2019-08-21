@@ -79,7 +79,7 @@
 3.[进大厂必会这20道JS原理题](https://github.com/zc639143029/Blog/issues/27)
 
 ## | Vue 面试题
-
+1.[写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/1)
 ## | 个人微信公众号
 <img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
 
