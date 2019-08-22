@@ -26,7 +26,7 @@
 
 ### 2.从零开始学Vue
 - 2.1 [Vue 常用基本指令汇总](https://github.com/Geek-James/Blog/issues/26)
-- 2.2 [Vue 组件中通信]()
+- 2.2 [Vue 组件中通信](https://github.com/Geek-James/Blog/issues/28)
 
 ## | JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
