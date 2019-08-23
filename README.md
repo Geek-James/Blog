@@ -24,7 +24,7 @@
 
 - 1.5 [事件绑定 - 原理分析及实现](https://github.com/zc639143029/Blog/issues/23) 
 
-### 2.从零开始学Vue
+### 2.从菜鸟到大神的Vue.js
 - 2.1 [Vue 常用基本指令汇总](https://github.com/Geek-James/Blog/issues/26)
 - 2.2 [Vue 组件中通信](https://github.com/Geek-James/Blog/issues/28)
 
@@ -42,7 +42,11 @@
  6.[彻底搞懂-instance和typeOf](https://github.com/zc639143029/Blog/issues/6)
 
  7.[彻底搞懂-JavaScript 闭包](https://github.com/zc639143029/Blog/issues/11)
-
+ 
+ ## | JavaScript 常用内置函数方法归类
+ 1.数组常用方法归类
+ 1.1 [Array.reduce() 方法详解及使用场景]()
+ 
 
 ## | JavaScript Dom操作系列目录
  1.[JavaScript常用的Dom操作](https://github.com/zc639143029/Blog/issues/9)
