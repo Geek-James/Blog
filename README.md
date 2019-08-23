@@ -45,7 +45,8 @@
  
  ## | JavaScript 常用内置函数方法归类
  1.数组常用方法归类
- 1.1 [Array.reduce() 方法详解及使用场景]()
+ 
+ 1.1 [Array.reduce() 方法详解及使用场景](https://github.com/Geek-James/Blog/issues/29)
  
 
 ## | JavaScript Dom操作系列目录
