@@ -75,7 +75,8 @@
 6.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
 
 ## | 算法及数据结构系列目录
- 1.[递归](https://github.com/zc639143029/Blog/issues/10)<br>
+ 1.数组相关算法
+ - 1.1 删除排序数组中的重复项
  
  ## | JavaScript 进阶必知必会及面试锦集
 1.[JavaScript 进阶必会问题](https://github.com/zc639143029/Blog/issues/22)
