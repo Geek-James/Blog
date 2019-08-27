@@ -74,7 +74,7 @@
 
 6.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
 
-7.[ES6详解-Promise 源码分析]()
+7.[ES6详解-Promise 源码分析](https://github.com/Geek-James/Blog/issues/31)
 
 ## | 每天一道算法题系列
  1.数组相关算法
