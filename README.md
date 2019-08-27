@@ -76,7 +76,7 @@
 
 ## | 每天一道算法题系列
  1.数组相关算法
- - 1.1 [LeedCode-26]删除排序数组中的重复项
+ - 1.1 [LeetCode-26]删除排序数组中的重复项
  
  ## | JavaScript 进阶必知必会及面试锦集
 1.[JavaScript 进阶必会问题](https://github.com/zc639143029/Blog/issues/22)
