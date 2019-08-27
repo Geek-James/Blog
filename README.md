@@ -74,6 +74,8 @@
 
 6.[ES6详解-Generator](https://github.com/zc639143029/Blog/issues/16)
 
+7.[ES6详解-Promise 源码分析]()
+
 ## | 每天一道算法题系列
  1.数组相关算法
  - 1.1 [LeetCode-26]删除排序数组中的重复项
