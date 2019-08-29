@@ -79,7 +79,7 @@
 ## | 每天一道算法题系列
 ### 数组系列
  - 1 [LeetCode-26 删除排序数组中的重复项](https://github.com/Geek-James/Blog/issues/30)
- - 2 [LeetCode-724 寻找数组的中心索引](https://github.com/Geek-James/Blog/issues/31)
+ - 2 [LeetCode-724 寻找数组的中心索引](https://github.com/Geek-James/Blog/issues/32)
  
  ## | JavaScript 进阶必知必会及面试锦集
 1.[JavaScript 进阶必会问题](https://github.com/zc639143029/Blog/issues/22)
