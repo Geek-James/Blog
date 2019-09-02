@@ -1,6 +1,3 @@
-## | 扫码回复:学习 领学习资料
-<img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
-
 # 全栈前端进阶笔记
 ✍️记录个人成长🍀分享学习笔记😊<br>
 主要分享jQuery源码剖析系列、JavaScript彻底搞懂系列、JavaScript Dom操作、ES6详解系列、javaScript设计模式系列、数据结构与算法系列、Vue、Node.js等等,分享内容会附加优质的学习博客连接以供全面参考学习。<br>
@@ -11,6 +8,9 @@
 [CSDN博客](https://blog.csdn.net/zc639143029)
 
 [掘金](https://juejin.im/user/5c4ebc72e51d4511dc7306ce/posts)
+
+## | 扫码回复:学习 领学习资料
+<img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
 
 ## |JavaScript必会框架系列
 ### 1.JQuery 源码剖析
