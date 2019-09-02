@@ -1,4 +1,4 @@
-## | 扫码回复:学习-->领学习资料
+## | 扫码回复:学习 领学习资料
 <img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
 
 # 全栈前端进阶笔记
