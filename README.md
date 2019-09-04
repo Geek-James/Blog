@@ -9,7 +9,7 @@
 
 [掘金](https://juejin.im/user/5c4ebc72e51d4511dc7306ce/posts)
 
-## | 扫码回复:学习 领学习资料
+## | 扫码回复:学习 领资料
 <img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
 
 ## |JavaScript必会框架系列
