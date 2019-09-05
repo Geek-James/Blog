@@ -1,0 +1,53 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: 极客James
+ * @Date: 2019-09-01 20:02:34
+ * @LastEditTime: 2019-09-05 15:08:15
+ * @LastEditors: Please set LastEditors
+ ** 掘金:https://juejin.im/post/5d6bed3e6fb9a06af372d069
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>逆波兰表达式</title>
+</head>
+
+<body>
+    <script>
+        var evalRPN = function (tokens) {
+            // 定义一个栈用来存放数据
+            let stack = [];
+            for (item of tokens) {
+                switch (item) {
+                    case ("+"):
+                        stack.push(Number(stack.pop()) + Number(stack.pop()));
+                        break;
+                    case ("-"):
+                        stack.push(Number(parseInt(-stack.pop())) + Number(parseInt(stack.pop())));
+                        break;
+                    case ("*"):
+                        stack.push(Number(parseInt(stack.pop())) * Number(parseInt(stack.pop())));
+                        break;
+                    case ("/"):
+                        let right = parseInt(stack.pop());
+                        stack.push(parseInt(stack.pop() /
+                            right));
+                        break;
+                    default:
+                        stack.push(item);
+                        break;
+                }
+            }
+            return stack.pop();
+        }
+        var data = ["2", "1", "+", "3", "*"];
+        console.log(evalRPN(data));
+    </script>
+
+</body>
+
+</html>
