@@ -83,7 +83,8 @@
 [前端开发到底学不学算法](https://github.com/Geek-James/Blog/issues/34)
  - 1 [LeetCode-26 删除排序数组中的重复项](https://github.com/Geek-James/Blog/issues/30)
  - 2 [LeetCode-724 寻找数组的中心索引](https://github.com/Geek-James/Blog/issues/32)
- - 2 [leetCode-150逆波兰求值](https://github.com/Geek-James/Blog/issues/33)
+ - 3 [leetCode-150 逆波兰求值](https://github.com/Geek-James/Blog/issues/33)
+ - 4 [leetCode-509 斐波那契数列](https://juejin.im/post/5d7505c7f265da03c61e775a)
  
  ## | JavaScript 进阶必知必会及面试锦集
 1.[JavaScript 进阶必会问题](https://github.com/zc639143029/Blog/issues/22)
