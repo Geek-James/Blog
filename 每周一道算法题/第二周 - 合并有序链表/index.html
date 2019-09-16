@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>合并有序链表</title>
+</head>
+
+<body>
+    <script>
+        // 方法一
+        function mergeTwoLists(l1, l2) {
+            var l3 = new ListNode(-1);
+            var c3 = l3;
+
+            while (l1 !== null && l2 !== null) {
+                if (l1.val <= l2.val) {
+                    c3.next = l1;
+                    l1 = l1.next;
+                } else {
+                    c3.next = l2;
+                    l2 = l2.next;
+                }
+                c3 = c3.next;
+            }
+            c3.next = (l1 === null) ? l2 : l1;
+            return l3.next;
+        }
+
+        // 自定义一个链表
+        function ListNode(val) {
+            this.val = val;
+            this.next = null;
+        }
+
+        // 方法二:递归
+        function mergeTwoList(l1, l2) {
+            if (l1 = null && l2 == null) {
+                return null;
+            }
+            if (l1 == null) {
+                return l2;
+            }
+
+            if (l2 == null) {
+                return l1;
+            }
+
+            if (l1.val < l2.val) {
+                l1.next = mergeTwoList(l1.next, l2);
+                return l1;
+            } else {
+                l2.next = mergeTwoList(l1, l2.next);
+                return l2;
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
