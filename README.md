@@ -9,7 +9,7 @@
 
 [掘金](https://juejin.im/user/5c4ebc72e51d4511dc7306ce/posts)
 
-## |我的开源项目
+## | 我的开源项目
 [Vue全家桶搭建大型电商项目](https://github.com/Geek-James/ddBuy)
 
 ## | 扫码回复:学习 领资料
