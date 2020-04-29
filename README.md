@@ -35,14 +35,14 @@
 - 2.2 [Vue 组件中通信](https://github.com/Geek-James/Blog/issues/28)
 
 ### Vue甜小白系列专栏 
-    - [Vue从甜小白到皮大佬系列(一) Vue是个啥?](https://juejin.im/post/5d64f31ae51d4561db5e3a74)
-    - [Vue从甜小白到皮大佬系列(二) v-指令](https://juejin.im/post/5d652fb351882505a87a976b)
-    - [Vue从甜小白到皮大佬系列(三) 生命周期](https://juejin.im/post/5d6675716fb9a06b10273c1c)
-    - [Vue从甜小白到皮大佬系列(四) 自定义指令](https://juejin.im/post/5d673ad7f265da03934bf266)
-    - [Vue从甜小白到皮大佬系列(五) 组件](https://juejin.im/post/5d67eac7e51d453c12504e3a)
-    - [Vue从甜小白到皮大佬系列(六) 组件通信](https://juejin.im/post/5d699e2b6fb9a06ae3727746)
-    - [Vue从甜小白到皮大佬系列(七) Vue Router](https://juejin.im/post/5d6e6f366fb9a06b32609021)
-    - [Vue从甜小白到皮大佬系列(八) Vuex](https://juejin.im/post/5d6f5801f265da03da24b365)
+- [Vue从甜小白到皮大佬系列(一) Vue是个啥?](https://juejin.im/post/5d64f31ae51d4561db5e3a74)
+- [Vue从甜小白到皮大佬系列(二) v-指令](https://juejin.im/post/5d652fb351882505a87a976b)
+- [Vue从甜小白到皮大佬系列(三) 生命周期](https://juejin.im/post/5d6675716fb9a06b10273c1c)
+- [Vue从甜小白到皮大佬系列(四) 自定义指令](https://juejin.im/post/5d673ad7f265da03934bf266)
+- [Vue从甜小白到皮大佬系列(五) 组件](https://juejin.im/post/5d67eac7e51d453c12504e3a)
+- [Vue从甜小白到皮大佬系列(六) 组件通信](https://juejin.im/post/5d699e2b6fb9a06ae3727746)
+- [Vue从甜小白到皮大佬系列(七) Vue Router](https://juejin.im/post/5d6e6f366fb9a06b32609021)
+- [Vue从甜小白到皮大佬系列(八) Vuex](https://juejin.im/post/5d6f5801f265da03da24b365)
     
 ## | JavaScript 彻底搞懂系列目录
  1.[彻底搞懂-JS数据类型及数据类型转换](https://github.com/zc639143029/Blog/issues/1)
