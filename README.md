@@ -16,7 +16,7 @@
 <img width="150" height="150"  src = "https://github.com/Geek-James/Blog/blob/master/image/wechat.jpg?raw=true">
 
 ## |JavaScript必会框架系列
-### 1.JQuery 源码剖析
+### JQuery 源码剖析
 #### 为什么要写源码剖析?
 > 提到jQuery,相信很多前端工程师都知道,这个已经🔥了十来年的框架,为前端开发提供便利性的同时也解决了各种各样的浏览器兼容性问题,一个框架为什么这么🔥其中的原因不言而喻,但能否以一种第三人称的方式,站在作者的角度来来思考设计,这估计是很多人不愿意去做的事,那么从现在开始,以第三人称的方式来剖析源码,自问自答的方式,读懂作者的意图,体会大牛的编程思想,学以致用,相信你耐心认真的仔细阅读完本专题,一定会有意外的编码思想和编码格局的提升。
 
@@ -30,7 +30,7 @@
 
 - 1.5 [事件绑定 - 原理分析及实现](https://github.com/zc639143029/Blog/issues/23) 
 
-### 2.从菜鸟到大神的Vue.js
+### Vue基础
 - 2.1 [Vue 常用基本指令汇总](https://github.com/Geek-James/Blog/issues/26)
 - 2.2 [Vue 组件中通信](https://github.com/Geek-James/Blog/issues/28)
 
