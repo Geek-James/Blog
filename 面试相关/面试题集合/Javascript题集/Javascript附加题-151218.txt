@@ -1,0 +1,51 @@
+1.附加题 模板引擎实践
+HTML
+<!doctype html public 'ahh hell yeah'>
+<html>
+<head>
+    <meta charset=utf-8>
+    <title>Simple Templating</title>
+</head>
+<body>
+   
+  <div class="result"></div>
+   
+  <script type="template" id="template">
+    <h2> 
+      <a href="{{href}}">
+        {{title}} 
+      </a>
+    </h2>
+    <img src="{{imgSrc}}" alt="{{title}}">
+  </script>
+ 
+</body>
+</html>
+数据：
+var data = [
+    {
+      title: "Create a Sticky Note Effect in 5 Easy Steps with CSS3 and HTML5",
+      href: "http://net.tutsplus.com/tutorials/html-css-techniques/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5/",
+      imgSrc: "https://d2o0t5hpnwv4c1.cloudfront.net/771_sticky/sticky_notes.jpg"
+    },
+    {
+      title: "Nettuts+ Quiz #8",
+      href: "http://net.tutsplus.com/articles/quizzes/nettuts-quiz-8-abbreviations-darth-sidious-edition/",
+      imgSrc: "https://d2o0t5hpnwv4c1.cloudfront.net/989_quiz2jquerybasics/quiz.jpg"
+    },
+    {
+      title: "WordPress Plugin Development Essentials",
+      href: "http://net.tutsplus.com/tutorials/wordpress/wordpress-plugin-development-essentials/",
+      imgSrc: "https://d2o0t5hpnwv4c1.cloudfront.net/1101_wpPlugins/wpplugincourse.png"
+    }    
+  ]
+
+2.附加题 实现下列语法（@符号随意。。）
+@{var userName= "邓星林";}
+    <span>@userName</span>
+输出：
+    <span>邓星林</span>
+   
+类似的：
+@{var cout=100;}  
+<p>这是第 @cout 个进球 </p> 

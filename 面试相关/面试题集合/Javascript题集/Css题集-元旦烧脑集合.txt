@@ -1,0 +1,47 @@
+1.css 属性命名区分大小写么？
+2.margin-top和margin-botton对于行内（内敛inline）元素效果一样么？
+3.padding-top和padding-bottom对于inline元素都会增加元素本身的大小么？
+4.如果一个p标签拥有font-size：10rem，那么这个p标签会自动响应窗口布局么？
+5.伪类 :checked 对于option标签有效果么？
+6.伪类 ：root 通常指的是标签<html>?
+7.translate()方法可不可以使元素在z轴上做变换？
+8.
+html
+<ul class="shopping-list" id="awesome">
+    <li><span>Milk</span></li>
+    <li class="favorite" id="must-buy"><span class="highlight">Sausage</span></li>
+</ul>
+css
+ul {
+    color: red;
+}
+li {
+    color: blue;
+}
+问Sausage的颜色是什么色？
+9.
+html
+<ul class="shopping-list" id="awesome">
+    <li><span>Milk</span></li>
+    <li class="favorite" id="must-buy"><span class="highlight">Sausage</span></li>
+</ul>
+css
+ul#awesome #must-buy {
+    color: red;
+}
+.favorite span {
+    color: blue!important;
+}
+问Sausage的颜色是什么色？
+10.
+<ul class="shopping-list" id="awesome">
+    <li><span>Milk</span></li>
+    <li class="favorite" id="must-buy"><span class="highlight">Sausage</span></li>
+</ul>
+ul.shopping-list li .highlight {
+    color: red;
+}
+ul.shopping-list li .highlight:nth-of-type(odd) {
+    color: blue;
+}
+问Sausage的颜色是什么色？

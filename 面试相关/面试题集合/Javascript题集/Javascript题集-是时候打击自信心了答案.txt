@@ -1,0 +1,39 @@
+1.
+    var lowerCaseOnly =  /^[a-z]+$/;
+    [lowerCaseOnly.test(null), lowerCaseOnly.test()]
+答案：有关正则表达式，test过程会将传入的变量自动转换为字符串 null-》"null",完全没有则会转换为"undefined"
+2.
+"1 2 3".replace(/\d/g, parseInt)
+答案：replace的第二个函数如何传参，parseInt一共可以传几个参数，结果：1，NaN，3
+3.
+   function foo() { }
+    var oldName = foo.name;
+    foo.name = "bar";
+    [oldName, foo.name]
+答案：纠结点，变量声明会提升至当前块的顶端，那么属性赋值呢？其实上面的都是废话，坑根本不在这变量声明与属性赋值。
+函数的name属性---只读。。所以上面的代码无法改变。
+结果：“foo”*2
+追加：Object.defineProperty()//有用过这个的么。
+4.
+    var a = /123/, b = /123/;
+    a == b
+    a === b
+答案：每个正则都是一个新的。
+
+5.
+  var a = {class: "Animal", name: 'Fido'};
+    a.class
+答案：关键字可不可以用呢？有的浏览器可以还是不可以。自行查看ecma。
+6.
+  console.log('one');
+setTimeout(function() {
+  console.log('two');
+}, 0);
+console.log('three');
+有关setTimeout延迟（异步或者神马的）。
+结果：one three two
+7.
+[1,2,3,4,5].duplicator(); // [1,2,3,4,5,1,2,3,4,5]
+追加：输出[1,2,3,4,5,4,3,2,1]
+这个没有答案标准。
+

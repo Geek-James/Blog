@@ -1,0 +1,104 @@
+1
+(function(){ 
+  return typeof arguments; 
+})();
+答案：object
+知识点：typeof返回的六种类型，boolean，object，undefined，string，number，function（追问：typeof null 输出）
+arguments--类数组-类数组不是数组（类数组或者有称伪数组--知识链接 length， slice等）
+arguments还是个object。
+2
+var f = function g(){ return 23; }; 
+typeof g();
+答案：bug。
+知识点：函数标示符和指向函数指针
+f最终指向的是函数，
+上面的code是一个函数表达式，函数表达式右侧标识符g只存在于函数作用域内，
+外部调用自然不识别。
+3
+(function(x){ 
+  delete x; 
+  return x; 
+})(1);
+答案：false 1
+知识点：关于delete，
+参数不可删除(var 声明的变量可以删除么？不用var 声明的变量可以删除么？)
+4
+ var y = 1, x = y = typeof x;
+  x;
+答案：undefined
+知识点：函数执行顺序（变量声明提前）
+连等号从右往左执行
+var y=1；
+var x=undefined；
+y=typeof x；
+x=y;
+x;
+5
+(function f(f){
+    return typeof f();
+  })(function(){ return 1; });
+答案：1
+知识点：函数内部变量和函数参数的优先级谁更高。
+6
+var foo = {
+    bar: function() { return this.baz; },
+    baz: 1
+  };
+  (function(){
+    return typeof arguments[0]();
+  })(foo.bar);
+7
+var foo = {
+    bar: function(){ return this.baz; },
+    baz: 1
+  }
+  typeof (f = foo.bar)();
+8
+var f = (function f(){ return "1"; }, function g(){ return 2; })();
+  typeof f;
+9
+ var x = 1;
+  if (function f(){}) {
+    x += typeof f;
+  }
+  x;
+10
+var x = [typeof x, typeof y][1];
+  typeof typeof x;
+11
+(function(foo){
+    return typeof foo.bar;
+  })({ foo: { bar: 1 } });
+12
+(function f(){
+    function f(){ return 1; }
+    return f();
+    function f(){ return 2; }
+  })();
+13
+function f(){ return f; }
+  new f() instanceof f;
+14
+with (function(x, undefined){}) length;
+15
+typeof typeof(null)
+16
+100['toString']['length']
+17
+var a = (1,5 - 1) * 2
+18
+var x = 10;
+var foo = {
+    x: 20,
+    bar: function () {
+        var x = 30;
+        return this.x;
+    }
+};
+
+console.log(
+    foo.bar(),             // 1.
+    (foo.bar)(),           // 2.
+    (foo.bar = foo.bar)(), // 3.
+    (foo.bar, foo.bar)()   // 4.
+);

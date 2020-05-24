@@ -1,0 +1,6 @@
+1.输出结果和原因
+console.log(a);
+console.log(b);
+window.b = 10;
+var a = 20;
+2.函数表达式和函数声明的特点。
