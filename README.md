@@ -70,14 +70,9 @@
 
  2.[JS事件响应处理操作](https://github.com/zc639143029/Blog/issues/12)
 
- ## | ES6 知识总结 思维导图
- [⭐️点我下载](https://github.com/Geek-James/Blog/tree/master/XMind)
-
-<img width="150" height="90" float="left" src="https://raw.githubusercontent.com/zc639143029/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.png">
-<img width="150" height="90" float="left" src="https://raw.githubusercontent.com/Geek-James/Blog/master/XMind/ES6%20%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1%2011-20.png">
-
-
 ## | ES6 系列
+[⭐️ ES6 知识总结 思维导图 点我下载](https://github.com/Geek-James/Blog/tree/master/XMind)
+
 [ES6系列40道基础题](https://github.com/Geek-James/Blog/issues/38)
 
 1.[ES6详解 - 基础扫盲大集结](https://github.com/Geek-James/Blog/issues/24)
