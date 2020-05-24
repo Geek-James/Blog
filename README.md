@@ -78,6 +78,8 @@
 
 
 ## | ES6 系列
+[ES6系列40道基础题](https://github.com/Geek-James/Blog/issues/38)
+
 1.[ES6详解 - 基础扫盲大集结](https://github.com/Geek-James/Blog/issues/24)
 
 2.[ES6详解-迭代器for of](https://github.com/zc639143029/Blog/issues/13)
