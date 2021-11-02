@@ -1,0 +1,59 @@
+无聊不学习还不工作的请不搜索的完成题目
+
+1.
+function foo1()
+{
+  return {
+      bar: "hello"
+  };
+}
+
+function foo2()
+{
+  return
+  {
+      bar: "hello"
+  };
+}
+2：
+if (!("a" in window)) {
+    var a = 1;
+}
+alert(a);
+3：
+var a = 1,
+    b = function a(x) {
+        x && a(--x);
+    };
+alert(a);
+4：
+function a(x) {
+    return x * 2;
+}
+var a;
+alert(a);
+5：
+function b(x, y, a) {
+    arguments[2] = 10;
+    alert(a);
+}
+b(1, 2, 3);
+
+6：
+function a() {
+    alert(this);
+}
+a.call(null);
+
+7：
+找出数字数组中最大的元素（使用Match.max函数）
+8：
+转化一个数字数组为function数组（每个function都弹出相应的数字）
+9：
+给object数组进行排序（排序条件是每个元素对象的属性个数）
+10：
+利用JavaScript打印出Fibonacci数（不使用全局变量）
+11：
+实现如下语法的功能：var a = (5).plus(3).minus(6); //2
+12：
+实现如下语法的功能：var a = add(2)(3)(4); //9

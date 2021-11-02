@@ -1,0 +1,141 @@
+提醒：题目很虐心 
+
+===========================ES6 START======================
+1.
+(function(x, f = () => x) {
+  var x;
+  var y = x;
+  x = 2;
+  return [x, y, f()];
+})(1)
+2.
+(function() {
+  return [
+    (() => this.x).bind({ x: 'inner' })(),
+    (() => this.x)()
+  ]
+}).call({ x: 'outer' });
+3.
+let x, { x: y = 1 } = { x }; y;
+4.
+(function() {
+  let f = this ? class g { } : class h { };
+  return [
+    typeof f,
+    typeof h
+  ];
+})();
+5.
+(typeof (new (class { class () {} })))
+6.
+typeof (new (class F extends (String, Array) { })).substring
+7.
+[...[...'...']].length
+8.
+typeof (function* f() { yield f })().next().next()
+9.
+typeof (new class f() { [f]() { }, f: { } })[`${f}`]
+10.
+typeof `${{Object}}`.prototype
+11.
+((...x, xs)=>x)(1,2,3)
+12.
+let arr = [ ];
+for (let { x = 2, y } of [{ x: 1 }, 2, { y }]) {
+  arr.push(x, y);
+}
+arr;u
+13.
+(function() {
+  if (false) {
+    let f = { g() => 1 };
+  }
+  return typeof f;
+})();
+
+
+
+
+===========================ES6 END========================
+1
+(function(){ 
+  return typeof arguments; 
+})();
+2
+var f = function g(){ return 23; }; 
+typeof g();
+3
+(function(x){ 
+  delete x; 
+  return x; 
+})(1);
+4
+ var y = 1, x = y = typeof x;
+  x;
+5
+(function f(f){
+    return typeof f();
+  })(function(){ return 1; });
+6
+var foo = {
+    bar: function() { return this.baz; },
+    baz: 1
+  };
+  (function(){
+    return typeof arguments[0]();
+  })(foo.bar);
+7
+var foo = {
+    bar: function(){ return this.baz; },
+    baz: 1
+  }
+  typeof (f = foo.bar)();
+8
+var f = (function f(){ return "1"; }, function g(){ return 2; })();
+  typeof f;
+9
+ var x = 1;
+  if (function f(){}) {
+    x += typeof f;
+  }
+  x;
+10
+var x = [typeof x, typeof y][1];
+  typeof typeof x;
+11
+(function(foo){
+    return typeof foo.bar;
+  })({ foo: { bar: 1 } });
+12
+(function f(){
+    function f(){ return 1; }
+    return f();
+    function f(){ return 2; }
+  })();
+13
+function f(){ return f; }
+  new f() instanceof f;
+14
+with (function(x, undefined){}) length;
+15
+typeof typeof(null)
+16
+100['toString']['length']
+17
+var a = (1,5 - 1) * 2
+18
+var x = 10;
+var foo = {
+    x: 20,
+    bar: function () {
+        var x = 30;
+        return this.x;
+    }
+};
+
+console.log(
+    foo.bar(),             // 1.
+    (foo.bar)(),           // 2.
+    (foo.bar = foo.bar)(), // 3.
+    (foo.bar, foo.bar)()   // 4.
+);

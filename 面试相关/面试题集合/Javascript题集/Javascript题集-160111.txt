@@ -1,0 +1,42 @@
+1.
+var f = true;
+if (f === true) {
+  var a = 10;
+}
+ 
+function fn() {
+  var b = 20;
+  c = 30;
+}
+ 
+fn();
+console.log(a);
+console.log(b);
+console.log(c);
+2.
+var x = 1;
+var y = 0;
+var z = 0;
+function add(n){n=n+1;}
+y = add(x);
+function add(n){n=n+3;}
+z = add(x);
+3.
+for(i=0, j=0; i<10, j<6; i++, j++){
+  k = i + j;
+}
+4.
+var two = 0.2;
+var one = 0.1;
+var eight = 0.8;
+var six = 0.6;
+[two -one == one,eight- six == two];
+运行结果，求更严谨的写法。
+5.
+编写一个方法 去掉一个数组的重复元素
+eg：var arr = [1,2,3,1,43,12,12,1];
+6.
+JavaScript中如何检测一个变量是一个String类型？
+7.
+实现
+“hello world”  -> ‘h e l l o  w o r l d’

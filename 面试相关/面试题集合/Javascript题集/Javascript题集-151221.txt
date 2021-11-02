@@ -1,0 +1,4 @@
+Route篇：（不用插件，不用jquery，纯用js）
+1.实现判断浏览器类型，浏览器版本，浏览器语言。（navigator.userAgent）
+2.实现监听location.hash改变。
+（注意ie8版本之前与后来的写法。）

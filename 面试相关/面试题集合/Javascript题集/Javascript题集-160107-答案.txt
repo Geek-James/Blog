@@ -1,0 +1,44 @@
+如有错误切勿打脸，友好私聊。(题目都采集自互联网)
+1.
+[]==[]
+答案：false.
+数组，在 Javascript 中是对象，对象使用 == 比较都是比较的引用。
+简单的说，就是，如果是同一个对象，就相等，如果不是同一个对象，就不等。
+每次使用 [] 都是新建一个数组对象，所以 [] == [] 这个语句里建了两个数据对象，它们不等。
+2.
+[3.toString(),3..toString(),3...toString()]
+答案：error,"3",error
+Number中的toString(a)，能够将数值转化成为a进制的值。但a缺省时，默认转化为十进制。
+一般使用方法为：var n = 3;ｎ.toString();
+执行3.toString()，因为3只是为数值型变量，为非Number实例，因此对于3不能直接调用Number方法。
+而执行3..toString()，会强制将3转化为数字实例，因此能够被解释，输出3，同样可以使用(3).toString()。
+(补充说明：3.toString() 在群里出的另外一道题里有类似问题，字面量到底是不是实例能不能调用方法的问题，具体可看ecma标准。
+而3..toString()之所以可执行，是因为在解析该句的时候，3与其后的第一个点解析人为 3.是个浮点数，转换完成后toString().
+)
+3.
+Array.isArray(Array.prototype)
+答案：true
+Array.prototype为[]，Array.isArray(a)是一个判断a是否为数组的方法。
+
+判断对象是否为数组的方法：
+1）ES5函数isArray(),该函数测试对象的内部[[Class]]属性是否为Array:
+Arrray.isArray(a);
+2）判断对象的构造函数是否为Array:
+a.constructor === Array
+3）使用对象内部[[Class]]属性创建结果字符串：
+Object.prototype.toString.call(a)
+4）使用instanceof操作符测试对象是否继承自Array：
+（但由于，一个页面的iframe不会继承自另外一个页面的iframe，该方法不可靠）
+a instanceof Array。
+4.
+["1","2","3"].map(parseInt)；
+5.
+var arr = Array(3);
+arr[0] = 2
+arr.map(function(elem){return '1';});
+
+答案：其实四和五可以同时解答，关于map会往callback里传三个参数，callback能接收到几个看callback的形参个数。
+parseInt形参--两个,map传入的参数分别是 当前对应元素值，和对应元素index。
+所以第四题，就可以看做parseInt(1,0),parseInt(2,1),parseInt(3,2);返回为数组。
+第五题是关于数组元素没有初始化的情况，map对于缺失元素直接返回undefined。
+所以答案："1",undefined*2

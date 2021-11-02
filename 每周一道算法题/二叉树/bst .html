@@ -1,0 +1,77 @@
+<!--
+ * @Github: https://github.com/Geek-James
+ * @掘金: https://juejin.im/user/5c4ebc72e51d4511dc7306ce
+ * @Date: 2020-05-06 10:26:45
+ * @LastEditors: your name
+ * @LastEditTime: 2020-05-06 10:47:35
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建二叉树</title>
+</head>
+
+<body>
+    <script>
+        // 初始化二叉树对象
+        function Node(data, left, right, parent) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+            this.parent = parent;
+            this.show = function () {
+                return this.data;
+            }
+        }
+        // 定义插入对象
+        function BST() {
+            this.root = null;
+            this.insert = insert;
+        }
+
+        function insert(data) {
+            //实例化Node对象
+            let n = new Node(data, null, null);
+            //如果不存在节点,则此节点为根节点
+            if (this.root == null) {
+                this.root = n;
+            } else {
+                //存在根节点,定义current
+                let current = this.root;
+                let parent;
+                while (true) {
+                    parent = current;
+                    //当插入值小于根节点的值时,将值作为左节点
+                    if (data < current.data) {
+                        current = current.left;
+                        if (current == null) {
+                            parent.left = n;
+                            break;
+                        }
+                    } else {
+                        //当插入的值大于根节点值,将值作为右节点
+                        current = current.right;
+                        if (current == null) {
+                            parent.right = n;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        const bst = new BST();
+        bst.insert(13);
+        bst.insert(21);
+        bst.insert(15);
+        bst.insert(29);
+        bst.insert(3);
+        bst.insert(55);
+        bst.show();
+    </script>
+</body>
+
+</html>

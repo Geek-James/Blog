@@ -1,0 +1,122 @@
+<!--
+ * @Github: https://github.com/Geek-James
+ * @掘金: https://juejin.im/user/5c4ebc72e51d4511dc7306ce
+ * @Date: 2020-05-06 14:34:02
+ * @LastEditors: your name
+ * @LastEditTime: 2020-05-08 16:31:08
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实现 二叉树 前序 中序 后序</title>
+</head>
+<script>
+    // 创建节点
+    function Node(data, left, right) {
+        this.data = data
+        this.left = left
+        this.right = right
+        this.show = function () {
+            return this.data
+        }
+    }
+    // 创建二叉树
+    function BST() {
+        //根节点
+        this.root = null
+        //插入节点
+        this.insert = insert
+        this.getMin = getMin
+        this.getMax = getMax
+        this.find = find
+    }
+
+    function insert(data) {
+        var n = new Node(data, null, null)
+        if (this.root === null) {
+            this.root = n
+        } else {
+            var current = this.root
+            var parent
+            while (true) {
+                parent = current
+                if (data < current.data) {
+                    //左节点
+                    current = current.left
+                    if (current === null) {
+                        parent.left = n
+                        break
+                    }
+                } else {
+                    //右节点
+                    current = current.right
+                    if (current === null) {
+                        parent.right = n
+                        break
+                    }
+                }
+            }
+        }
+    }
+    // 最小值
+    function getMin() {
+        var current = this.root
+        while (!(current.left === null)) {
+            current = current.left
+        }
+        return current.data
+    }
+    //最大值
+    function getMax() {
+        var current = this.root
+        while (!(current.right === null)) {
+            current = current.right
+        }
+        return current.data
+    }
+
+    // 查找二叉树
+    function find(data) {
+        var current = this.root
+        // 递归查找
+        // 在BST上查找给定值，需要比较该值和当前节点上 的值的大小。
+        // 通过比较，就能确定如果给定值不在 当前节点时，该向左遍历还是向右遍历。
+        while (current != null) {
+            if (current.data == data) {
+                return current;
+            } else if (data < current.data) {
+                current.left;
+            } else {
+                current.right;
+            }
+        }
+        return null
+    }
+
+    var bst = new BST()
+    var datas = [23, 45, 16, 37, 3, 99, 22];
+    datas.forEach(key => {
+        bst.insert(key)
+    });
+    var min = bst.getMin()
+    console.log('最小值' + min)
+    var max = bst.getMax()
+    console.log('最大值' + max)
+
+    var found = bst.find(10);
+    console.log(found);
+
+    if (found != null) {
+        console.log('This value is find in BST');
+    } else {
+        console.log('This value is not in BST');
+
+    }
+</script>
+
+<body></body>
+
+</html>
